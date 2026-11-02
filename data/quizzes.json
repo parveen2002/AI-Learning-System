@@ -1,0 +1,746 @@
+[
+  {
+    "quiz_id": "q1_12",
+    "course_id": 1,
+    "module_id": "m4",
+    "lesson_id": "l12",
+    "title": "Tree and Graph Assessment",
+    "description": "Test your understanding of trees, graphs, heaps, and graph traversal algorithms.",
+    "time_limit": 8,
+    "passing_score": 60,
+    "questions": [
+      {
+        "question_id": "q1",
+        "question": "For a balanced binary search tree with n nodes, what is the average-case time complexity of search, insert, and delete operations?",
+        "options": ["O(1)", "O(log n)", "O(n)", "O(n log n)"],
+        "correct_answer": "B",
+        "explanation": "A balanced BST keeps its height at O(log n), so search, insert, and delete each take O(log n) on average."
+      },
+      {
+        "question_id": "q2",
+        "question": "Which graph traversal algorithm uses a queue and visits all neighbors at the current depth before moving deeper?",
+        "options": ["Depth-First Search", "Breadth-First Search", "Binary Search", "Merge Sort"],
+        "correct_answer": "B",
+        "explanation": "BFS explores nodes level by level using a queue, which makes it ideal for shortest paths in unweighted graphs."
+      },
+      {
+        "question_id": "q3",
+        "question": "Which data structure allows you to retrieve the maximum or minimum element in O(1) time?",
+        "options": ["Binary search tree", "Hash map", "Heap", "Linked list"],
+        "correct_answer": "C",
+        "explanation": "A heap always exposes its largest (max-heap) or smallest (min-heap) element at the root in O(1) time."
+      },
+      {
+        "question_id": "q4",
+        "question": "A minimum spanning tree of an undirected connected graph connects all vertices using the:",
+        "options": [
+          "Maximum total edge weight with cycles",
+          "Minimum total edge weight with no cycles",
+          "Exactly the number of edges as vertices squared",
+          "Only directed edges"
+        ],
+        "correct_answer": "B",
+        "explanation": "An MST connects every vertex with the smallest possible total edge weight and contains no cycles, using V - 1 edges."
+      },
+      {
+        "question_id": "q5",
+        "question": "For a graph with V vertices and E edges, what is the time complexity of BFS and DFS?",
+        "options": ["O(1)", "O(V)", "O(V + E)", "O(V × E)"],
+        "correct_answer": "C",
+        "explanation": "Both BFS and DFS visit each vertex once and examine each edge once, giving O(V + E)."
+      }
+    ]
+  },
+  {
+    "quiz_id": "q1_15",
+    "course_id": 1,
+    "module_id": "m5",
+    "lesson_id": "l15",
+    "title": "Data Structures Final Assessment",
+    "description": "Verify your mastery of sorting, searching, and the core data structures from the course.",
+    "time_limit": 10,
+    "passing_score": 60,
+    "questions": [
+      {
+        "question_id": "q1",
+        "question": "Which comparison-based sorting algorithm guarantees O(n log n) time in all cases but requires O(n) extra space?",
+        "options": ["Quick Sort", "Merge Sort", "Bubble Sort", "Counting Sort"],
+        "correct_answer": "B",
+        "explanation": "Merge Sort always runs in O(n log n) and merges halves using an auxiliary array, requiring O(n) extra space."
+      },
+      {
+        "question_id": "q2",
+        "question": "Binary search can only be applied to input that is:",
+        "options": ["Randomly ordered", "Already sorted", "Stored in a hash table", "Of fixed size"],
+        "correct_answer": "B",
+        "explanation": "Binary search relies on comparing the middle element and halving the search space, which requires sorted data."
+      },
+      {
+        "question_id": "q3",
+        "question": "What is the average-case time complexity of a hash map lookup?",
+        "options": ["O(1)", "O(log n)", "O(n)", "O(n²)"],
+        "correct_answer": "A",
+        "explanation": "Hash maps compute the bucket from the key's hash in constant time, giving O(1) average-case lookups."
+      },
+      {
+        "question_id": "q4",
+        "question": "Which data structure processes elements in First-In, First-Out (FIFO) order?",
+        "options": ["Stack", "Queue", "Binary tree", "Max-heap"],
+        "correct_answer": "B",
+        "explanation": "A queue inserts at the rear and removes from the front, following FIFO ordering."
+      },
+      {
+        "question_id": "q5",
+        "question": "What is the worst-case time complexity of Quick Sort?",
+        "options": ["O(n)", "O(log n)", "O(n log n)", "O(n²)"],
+        "correct_answer": "D",
+        "explanation": "Quick Sort degrades to O(n²) when the pivot is consistently the smallest or largest element, such as on already sorted input."
+      }
+    ]
+  },
+  {
+    "quiz_id": "q2_9",
+    "course_id": 2,
+    "module_id": "m3",
+    "lesson_id": "l9",
+    "title": "Python Functions Quiz",
+    "description": "Check your knowledge of defining and using functions and modules in Python.",
+    "time_limit": 8,
+    "passing_score": 60,
+    "questions": [
+      {
+        "question_id": "q1",
+        "question": "Which syntax correctly defines a function in Python?",
+        "options": ["function greet():", "def greet():", "func greet():", "def greet;"],
+        "correct_answer": "B",
+        "explanation": "Python functions are declared with the `def` keyword followed by the function name and parentheses."
+      },
+      {
+        "question_id": "q2",
+        "question": "If a function has no return statement, what does it return by default?",
+        "options": ["0", "False", "None", "An empty string"],
+        "correct_answer": "C",
+        "explanation": "Functions without an explicit return statement return the special value None."
+      },
+      {
+        "question_id": "q3",
+        "question": "Which keyword is used to import another module in Python?",
+        "options": ["include", "require", "import", "load"],
+        "correct_answer": "C",
+        "explanation": "The `import` statement brings a module (or names from it) into the current namespace."
+      },
+      {
+        "question_id": "q4",
+        "question": "In a function definition, what does *args allow a function to accept?",
+        "options": [
+          "Exactly one argument",
+          "Keyword-only arguments",
+          "A variable number of positional arguments as a tuple",
+          "Only string arguments"
+        ],
+        "correct_answer": "C",
+        "explanation": "*args collects extra positional arguments into a tuple, letting the function accept any number of them."
+      },
+      {
+        "question_id": "q5",
+        "question": "Lambda functions in Python are:",
+        "options": [
+          "Multi-line named functions",
+          "Anonymous single-expression functions",
+          "Built-in functions for math",
+          "Functions that cannot take arguments"
+        ],
+        "correct_answer": "B",
+        "explanation": "A lambda is a small anonymous function defined in a single expression, typically used where a simple callable is needed."
+      }
+    ]
+  },
+  {
+    "quiz_id": "q3_15",
+    "course_id": 3,
+    "module_id": "m5",
+    "lesson_id": "l15",
+    "title": "Web Development Final Quiz",
+    "description": "Demonstrate your understanding of HTML, CSS, and JavaScript fundamentals.",
+    "time_limit": 10,
+    "passing_score": 60,
+    "questions": [
+      {
+        "question_id": "q1",
+        "question": "Which HTML element is the semantic container for the main page heading?",
+        "options": ["<heading>", "<h1>", "<title>", "<header>"],
+        "correct_answer": "B",
+        "explanation": "<h1> is the semantic element for the main document heading; <header> is a container, and <title> sets the browser tab title."
+      },
+      {
+        "question_id": "q2",
+        "question": "CSS Flexbox is primarily designed for:",
+        "options": [
+          "Creating complex grid layouts in two dimensions",
+          "Distributing and aligning items along a single axis",
+          "Styling text globally",
+          "Animating page elements"
+        ],
+        "correct_answer": "B",
+        "explanation": "Flexbox lays out items along one axis (row or column); CSS Grid is the two-dimensional layout tool."
+      },
+      {
+        "question_id": "q3",
+        "question": "Which CSS property changes the text color of an element?",
+        "options": ["font-color", "text-color", "color", "background-color"],
+        "correct_answer": "C",
+        "explanation": "The `color` property sets the foreground text color; background-color affects the element's background."
+      },
+      {
+        "question_id": "q4",
+        "question": "Which CSS unit is relative to the root element's font size?",
+        "options": ["px", "em", "rem", "%"],
+        "correct_answer": "C",
+        "explanation": "`rem` is always relative to the root (<html>) font size, while `em` is relative to the parent element."
+      },
+      {
+        "question_id": "q5",
+        "question": "What is the purpose of the <script> element in an HTML document?",
+        "options": [
+          "To define page styles",
+          "To embed or reference executable JavaScript",
+          "To create tables",
+          "To add metadata about the page"
+        ],
+        "correct_answer": "B",
+        "explanation": "The <script> element embeds JavaScript directly or references an external .js file to execute client-side code."
+      }
+    ]
+  },
+  {
+    "quiz_id": "q4_9",
+    "course_id": 4,
+    "module_id": "m3",
+    "lesson_id": "l9",
+    "title": "Normalization Quiz",
+    "description": "Test your grasp of normal forms and how they remove redundancy in relational databases.",
+    "time_limit": 8,
+    "passing_score": 60,
+    "questions": [
+      {
+        "question_id": "q1",
+        "question": "A table is in First Normal Form (1NF) when:",
+        "options": [
+          "Each column holds a single atomic value per row",
+          "All non-key columns depend on the full primary key",
+          "There are no transitive dependencies",
+          "Every column is a foreign key"
+        ],
+        "correct_answer": "A",
+        "explanation": "1NF requires atomic values and no repeating groups, so each cell holds one indivisible value."
+      },
+      {
+        "question_id": "q2",
+        "question": "A table is in Second Normal Form (2NF) when it is in 1NF and:",
+        "options": [
+          "All attributes are atomic",
+          "Every non-key attribute fully depends on the entire primary key",
+          "No functional dependencies exist",
+          "The table has a composite primary key"
+        ],
+        "correct_answer": "B",
+        "explanation": "2NF removes partial dependencies, meaning every non-key column depends on the whole composite primary key, not part of it."
+      },
+      {
+        "question_id": "q3",
+        "question": "A table is in Third Normal Form (3NF) when it is in 2NF and:",
+        "options": [
+          "There are no transitive dependencies on non-key columns",
+          "It contains a repeating group",
+          "It has at least three columns",
+          "All columns are indexed"
+        ],
+        "correct_answer": "A",
+        "explanation": "3NF eliminates transitive dependencies, where a non-key column depends on another non-key column instead of the key."
+      },
+      {
+        "question_id": "q4",
+        "question": "What is the purpose of a foreign key?",
+        "options": [
+          "To uniquely identify each row in the same table",
+          "To reproduce a primary key in another table and enforce relationships",
+          "To speed up every query",
+          "To store encrypted data"
+        ],
+        "correct_answer": "B",
+        "explanation": "A foreign key references the primary key of another table, enforcing referential integrity between tables."
+      },
+      {
+        "question_id": "q5",
+        "question": "Which normal form is violated by a table that stores multiple phone numbers in one column?",
+        "options": ["3NF", "2NF", "1NF", "BCNF"],
+        "correct_answer": "C",
+        "explanation": "Storing multiple values in a single column violates atomicity, so the table is not in 1NF."
+      }
+    ]
+  },
+  {
+    "quiz_id": "q4_15",
+    "course_id": 4,
+    "module_id": "m5",
+    "lesson_id": "l15",
+    "title": "DBMS Final Assessment",
+    "description": "Review transactions, SQL, and core database concepts covered throughout the course.",
+    "time_limit": 10,
+    "passing_score": 60,
+    "questions": [
+      {
+        "question_id": "q1",
+        "question": "What does the ACID acronym stand for in database transactions?",
+        "options": [
+          "Accuracy, Consistency, Isolation, Durability",
+          "Atomicity, Consistency, Isolation, Durability",
+          "Atomicity, Correctness, Integrity, Durability",
+          "Atomicity, Consistency, Independence, Data"
+        ],
+        "correct_answer": "B",
+        "explanation": "ACID ensures reliable transactions: Atomicity, Consistency, Isolation, and Durability."
+      },
+      {
+        "question_id": "q2",
+        "question": "Which SQL clause is used to filter rows after GROUP BY aggregation?",
+        "options": ["WHERE", "HAVING", "ORDER BY", "FILTER"],
+        "correct_answer": "B",
+        "explanation": "WHERE filters rows before grouping; HAVING filters groups after aggregation."
+      },
+      {
+        "question_id": "q3",
+        "question": "Which property must a primary key always satisfy?",
+        "options": [
+          "It may be null",
+          "It must be unique and not null",
+          "It must be an integer",
+          "It must be a foreign key"
+        ],
+        "correct_answer": "B",
+        "explanation": "A primary key uniquely identifies each row, so it must be unique and cannot contain NULL values."
+      },
+      {
+        "question_id": "q4",
+        "question": "Which SQL statement is used to retrieve data from a database?",
+        "options": ["SELECT", "INSERT", "UPDATE", "DELETE"],
+        "correct_answer": "A",
+        "explanation": "SELECT queries and reads data; the others modify or remove data."
+      },
+      {
+        "question_id": "q5",
+        "question": "A deadlock occurs when:",
+        "options": [
+          "Two queries run at the same time",
+          "Two transactions each wait for a lock held by the other",
+          "A table is too large",
+          "An index is missing"
+        ],
+        "correct_answer": "B",
+        "explanation": "Deadlock happens when concurrent transactions hold locks while waiting for locks the other holds, so neither can proceed."
+      }
+    ]
+  },
+  {
+    "quiz_id": "q5_12",
+    "course_id": 5,
+    "module_id": "m4",
+    "lesson_id": "l12",
+    "title": "Neural Network Quiz",
+    "description": "Assess your understanding of how neural networks learn and the role of each layer.",
+    "time_limit": 8,
+    "passing_score": 60,
+    "questions": [
+      {
+        "question_id": "q1",
+        "question": "Which activation function is most commonly used in the hidden layers of modern neural networks?",
+        "options": ["Sigmoid", "Tanh", "ReLU", "Softmax"],
+        "correct_answer": "C",
+        "explanation": "ReLU (Rectified Linear Unit) is fast and helps avoid the vanishing gradient problem in deep networks."
+      },
+      {
+        "question_id": "q2",
+        "question": "Backpropagation is the algorithm used to:",
+        "options": [
+          "Generate training data",
+          "Compute gradients to update the network weights",
+          "Select the network architecture",
+          "Compress the model"
+        ],
+        "correct_answer": "B",
+        "explanation": "Backpropagation computes the gradient of the loss with respect to each weight, which gradient descent uses to update them."
+      },
+      {
+        "question_id": "q3",
+        "question": "What does the input layer of a neural network receive?",
+        "options": [
+          "The final predictions",
+          "The loss value",
+          "The features of each training example",
+          "The learning rate"
+        ],
+        "correct_answer": "C",
+        "explanation": "The input layer holds the raw feature values that the network transforms in subsequent layers."
+      },
+      {
+        "question_id": "q4",
+        "question": "Overfitting means a model:",
+        "options": [
+          "Fails to converge during training",
+          "Performs well on training data but poorly on new data",
+          "Requires too much memory",
+          "Trains too slowly"
+        ],
+        "correct_answer": "B",
+        "explanation": "An overfit model memorizes noise from training data and generalizes poorly to unseen examples."
+      },
+      {
+        "question_id": "q5",
+        "question": "Which of the following is a supervised learning task?",
+        "options": [
+          "Grouping customers by similarity without labels",
+          "Classifying emails as spam or not spam from labeled examples",
+          "Reducing dimensions of an image dataset",
+          "Finding frequent items in a transaction log"
+        ],
+        "correct_answer": "B",
+        "explanation": "Classification with labeled examples is supervised learning; the other options are unsupervised or rule-mining tasks."
+      }
+    ]
+  },
+  {
+    "quiz_id": "q5_15",
+    "course_id": 5,
+    "module_id": "m5",
+    "lesson_id": "l15",
+    "title": "AI Final Assessment",
+    "description": "Confirm your understanding of ML workflows, evaluation, and real-world AI applications.",
+    "time_limit": 10,
+    "passing_score": 60,
+    "questions": [
+      {
+        "question_id": "q1",
+        "question": "Why do we split data into training and test sets?",
+        "options": [
+          "To speed up training",
+          "To evaluate how well the model generalizes to unseen data",
+          "To remove duplicate records",
+          "To ensure a balanced dataset"
+        ],
+        "correct_answer": "B",
+        "explanation": "A held-out test set estimates performance on data the model has never seen, revealing generalization and overfitting."
+      },
+      {
+        "question_id": "q2",
+        "question": "Accuracy is a reliable metric mainly when:",
+        "options": [
+          "Classes are imbalanced 99:1",
+          "Class distribution is roughly balanced",
+          "The dataset is very large",
+          "The problem is regression"
+        ],
+        "correct_answer": "B",
+        "explanation": "With balanced classes a high accuracy is meaningful; with skewed data, precision, recall, or F1 are more informative."
+      },
+      {
+        "question_id": "q3",
+        "question": "What is an epoch in machine learning training?",
+        "options": [
+          "A single training example",
+          "One full pass through the entire training dataset",
+          "The learning rate multiplied by iterations",
+          "A single weight update"
+        ],
+        "correct_answer": "B",
+        "explanation": "An epoch is completed when the model has seen every training example once."
+      },
+      {
+        "question_id": "q4",
+        "question": "Which of these is a common real-world AI application?",
+        "options": [
+          "Spelling check in a word processor",
+          "A recommendation system that personalizes content",
+          "A spreadsheet function that sums cells",
+          "A text editor shortcut"
+        ],
+        "correct_answer": "B",
+        "explanation": "Recommendation systems use machine learning models trained on user behavior to personalize suggestions."
+      },
+      {
+        "question_id": "q5",
+        "question": "In supervised learning, model parameters are learned from:",
+        "options": [
+          "The validation set only",
+          "The labeled training data",
+          "Hyperparameters you set by hand",
+          "The loss function definition alone"
+        ],
+        "correct_answer": "B",
+        "explanation": "Parameters are updated during training to minimize loss over the labeled training data."
+      }
+    ]
+  },
+  {
+    "quiz_id": "q6_9",
+    "course_id": 6,
+    "module_id": "m3",
+    "lesson_id": "l9",
+    "title": "Pivot Table Quiz",
+    "description": "Check your ability to summarize and analyze data using Excel pivot tables.",
+    "time_limit": 8,
+    "passing_score": 60,
+    "questions": [
+      {
+        "question_id": "q1",
+        "question": "What is the main purpose of an Excel pivot table?",
+        "options": [
+          "To store formulas safely",
+          "To summarize and aggregate large amounts of tabular data",
+          "To merge workbook files",
+          "To protect cells from editing"
+        ],
+        "correct_answer": "B",
+        "explanation": "Pivot tables let you quickly group, count, and aggregate data across rows and columns without writing formulas."
+      },
+      {
+        "question_id": "q2",
+        "question": "In a pivot table, which area holds the fields you want to sum, count, or average?",
+        "options": ["Rows", "Columns", "Values", "Slicers"],
+        "correct_answer": "C",
+        "explanation": "The Values area defines how numeric fields are aggregated, such as Sum, Count, or Average."
+      },
+      {
+        "question_id": "q3",
+        "question": "Which pivot table area determines the fields shown as columns of the summary grid?",
+        "options": ["Columns", "Filters", "Values", "Legend"],
+        "correct_answer": "A",
+        "explanation": "Field names placed in the Columns area become the columns of the aggregated summary."
+      },
+      {
+        "question_id": "q4",
+        "question": "What is a slicer used for in a pivot table?",
+        "options": [
+          "Dividing a column into text pieces",
+          "Visually filtering pivot table data by a field's values",
+          "Renaming the pivot table",
+          "Creating a chart automatically"
+        ],
+        "correct_answer": "B",
+        "explanation": "Slicers provide clickable buttons that filter pivot data, and they stay visible and easy to read."
+      },
+      {
+        "question_id": "q5",
+        "question": "After new rows are added to the source data, the pivot table needs to be:",
+        "options": ["Deleted and rebuilt", "Refreshed", "Recalculated with F9", "Copied to another sheet"],
+        "correct_answer": "B",
+        "explanation": "Pivot tables do not update automatically; use Refresh to pull in the latest source data."
+      }
+    ]
+  },
+  {
+    "quiz_id": "q7_14",
+    "course_id": 7,
+    "module_id": "m5",
+    "lesson_id": "l14",
+    "title": "Testing Final Quiz",
+    "description": "Validate your understanding of test types, cases, and automation best practices.",
+    "time_limit": 8,
+    "passing_score": 60,
+    "questions": [
+      {
+        "question_id": "q1",
+        "question": "What is the main purpose of unit testing?",
+        "options": [
+          "Testing the entire application through the UI",
+          "Verifying individual functions or modules in isolation",
+          "Load-testing a server with many users",
+          "Checking database backups"
+        ],
+        "correct_answer": "B",
+        "explanation": "Unit tests focus on a single unit of code in isolation, catching defects early with fast and focused tests."
+      },
+      {
+        "question_id": "q2",
+        "question": "A well-designed test case should be:",
+        "options": [
+          "Dependent on the order of other tests",
+          "Random and non-repeatable",
+          "Independent, deterministic, and repeatable",
+          "As slow as possible"
+        ],
+        "correct_answer": "C",
+        "explanation": "Reliable tests are isolated, produce the same result every run, and can be repeated without external side effects."
+      },
+      {
+        "question_id": "q3",
+        "question": "Boundary value analysis tests:",
+        "options": [
+          "Only the middle value of a range",
+          "Values at and near the edges of input ranges",
+          "Every possible input value",
+          "Only invalid inputs"
+        ],
+        "correct_answer": "B",
+        "explanation": "Bugs often hide at the edges of valid ranges, so BVA tests minimum, maximum, and values just beyond them."
+      },
+      {
+        "question_id": "q4",
+        "question": "What is regression testing used for?",
+        "options": [
+          "Ensuring new changes do not break existing functionality",
+          "Measuring application speed",
+          "Testing the first release only",
+          "Generating random user data"
+        ],
+        "correct_answer": "A",
+        "explanation": "Regression tests re-run existing functionality after code changes to catch unintended breaks."
+      },
+      {
+        "question_id": "q5",
+        "question": "Integration testing verifies that:",
+        "options": [
+          "A single function works alone",
+          "Different modules interact correctly with each other",
+          "The UI matches the design mockups",
+          "The server handles peak load"
+        ],
+        "correct_answer": "B",
+        "explanation": "Integration tests exercise the interaction and contracts between modules, databases, and external services."
+      }
+    ]
+  },
+  {
+    "quiz_id": "q8_9",
+    "course_id": 8,
+    "module_id": "m3",
+    "lesson_id": "l9",
+    "title": "Java Collections Quiz",
+    "description": "Test your knowledge of the Java Collections Framework: List, Set, Map, and iterators.",
+    "time_limit": 8,
+    "passing_score": 60,
+    "questions": [
+      {
+        "question_id": "q1",
+        "question": "Which collection stores unique elements with no guaranteed order?",
+        "options": ["ArrayList", "LinkedList", "HashSet", "Properties"],
+        "correct_answer": "C",
+        "explanation": "HashSet stores unique elements backed by a hash table and offers O(1) average lookup with no ordering guarantees."
+      },
+      {
+        "question_id": "q2",
+        "question": "What is the main advantage of an ArrayList over a LinkedList?",
+        "options": [
+          "Faster insertion in the middle",
+          "Faster indexed (random) access",
+          "Always sorted",
+          "Memory efficient for text"
+        ],
+        "correct_answer": "B",
+        "explanation": "ArrayList uses a dynamic array, giving O(1) access by index, while LinkedList requires traversal from the head."
+      },
+      {
+        "question_id": "q3",
+        "question": "Which interface is implemented by the HashMap class?",
+        "options": ["List", "Set", "Map", "Queue"],
+        "correct_answer": "C",
+        "explanation": "HashMap implements the Map interface, storing key-value pairs with unique keys."
+      },
+      {
+        "question_id": "q4",
+        "question": "What is the purpose of an Iterator?",
+        "options": [
+          "To convert a collection to a string",
+          "To traverse the elements of a collection sequentially",
+          "To sort a collection automatically",
+          "To count the elements only"
+        ],
+        "correct_answer": "B",
+        "explanation": "An iterator lets you step through a collection's elements one by one, supporting standard traversal."
+      },
+      {
+        "question_id": "q5",
+        "question": "To sort a List of custom objects by a chosen attribute, you use:",
+        "options": [
+          "The equals method",
+          "The withLock method",
+          "Comparable or Comparator",
+          "The clone method"
+        ],
+        "correct_answer": "C",
+        "explanation": "Comparable defines the natural order and Comparator allows custom sort keys when sorting lists."
+      }
+    ]
+  },
+  {
+    "quiz_id": "q9_15",
+    "course_id": 9,
+    "module_id": "m5",
+    "lesson_id": "l15",
+    "title": "Cybersecurity Fundamentals Quiz",
+    "description": "Apply the cyber defense, cryptography, and audit concepts from the course to real scenarios.",
+    "time_limit": 8,
+    "passing_score": 60,
+    "questions": [
+      {
+        "question_id": "q1",
+        "question": "The CIA triad stands for:",
+        "options": [
+          "Confidentiality, Integrity, Availability",
+          "Control, Isolation, Authorization",
+          "Cryptography, Identity, Access",
+          "Central, International, Automated"
+        ],
+        "correct_answer": "A",
+        "explanation": "Confidentiality, Integrity, and Availability are the three pillars of information security."
+      },
+      {
+        "question_id": "q2",
+        "question": "The principle of least privilege means:",
+        "options": [
+          "Giving all users the same permissions",
+          "Giving each user only the permissions needed for their role",
+          "Removing all passwords",
+          "Granting admin rights to everyone"
+        ],
+        "correct_answer": "B",
+        "explanation": "Least privilege limits the blast radius of a compromised account by granting the minimum access required."
+      },
+      {
+        "question_id": "q3",
+        "question": "Multi-Factor Authentication (MFA) combines:",
+        "options": [
+          "Two passwords the user remembers",
+          "Two or more different authentication factors",
+          "A VPN and a firewall",
+          "Email and SMS only"
+        ],
+        "correct_answer": "B",
+        "explanation": "MFA combines something you know, have, and/or are, so a stolen password alone is not enough to log in."
+      },
+      {
+        "question_id": "q4",
+        "question": "Why are passwords stored as salted hashes instead of plain text?",
+        "options": [
+          "Hashes are easier to read",
+          "Salted hashes make identical passwords produce different stored values and resist rainbow tables",
+          "Salting compresses the database",
+          "Plain text is slower to write"
+        ],
+        "correct_answer": "B",
+        "explanation": "A unique random salt per user prevents identical passwords from having identical hashes and defeats precomputed rainbow tables."
+      },
+      {
+        "question_id": "q5",
+        "question": "During a security audit you find hardcoded API keys in source code. What is the correct first step?",
+        "options": [
+          "Copy the key into the README",
+          "Rotate the key and move it to a secrets manager",
+          "Ignore it because the repo is private",
+          "Share it with the team in chat"
+        ],
+        "correct_answer": "B",
+        "explanation": "Once a secret appears in code it must be treated as compromised: rotate it immediately and store secrets securely, not in source."
+      }
+    ]
+  }
+]

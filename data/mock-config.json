@@ -1,0 +1,52 @@
+{
+  "app": {
+    "name": "AI-Learning System",
+    "tagline": "Learning That Adapts To You",
+    "version": "1.0.0",
+    "description": "AI-Learning System creates a personalized learning experience that adapts to your knowledge, learning speed, strengths and weaknesses."
+  },
+  "stats": {
+    "totalStudents": 12500,
+    "coursesAvailable": 85,
+    "topicsCovered": 320,
+    "averageAccuracy": 84
+  },
+  "features": [
+    {
+      "icon": "target",
+      "title": "Personalized Learning",
+      "description": "Every student gets a unique learning path tailored to their knowledge level, strengths, and weaknesses."
+    },
+    {
+      "icon": "sparkles",
+      "title": "AI-Based Recommendations",
+      "description": "Our AI engine analyzes your performance and recommends the best next topic, resource, or activity."
+    },
+    {
+      "icon": "refresh",
+      "title": "Smart Revision",
+      "description": "Spaced repetition algorithms ensure you revisit concepts at the optimal time for long-term retention."
+    },
+    {
+      "icon": "brain",
+      "title": "Adaptive Quizzes",
+      "description": "Quizzes that adapt in difficulty based on your answers, providing the right level of challenge."
+    },
+    {
+      "icon": "chart",
+      "title": "Progress Analytics",
+      "description": "Detailed dashboards showing your learning progress, accuracy trends, and areas to improve."
+    },
+    {
+      "icon": "bot",
+      "title": "AI Tutor",
+      "description": "Get instant explanations, examples, and guidance from an AI tutor available 24/7."
+    }
+  ],
+  "mockAnalytics": {
+    "courseProgress": 72,
+    "quizAccuracy": 84,
+    "studyStreak": 7,
+    "topicsMastered": 18
+  }
+}

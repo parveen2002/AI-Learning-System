@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage your AI-Learning System settings: appearance, learning preferences, notifications, account, security and privacy.">
+  <title>Settings - AI-Learning System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- ====== NAVBAR ====== -->
+  <!-- ====== NAVBAR ====== -->
+<nav class="navbar" id="navbar" aria-label="Primary">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">
+      <img src="../assets/images/logo.png" alt="AI-Learning System logo" class="brand-logo">
+      <span>AI-<span class="brand-text-accent">Learning</span> System</span>
+    </a>
+
+    <div class="navbar-menu">
+      <a href="../index.html" class="navbar-link">Home</a>
+      <a href="courses.html" class="navbar-link">Courses</a>
+      <a href="learning-path.html" class="navbar-link">Learning Path</a>
+      <a href="ai-tutor.html" class="navbar-link">AI Tutor</a>
+      <a href="dashboard.html" class="navbar-link">Dashboard</a>
+    </div>
+
+    <div class="navbar-actions">
+      <button type="button" class="navbar-icon-btn nav-search-btn" data-search-url="courses.html" aria-label="Search courses">&#128269;</button>
+      <button type="button" class="navbar-icon-btn theme-toggle" aria-label="Toggle theme">&#9790;</button>
+
+      <div class="navbar-auth" id="authGuest">
+        <a href="login.html" class="btn btn-ghost btn-sm">Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+      </div>
+
+      <div class="navbar-auth navbar-user-menu" id="authUser" style="display:none;">
+        <button type="button" class="navbar-user-btn" aria-haspopup="true" aria-expanded="false">
+          <span class="navbar-user-avatar">P</span>
+          <span class="navbar-user-name">User</span>
+          <span class="navbar-user-caret" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="navbar-dropdown" role="menu">
+          <a href="profile.html" class="navbar-dropdown-item" role="menuitem">&#128100; My Profile</a>
+          <a href="achievements.html" class="navbar-dropdown-item" role="menuitem">&#127942; Achievements</a>
+          <a href="bookmarks.html" class="navbar-dropdown-item" role="menuitem">&#128278; Bookmarks</a>
+          <a href="study-planner.html" class="navbar-dropdown-item" role="menuitem">&#128197; Study Planner</a>
+          <a href="analytics.html" class="navbar-dropdown-item" role="menuitem">&#128200; Analytics</a>
+          <a href="settings.html" class="navbar-dropdown-item" role="menuitem">&#9881; Settings</a>
+          <div class="navbar-dropdown-divider" role="separator"></div>
+          <div class="navbar-dropdown-item navbar-dropdown-logout" id="navLogoutBtn" role="menuitem" tabindex="0">&#10140; Logout</div>
+        </div>
+      </div>
+
+      <button type="button" class="navbar-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ====== MOBILE MENU ====== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" class="mobile-menu-link">Home</a>
+  <a href="courses.html" class="mobile-menu-link">Courses</a>
+  <a href="learning-path.html" class="mobile-menu-link">Learning Path</a>
+  <a href="ai-tutor.html" class="mobile-menu-link">AI Tutor</a>
+  <a href="dashboard.html" class="mobile-menu-link">Dashboard</a>
+
+  <div class="mobile-menu-divider">Learning Tools</div>
+  <a href="flashcards.html" class="mobile-menu-link">Flashcards</a>
+  <a href="revision.html" class="mobile-menu-link">Revision</a>
+
+  <div class="mobile-menu-divider">More</div>
+  <a href="achievements.html" class="mobile-menu-link">Achievements</a>
+  <a href="bookmarks.html" class="mobile-menu-link">Bookmarks</a>
+  <a href="study-planner.html" class="mobile-menu-link">Study Planner</a>
+  <a href="analytics.html" class="mobile-menu-link">Analytics</a>
+  <a href="settings.html" class="mobile-menu-link">Settings</a>
+
+  <div class="mobile-menu-actions" id="mobileAuthGuest">
+    <a href="login.html" class="btn btn-secondary btn-block">Login</a>
+    <a href="signup.html" class="btn btn-primary btn-block">Sign Up</a>
+  </div>
+
+  <div class="mobile-menu-actions" id="mobileAuthUser" style="display:none;">
+    <p class="mobile-menu-login-name">Logged in as <strong class="mobile-user-name">User</strong></p>
+    <button type="button" class="btn btn-secondary btn-block" id="mobileLogoutBtn">Logout</button>
+  </div>
+</div>
+
+  <!-- ====== SETTINGS CONTENT ====== -->
+  <main class="st-main">
+    <section class="dash-header st-header">
+      <div class="container">
+        <h1 class="dash-title">Settings</h1>
+        <p class="dash-subtitle">Manage your appearance, learning preferences, notifications and account.</p>
+      </div>
+    </section>
+
+    <section class="dash-section">
+      <div class="container">
+
+        <div class="pf-state" id="stLoading">Loading settings...</div>
+
+        <div class="pf-state pf-error-card" id="stError" style="display:none;">
+          <p class="pf-error-title">We couldn't load your settings right now.</p>
+          <button type="button" class="btn btn-ghost btn-sm" id="stRetryBtn">Retry</button>
+        </div>
+
+        <div id="stContent" style="display:none;">
+          <div class="dash-grid-two">
+
+            <div class="dash-col-main">
+
+              <!-- ====== LEARNING PREFERENCES ====== -->
+              <div class="dash-card" id="stPrefsCard">
+                <div class="dash-card-header">
+                  <h2 class="dash-card-title">Learning Preferences</h2>
+                </div>
+                <div class="dash-card-body">
+
+                  <div class="form-group">
+                    <label class="form-label" for="stLearningLevel">Learning Level</label>
+                    <select id="stLearningLevel" class="form-select">
+                      <option value="">Select your learning level</option>
+                      <option value="Beginner">Beginner</option>
+                      <option value="Intermediate">Intermediate</option>
+                      <option value="Advanced">Advanced</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="stPreferredFormat">Preferred Learning Format</label>
+                    <select id="stPreferredFormat" class="form-select">
+                      <option value="">Select preferred format</option>
+                      <option value="Video">Video</option>
+                      <option value="Reading">Reading</option>
+                      <option value="Articles">Articles</option>
+                      <option value="Practice">Practice</option>
+                      <option value="Interactive Practice">Interactive Practice</option>
+                      <option value="Flashcards">Flashcards</option>
+                      <option value="Quizzes">Quizzes</option>
+                      <option value="Mixed">Mixed</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="stLearningGoal">Learning Goal</label>
+                    <select id="stLearningGoal" class="form-select">
+                      <option value="">Select your learning goal</option>
+                      <option value="Exam Preparation">Exam Preparation</option>
+                      <option value="Skill Development">Skill Development</option>
+                      <option value="Career Preparation">Career Preparation</option>
+                      <option value="Competitive Exams">Competitive Exams</option>
+                      <option value="Personal Learning">Personal Learning</option>
+                      <option value="Full Stack Development">Full Stack Development</option>
+                      <option value="Programming">Programming</option>
+                      <option value="Data Analytics">Data Analytics</option>
+                      <option value="Software Testing">Software Testing</option>
+                      <option value="Interview Preparation">Interview Preparation</option>
+                      <option value="Academic Learning">Academic Learning</option>
+                      <option value="Career Development">Career Development</option>
+                      <option value="Other">Other</option>
+                    </select>
+                    <span class="form-error" id="stGoalError"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="stDailyGoal">Daily Learning Goal</label>
+                    <select id="stDailyGoal" class="form-select">
+                      <option value="">Select a daily goal</option>
+                      <option value="15">15 minutes</option>
+                      <option value="30">30 minutes</option>
+                      <option value="45">45 minutes</option>
+                      <option value="60">60 minutes</option>
+                      <option value="90">90 minutes</option>
+                      <option value="120">120 minutes</option>
+                      <option value="custom">Custom...</option>
+                    </select>
+                    <div class="st-custom-goal" id="stCustomGoalWrap" style="display:none;">
+                      <label class="form-label" for="stCustomGoal">Custom daily goal (minutes)</label>
+                      <input type="number" id="stCustomGoal" class="form-input" min="5" max="480" step="5" inputmode="numeric">
+                      <span class="form-error" id="stGoalMinutesError"></span>
+                      <span class="form-hint">Between 5 and 480 minutes. Used by the Study Planner and your Dashboard goal.</span>
+                    </div>
+                  </div>
+
+                  <div class="st-form-actions">
+                    <button type="button" class="btn btn-primary" id="stSavePrefsBtn" disabled>&#10003; Save Preferences</button>
+                    <button type="button" class="btn btn-ghost" id="stResetPrefsDraftBtn">Cancel</button>
+                    <span class="st-dirty-tag" id="stPrefsDirty" style="display:none;">Unsaved changes</span>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- ====== NOTIFICATIONS ====== -->
+              <div class="dash-card" id="stNotifCard">
+                <div class="dash-card-header">
+                  <h2 class="dash-card-title">Notifications</h2>
+                </div>
+                <div class="dash-card-body">
+
+                  <div class="st-toggle-row">
+                    <div class="st-toggle-text">
+                      <label class="form-label" for="stStudyReminders">Study Reminders</label>
+                    </div>
+                    <label class="st-switch">
+                      <input type="checkbox" id="stStudyReminders" aria-label="Toggle study reminders">
+                      <span class="st-slider" aria-hidden="true"></span>
+                    </label>
+                  </div>
+
+                  <div class="st-toggle-row">
+                    <div class="st-toggle-text">
+                      <label class="form-label" for="stRevisionReminders">Revision Reminders</label>
+                    </div>
+                    <label class="st-switch">
+                      <input type="checkbox" id="stRevisionReminders" aria-label="Toggle revision reminders">
+                      <span class="st-slider" aria-hidden="true"></span>
+                    </label>
+                  </div>
+
+                  <div class="st-toggle-row">
+                    <div class="st-toggle-text">
+                      <label class="form-label" for="stQuizReminders">Quiz Reminders</label>
+                    </div>
+                    <label class="st-switch">
+                      <input type="checkbox" id="stQuizReminders" aria-label="Toggle quiz reminders">
+                      <span class="st-slider" aria-hidden="true"></span>
+                    </label>
+                  </div>
+
+                  <div class="st-toggle-row">
+                    <div class="st-toggle-text">
+                      <label class="form-label" for="stAchievementNotifications">Achievement Notifications</label>
+                      <p class="st-toggle-hint">Updates about badges, XP and streaks.</p>
+                    </div>
+                    <label class="st-switch">
+                      <input type="checkbox" id="stAchievementNotifications" aria-label="Toggle achievement notifications">
+                      <span class="st-slider" aria-hidden="true"></span>
+                    </label>
+                  </div>
+
+                  <div class="st-form-actions">
+                    <button type="button" class="btn btn-primary" id="stSaveNotifBtn" disabled>&#10003; Save Notifications</button>
+                    <span class="st-dirty-tag" id="stNotifDirty" style="display:none;">Unsaved changes</span>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- ====== SECURITY ====== -->
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <h2 class="dash-card-title">Security</h2>
+                </div>
+                <div class="dash-card-body">
+
+                  <div class="form-group">
+                    <label class="form-label" for="stCurrentPassword">Current Password</label>
+                    <div class="password-wrapper">
+                      <input type="password" id="stCurrentPassword" class="form-input" autocomplete="current-password">
+                      <button type="button" class="password-toggle" data-pwd="stCurrentPassword" aria-label="Show or hide current password">&#128065;</button>
+                    </div>
+                    <span class="form-error" id="stCurrentPwdError"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="stNewPassword">New Password</label>
+                    <div class="password-wrapper">
+                      <input type="password" id="stNewPassword" class="form-input" autocomplete="new-password">
+                      <button type="button" class="password-toggle" data-pwd="stNewPassword" aria-label="Show or hide new password">&#128065;</button>
+                    </div>
+                    <span class="form-error" id="stNewPwdError"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label" for="stConfirmPassword">Confirm New Password</label>
+                    <div class="password-wrapper">
+                      <input type="password" id="stConfirmPassword" class="form-input" autocomplete="new-password">
+                      <button type="button" class="password-toggle" data-pwd="stConfirmPassword" aria-label="Show or hide confirm password">&#128065;</button>
+                    </div>
+                    <span class="form-error" id="stConfirmPwdError"></span>
+                  </div>
+
+                  <div class="st-form-actions">
+                    <button type="button" class="btn btn-primary" id="stChangePwdBtn">Change Password</button>
+                  </div>
+
+                  <div class="alert alert-info show st-pwd-note" id="stPwdNote" role="status">Password change will be available when the backend authentication system is connected.</div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="dash-col-side">
+
+              <!-- ====== APPEARANCE ====== -->
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <h2 class="dash-card-title">Appearance</h2>
+                </div>
+                <div class="dash-card-body">
+                  <span class="settings-section-label">Theme</span>
+                  <div class="settings-theme-buttons" role="radiogroup" aria-label="Theme">
+                    <button type="button" class="settings-theme-btn" id="themeLightBtn" role="radio" aria-checked="false">&#9788; Light</button>
+                    <button type="button" class="settings-theme-btn" id="themeDarkBtn" role="radio" aria-checked="false">&#9790; Dark</button>
+                  </div>
+                  <p class="settings-meta">Your theme preference is applied immediately and remembered on every page.</p>
+                </div>
+              </div>
+
+              <!-- ====== ACCOUNT ====== -->
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <h2 class="dash-card-title">Account</h2>
+                </div>
+                <div class="dash-card-body">
+                  <div class="st-account-row">
+                    <span class="st-account-label">Account Email</span>
+                    <span class="st-account-value" id="stAccountEmail">-</span>
+                  </div>
+                  <div class="st-account-row">
+                    <span class="st-account-label">Account Status</span>
+                    <span class="st-account-value"><span class="pf-badge" id="stAccountStatus">Active</span></span>
+                  </div>
+                  <button type="button" class="btn btn-secondary btn-block" id="settingsLogoutBtn">&#10140; Sign Out</button>
+                  <p class="settings-meta" style="margin-top:var(--space-sm);">Signing out keeps your learning progress, bookmarks and study plan saved.</p>
+                </div>
+              </div>
+
+              <!-- ====== PRIVACY / DATA ====== -->
+              <div class="dash-card">
+                <div class="dash-card-header">
+                  <h2 class="dash-card-title">Privacy / Data</h2>
+                </div>
+                <div class="dash-card-body">
+                  <p class="settings-meta">Your current learning data is stored locally in this frontend prototype.</p>
+                  <ul class="st-data-list">
+                    <li>Learning Progress</li>
+                    <li>Quiz Results</li>
+                    <li>Flashcard Progress</li>
+                    <li>Achievements and XP</li>
+                    <li>Bookmarks</li>
+                    <li>Study Planner</li>
+                    <li>Preferences</li>
+                  </ul>
+
+                  <button type="button" class="btn btn-ghost btn-block st-danger-btn" id="stResetBtn">&#8634; Reset Learning Preferences</button>
+
+                  <div class="st-confirm" id="stResetConfirm" style="display:none;">
+                    <p>This resets only your learning preferences. Your course progress, quiz results, flashcard history, achievements, XP, bookmarks and study tasks will not be touched.</p>
+                    <div class="st-confirm-actions">
+                      <button type="button" class="btn btn-danger btn-sm" id="stResetConfirmBtn">Reset Preferences</button>
+                      <button type="button" class="btn btn-ghost btn-sm" id="stResetCancelBtn">Cancel</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;padding-top:0;">
+        <p>&copy; 2026 AI-Learning System. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="sp-toast" id="stToast" role="status" aria-live="polite"></div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
+
+  <!-- Scripts -->
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/settings.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      LearnSphereTheme.init();
+      LearnSphereNav.init();
+      LearnSphereSettings.init();
+    });
+  </script>
+
+</body>
+</html>

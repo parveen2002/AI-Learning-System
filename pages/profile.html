@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage your personal information and learning profile on AI-Learning System.">
+  <title>My Profile - AI-Learning System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- ====== NAVBAR ====== -->
+  <!-- ====== NAVBAR ====== -->
+<nav class="navbar" id="navbar" aria-label="Primary">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">
+      <img src="../assets/images/logo.png" alt="AI-Learning System logo" class="brand-logo">
+      <span>AI-<span class="brand-text-accent">Learning</span> System</span>
+    </a>
+
+    <div class="navbar-menu">
+      <a href="../index.html" class="navbar-link">Home</a>
+      <a href="courses.html" class="navbar-link">Courses</a>
+      <a href="learning-path.html" class="navbar-link">Learning Path</a>
+      <a href="ai-tutor.html" class="navbar-link">AI Tutor</a>
+      <a href="dashboard.html" class="navbar-link">Dashboard</a>
+    </div>
+
+    <div class="navbar-actions">
+      <button type="button" class="navbar-icon-btn nav-search-btn" data-search-url="courses.html" aria-label="Search courses">&#128269;</button>
+      <button type="button" class="navbar-icon-btn theme-toggle" aria-label="Toggle theme">&#9790;</button>
+
+      <div class="navbar-auth" id="authGuest">
+        <a href="login.html" class="btn btn-ghost btn-sm">Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+      </div>
+
+      <div class="navbar-auth navbar-user-menu" id="authUser" style="display:none;">
+        <button type="button" class="navbar-user-btn" aria-haspopup="true" aria-expanded="false">
+          <span class="navbar-user-avatar">P</span>
+          <span class="navbar-user-name">User</span>
+          <span class="navbar-user-caret" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="navbar-dropdown" role="menu">
+          <a href="profile.html" class="navbar-dropdown-item" role="menuitem">&#128100; My Profile</a>
+          <a href="achievements.html" class="navbar-dropdown-item" role="menuitem">&#127942; Achievements</a>
+          <a href="bookmarks.html" class="navbar-dropdown-item" role="menuitem">&#128278; Bookmarks</a>
+          <a href="study-planner.html" class="navbar-dropdown-item" role="menuitem">&#128197; Study Planner</a>
+          <a href="analytics.html" class="navbar-dropdown-item" role="menuitem">&#128200; Analytics</a>
+          <a href="settings.html" class="navbar-dropdown-item" role="menuitem">&#9881; Settings</a>
+          <div class="navbar-dropdown-divider" role="separator"></div>
+          <div class="navbar-dropdown-item navbar-dropdown-logout" id="navLogoutBtn" role="menuitem" tabindex="0">&#10140; Logout</div>
+        </div>
+      </div>
+
+      <button type="button" class="navbar-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ====== MOBILE MENU ====== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" class="mobile-menu-link">Home</a>
+  <a href="courses.html" class="mobile-menu-link">Courses</a>
+  <a href="learning-path.html" class="mobile-menu-link">Learning Path</a>
+  <a href="ai-tutor.html" class="mobile-menu-link">AI Tutor</a>
+  <a href="dashboard.html" class="mobile-menu-link">Dashboard</a>
+
+  <div class="mobile-menu-divider">Learning Tools</div>
+  <a href="flashcards.html" class="mobile-menu-link">Flashcards</a>
+  <a href="revision.html" class="mobile-menu-link">Revision</a>
+
+  <div class="mobile-menu-divider">More</div>
+  <a href="achievements.html" class="mobile-menu-link">Achievements</a>
+  <a href="bookmarks.html" class="mobile-menu-link">Bookmarks</a>
+  <a href="study-planner.html" class="mobile-menu-link">Study Planner</a>
+  <a href="analytics.html" class="mobile-menu-link">Analytics</a>
+  <a href="settings.html" class="mobile-menu-link">Settings</a>
+
+  <div class="mobile-menu-actions" id="mobileAuthGuest">
+    <a href="login.html" class="btn btn-secondary btn-block">Login</a>
+    <a href="signup.html" class="btn btn-primary btn-block">Sign Up</a>
+  </div>
+
+  <div class="mobile-menu-actions" id="mobileAuthUser" style="display:none;">
+    <p class="mobile-menu-login-name">Logged in as <strong class="mobile-user-name">User</strong></p>
+    <button type="button" class="btn btn-secondary btn-block" id="mobileLogoutBtn">Logout</button>
+  </div>
+</div>
+
+  <!-- ====== PROFILE CONTENT ====== -->
+  <main class="pf-main">
+    <section class="dash-header pf-header">
+      <div class="container">
+        <h1 class="dash-title">My Profile</h1>
+        <p class="dash-subtitle">Manage your personal information and learning profile.</p>
+      </div>
+    </section>
+
+    <section class="dash-section">
+      <div class="container">
+
+        <div class="pf-state" id="pfLoading">Loading profile...</div>
+
+        <div class="pf-state pf-error-card" id="pfError" style="display:none;">
+          <p class="pf-error-title">We couldn't load your profile right now.</p>
+          <button type="button" class="btn btn-ghost btn-sm" id="pfRetryBtn">Retry</button>
+        </div>
+
+        <div id="pfContent" style="display:none;">
+
+          <div class="dash-card">
+            <div class="dash-card-body pf-hero">
+              <div class="pf-avatar-col">
+                <div class="pf-avatar-wrap">
+                  <div class="pf-avatar" id="pfAvatar" role="img" aria-label="Profile avatar" tabindex="0" title="Change profile photo"></div>
+                  <button type="button" class="pf-avatar-edit" id="pfAvatarEditBtn" aria-label="Upload profile photo" title="Change photo">&#128247;</button>
+                </div>
+                <div class="pf-avatar-actions">
+                  <button type="button" class="pf-photo-btn" id="pfChangePhotoBtn">Change Photo</button>
+                  <button type="button" class="pf-photo-btn pf-photo-remove" id="pfRemovePhotoBtn" style="display:none;">Remove Photo</button>
+                </div>
+                <input type="file" id="pfPhotoInput" accept="image/jpeg,image/png,image/webp" style="display:none;" aria-hidden="true">
+              </div>
+              <div class="pf-hero-info">
+                <h2 class="pf-name" id="pfName">-</h2>
+                <p class="pf-role" id="pfRole">-</p>
+                <p class="pf-email" id="pfEmail">-</p>
+                <div class="pf-meta-row">
+                  <span class="pf-badge" id="pfStatus">Active</span>
+                  <span class="pf-member-since" id="pfMemberSince"></span>
+                </div>
+                <div class="pf-palette" id="pfPalette" aria-label="Change avatar color">
+                  <span class="pf-palette-label">Avatar color</span>
+                  <button type="button" class="pf-swatch" data-color="blue" aria-label="Blue avatar" style="background:linear-gradient(135deg,#2563EB,#06B6D4);"></button>
+                  <button type="button" class="pf-swatch" data-color="green" aria-label="Green avatar" style="background:linear-gradient(135deg,#10B981,#34D399);"></button>
+                  <button type="button" class="pf-swatch" data-color="orange" aria-label="Orange avatar" style="background:linear-gradient(135deg,#F59E0B,#F97316);"></button>
+                  <button type="button" class="pf-swatch" data-color="rose" aria-label="Rose avatar" style="background:linear-gradient(135deg,#F43F5E,#FB7185);"></button>
+                  <button type="button" class="pf-swatch" data-color="violet" aria-label="Violet avatar" style="background:linear-gradient(135deg,#8B5CF6,#A78BFA);"></button>
+                  <button type="button" class="pf-swatch" data-color="slate" aria-label="Slate avatar" style="background:linear-gradient(135deg,#475569,#94A3B8);"></button>
+                </div>
+              </div>
+              <div class="pf-hero-actions">
+                <button type="button" class="btn btn-primary btn-sm" id="pfEditBtn">&#9998; Edit Profile</button>
+                <a href="settings.html" class="btn btn-ghost btn-sm">&#9881; Settings</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-card">
+            <div class="dash-card-header">
+              <h2 class="dash-card-title">Profile Information</h2>
+            </div>
+            <div class="dash-card-body">
+              <div class="pf-info-grid">
+                <div class="pf-info-item">
+                  <span class="pf-info-label">Full Name</span>
+                  <span class="pf-info-value" id="pfInfoName">Not set</span>
+                </div>
+                <div class="pf-info-item">
+                  <span class="pf-info-label">Email</span>
+                  <span class="pf-info-value" id="pfInfoEmail">Not set</span>
+                </div>
+                <div class="pf-info-item">
+                  <span class="pf-info-label">Role</span>
+                  <span class="pf-info-value" id="pfInfoRole">Not set</span>
+                </div>
+                <div class="pf-info-item">
+                  <span class="pf-info-label">College</span>
+                  <span class="pf-info-value" id="pfInfoCollege">Not set</span>
+                </div>
+                <div class="pf-info-item">
+                  <span class="pf-info-label">Education Level</span>
+                  <span class="pf-info-value" id="pfInfoEducation">Not set</span>
+                </div>
+                <div class="pf-info-item">
+                  <span class="pf-info-label">Learning Goal</span>
+                  <span class="pf-info-value" id="pfInfoGoal">Add your learning goal</span>
+                </div>
+                <div class="pf-info-item">
+                  <span class="pf-info-label">Preferred Format</span>
+                  <span class="pf-info-value" id="pfInfoFormat">Not set</span>
+                </div>
+                <div class="pf-info-item">
+                  <span class="pf-info-label">Daily Goal</span>
+                  <span class="pf-info-value" id="pfInfoDailyGoal">Not set</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dash-card" id="pfEditCard" style="display:none;">
+            <div class="dash-card-header">
+              <h2 class="dash-card-title">Edit Profile</h2>
+            </div>
+            <div class="dash-card-body">
+
+              <div class="form-group">
+                <label class="form-label" for="pfEditName">Full Name</label>
+                <input type="text" id="pfEditName" class="form-input" maxlength="60" autocomplete="name">
+                <span class="form-error" id="pfNameError"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="pfEditEmail">Email</label>
+                <input type="email" id="pfEditEmail" class="form-input" disabled>
+                <span class="form-hint">Email is your login ID and cannot be changed.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="pfEditRole">Role</label>
+                <input type="text" id="pfEditRole" class="form-input" maxlength="60" autocomplete="organization-title">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="pfEditCollege">College</label>
+                <input type="text" id="pfEditCollege" class="form-input" maxlength="80" autocomplete="organization">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="pfEditEducation">Education Level</label>
+                <select id="pfEditEducation" class="form-select">
+                  <option value="">Select your education level</option>
+                  <option value="School">School</option>
+                  <option value="Undergraduate">Undergraduate</option>
+                  <option value="Postgraduate">Postgraduate</option>
+                  <option value="Professional">Professional</option>
+                  <option value="Other">Other</option>
+                </select>
+                <span class="form-error" id="pfEducationError"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="pfEditGoal">Learning Goal</label>
+                <select id="pfEditGoal" class="form-select">
+                  <option value="">Select your learning goal</option>
+                  <option value="Exam Preparation">Exam Preparation</option>
+                  <option value="Skill Development">Skill Development</option>
+                  <option value="Career Preparation">Career Preparation</option>
+                  <option value="Competitive Exams">Competitive Exams</option>
+                  <option value="Personal Learning">Personal Learning</option>
+                  <option value="Full Stack Development">Full Stack Development</option>
+                  <option value="Programming">Programming</option>
+                  <option value="Data Analytics">Data Analytics</option>
+                  <option value="Software Testing">Software Testing</option>
+                  <option value="Interview Preparation">Interview Preparation</option>
+                  <option value="Academic Learning">Academic Learning</option>
+                  <option value="Career Development">Career Development</option>
+                  <option value="Other">Other</option>
+                </select>
+                <span class="form-error" id="pfGoalError"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="pfEditFormat">Preferred Learning Format</label>
+                <select id="pfEditFormat" class="form-select">
+                  <option value="">Select preferred format</option>
+                  <option value="Video">Video</option>
+                  <option value="Reading">Reading</option>
+                  <option value="Articles">Articles</option>
+                  <option value="Practice">Practice</option>
+                  <option value="Interactive Practice">Interactive Practice</option>
+                  <option value="Flashcards">Flashcards</option>
+                  <option value="Quizzes">Quizzes</option>
+                  <option value="Mixed">Mixed</option>
+                </select>
+                <span class="form-error" id="pfFormatError"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="pfEditDailyGoal">Daily Learning Goal</label>
+                <select id="pfEditDailyGoal" class="form-select">
+                  <option value="">Select a daily goal</option>
+                  <option value="15">15 minutes</option>
+                  <option value="30">30 minutes</option>
+                  <option value="45">45 minutes</option>
+                  <option value="60">60 minutes</option>
+                  <option value="90">90 minutes</option>
+                  <option value="120">120 minutes</option>
+                </select>
+                <span class="form-error" id="pfDailyGoalError"></span>
+              </div>
+
+              <div class="pf-form-actions">
+                <button type="button" class="btn btn-primary" id="pfSaveBtn">Save Changes</button>
+                <button type="button" class="btn btn-ghost" id="pfCancelBtn">Cancel</button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;padding-top:0;">
+        <p>&copy; 2026 AI-Learning System. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div class="sp-toast" id="pfToast" role="status" aria-live="polite"></div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
+
+  <!-- Scripts -->
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/profile.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      LearnSphereTheme.init();
+      LearnSphereNav.init();
+      LearnSphereProfile.init();
+    });
+  </script>
+
+</body>
+</html>

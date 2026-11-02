@@ -1,0 +1,556 @@
+[
+  {
+    "courseId": 1,
+    "moduleId": "m1",
+    "lessonId": "l1",
+    "title": "What are Data Structures?",
+    "type": "video",
+    "duration": "12 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "An introduction to data structures, why they matter, and how they are used in real-world software systems.",
+      "transcript": "Welcome to the first lesson of Data Structures and Algorithms. In this lesson, we will explore what data structures are and why they are fundamental to computer science. A data structure is a way of organizing and storing data so that it can be accessed and modified efficiently. Different data structures are suited for different kinds of applications, and some are highly specialized for specific tasks."
+    }
+  },
+  {
+    "courseId": 1,
+    "moduleId": "m1",
+    "lessonId": "l2",
+    "title": "Time and Space Complexity",
+    "type": "reading",
+    "duration": "15 min",
+    "content": {
+      "heading": "Understanding Time and Space Complexity",
+      "sections": [
+        {
+          "title": "Why Complexity Analysis Matters",
+          "text": "When we write algorithms, we need to understand how efficient they are. Complexity analysis helps us predict how an algorithm will perform as the input size grows. There are two main types: time complexity (how fast) and space complexity (how much memory)."
+        },
+        {
+          "title": "Big-O Notation",
+          "text": "Big-O notation describes the upper bound of an algorithm's growth rate. We use it to classify algorithms by how their runtime or space requirements grow relative to input size."
+        },
+        {
+          "title": "Common Complexities",
+          "code": "O(1)       - Constant time\nO(log n)   - Logarithmic time\nO(n)       - Linear time\nO(n log n) - Linearithmic time\nO(n^2)     - Quadratic time\nO(2^n)     - Exponential time"
+        },
+        {
+          "title": "Key Takeaway",
+          "text": "Always aim for the lowest possible complexity. In practice, O(n log n) is often the best we can achieve for comparison-based sorting, and O(n) for searching in a hash table."
+        }
+      ]
+    }
+  },
+  {
+    "courseId": 1,
+    "moduleId": "m1",
+    "lessonId": "l3",
+    "title": "Introduction to Arrays",
+    "type": "video",
+    "duration": "18 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "Learn about arrays as the most fundamental data structure. Understand contiguous memory allocation, indexing, and basic operations.",
+      "transcript": "Arrays are the simplest and most widely used data structure. An array is a collection of elements identified by index or key. Arrays are stored in contiguous memory locations, which allows for O(1) random access. However, inserting or deleting elements can be expensive because it may require shifting other elements."
+    }
+  },
+  {
+    "courseId": 1,
+    "moduleId": "m2",
+    "lessonId": "l4",
+    "title": "Singly Linked List",
+    "type": "video",
+    "duration": "20 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "Understand linked lists as a dynamic alternative to arrays. Learn node structure, traversal, insertion, and deletion.",
+      "transcript": "A singly linked list is a linear data structure where each element (node) contains a data field and a reference (link) to the next node in the list. Unlike arrays, linked lists do not store elements in contiguous memory locations. This makes insertion and deletion more efficient but random access slower."
+    }
+  },
+  {
+    "courseId": 1,
+    "moduleId": "m2",
+    "lessonId": "l5",
+    "title": "Doubly Linked List",
+    "type": "video",
+    "duration": "18 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "Extend your knowledge with doubly linked lists. Learn bidirectional traversal and the trade-offs compared to singly linked lists.",
+      "transcript": "A doubly linked list is a linked data structure that consists of a set of sequentially linked records called nodes. Each node contains three fields: two link fields (references to the previous and next node) and one data field. The beginning and ending nodes' previous and next links point to null."
+    }
+  },
+  {
+    "courseId": 1,
+    "moduleId": "m2",
+    "lessonId": "l6",
+    "title": "Linked List Practice Problems",
+    "type": "practice",
+    "duration": "25 min",
+    "content": {
+      "problems": [
+        {
+          "question": "Reverse a singly linked list in place.",
+          "hint": "Use three pointers: previous, current, and next. At each step, reverse the current node's pointer.",
+          "solution": "Initialize prev = null, current = head. While current is not null: save next = current.next, set current.next = prev, move prev = current, move current = next. Finally, return prev as the new head."
+        },
+        {
+          "question": "Detect if a linked list has a cycle.",
+          "hint": "Think about using two pointers moving at different speeds (Floyd's algorithm).",
+          "solution": "Use a slow pointer (moves 1 step) and a fast pointer (moves 2 steps). If they ever meet, there is a cycle. If the fast pointer reaches null, there is no cycle. This runs in O(n) time and O(1) space."
+        },
+        {
+          "question": "Find the middle element of a linked list in one pass.",
+          "hint": "The tortoise and hare technique works here too.",
+          "solution": "Use two pointers: slow moves 1 step, fast moves 2 steps. When fast reaches the end, slow will be at the middle. For even-length lists, this gives the second middle element."
+        }
+      ]
+    }
+  },
+  {
+    "courseId": 1,
+    "moduleId": "m3",
+    "lessonId": "l7",
+    "title": "Stack Fundamentals",
+    "type": "video",
+    "duration": "15 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "Learn about stacks as a LIFO (Last In, First Out) data structure. Understand push, pop, peek, and real-world applications.",
+      "transcript": "A stack is a linear data structure that follows the LIFO principle. The last element added is the first one to be removed. Think of a stack of plates: you add to the top and remove from the top. Stacks are used in function call management, expression evaluation, undo mechanisms, and more."
+    }
+  },
+  {
+    "courseId": 1,
+    "moduleId": "m3",
+    "lessonId": "l8",
+    "title": "Queue and Deque",
+    "type": "video",
+    "duration": "16 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "Understand queues as FIFO structures and deques as double-ended queues. Learn their implementations and use cases.",
+      "transcript": "A queue is a FIFO (First In, First Out) data structure. Elements are added at the rear and removed from the front. Think of a line at a store: first person in line is first to be served. A deque (double-ended queue) allows insertion and deletion at both ends."
+    }
+  },
+  {
+    "courseId": 1,
+    "moduleId": "m3",
+    "lessonId": "l9",
+    "title": "Stack and Queue Problems",
+    "type": "practice",
+    "duration": "20 min",
+    "content": {
+      "problems": [
+        {
+          "question": "Implement a stack that supports getMin() in O(1) time.",
+          "hint": "Use an auxiliary stack to track minimum values.",
+          "solution": "Maintain two stacks: the main stack and a min stack. When pushing, also push to min stack if the value is <= current min. When popping, pop from both. getMin() simply returns the top of min stack."
+        },
+        {
+          "question": "Validate balanced parentheses using a stack.",
+          "hint": "Push opening brackets onto the stack. When you see a closing bracket, check if the top of the stack matches.",
+          "solution": "Iterate through the string. For each opening bracket, push it onto the stack. For each closing bracket, check if the stack top is the matching opening bracket. At the end, the stack should be empty."
+        }
+      ]
+    }
+  },
+  {
+    "courseId": 1,
+    "moduleId": "m4",
+    "lessonId": "l10",
+    "title": "Binary Trees",
+    "type": "video",
+    "duration": "22 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "Explore binary trees, a hierarchical data structure. Learn tree terminology, traversal methods, and implementation basics.",
+      "transcript": "A binary tree is a tree data structure in which each node has at most two children, referred to as the left child and the right child. Binary trees are used in search trees, heaps, and expression trees. Traversal can be done in-order, pre-order, post-order, or level-order."
+    }
+  },
+  {
+    "courseId": 1,
+    "moduleId": "m4",
+    "lessonId": "l11",
+    "title": "Binary Search Trees",
+    "type": "video",
+    "duration": "18 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "Learn about BSTs where left child < parent < right child. Understand searching, insertion, deletion, and balancing concepts.",
+      "transcript": "A Binary Search Tree (BST) is a binary tree where each node follows the BST property: all values in the left subtree are less than the node, and all values in the right subtree are greater. This property makes searching efficient with O(log n) average time."
+    }
+  },
+  {
+    "courseId": 1,
+    "moduleId": "m4",
+    "lessonId": "l12",
+    "title": "Tree Traversal Quiz",
+    "type": "quiz",
+    "duration": "10 min",
+    "content": {
+      "placeholder": true,
+      "message": "Quiz will be available in the Quiz Module. This feature is coming soon!"
+    }
+  },
+  {
+    "courseId": 1,
+    "moduleId": "m5",
+    "lessonId": "l13",
+    "title": "Graph Representation",
+    "type": "video",
+    "duration": "16 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "Learn how graphs are represented in memory using adjacency matrices and adjacency lists. Understand directed vs undirected graphs.",
+      "transcript": "A graph is a collection of vertices (nodes) and edges (connections). Graphs can be represented using an adjacency matrix (2D array) or adjacency lists (array of lists). Adjacency matrices use O(V^2) space, while adjacency lists use O(V + E) space."
+    }
+  },
+  {
+    "courseId": 1,
+    "moduleId": "m5",
+    "lessonId": "l14",
+    "title": "BFS and DFS",
+    "type": "video",
+    "duration": "24 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "Master the two fundamental graph traversal algorithms: Breadth-First Search and Depth-First Search.",
+      "transcript": "BFS explores all neighbors at the current depth before moving to the next level, using a queue. DFS explores as far as possible along each branch before backtracking, using a stack (or recursion). Both visit every vertex and edge once, giving O(V + E) time complexity."
+    }
+  },
+  {
+    "courseId": 1,
+    "moduleId": "m5",
+    "lessonId": "l15",
+    "title": "Graph Practice",
+    "type": "practice",
+    "duration": "30 min",
+    "content": {
+      "problems": [
+        {
+          "question": "Find the shortest path between two nodes in an unweighted graph.",
+          "hint": "BFS naturally finds the shortest path in unweighted graphs.",
+          "solution": "Use BFS starting from the source node. Keep track of visited nodes and parent pointers. When you reach the target, backtrack through parents to reconstruct the path."
+        },
+        {
+          "question": "Check if a graph is bipartite.",
+          "hint": "Try coloring the graph with two colors using BFS or DFS.",
+          "solution": "Use BFS to color each node. If you encounter an edge between two nodes of the same color, the graph is not bipartite. Start by coloring the source node with color 0, then alternate colors for each level."
+        }
+      ]
+    }
+  },
+  {
+    "courseId": 1,
+    "moduleId": "m6",
+    "lessonId": "l16",
+    "title": "Merge Sort and Quick Sort",
+    "type": "video",
+    "duration": "25 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "Learn two of the most important comparison-based sorting algorithms. Understand divide-and-conquer strategy and their time complexities.",
+      "transcript": "Merge Sort divides the array in half, recursively sorts each half, then merges them. It guarantees O(n log n) time but uses O(n) extra space. Quick Sort picks a pivot, partitions the array around it, then recursively sorts the partitions. It averages O(n log n) but can degrade to O(n^2) in the worst case."
+    }
+  },
+  {
+    "courseId": 1,
+    "moduleId": "m6",
+    "lessonId": "l17",
+    "title": "Binary Search and Hash Maps",
+    "type": "video",
+    "duration": "20 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "Master binary search for sorted data and hash maps for O(1) average-case lookups.",
+      "transcript": "Binary search finds an element in a sorted array in O(log n) time by repeatedly halving the search space. Hash maps provide O(1) average-case insertion, deletion, and lookup using a hash function to map keys to array indices."
+    }
+  },
+  {
+    "courseId": 1,
+    "moduleId": "m6",
+    "lessonId": "l18",
+    "title": "Final Assessment",
+    "type": "quiz",
+    "duration": "15 min",
+    "content": {
+      "placeholder": true,
+      "message": "Quiz will be available in the Quiz Module. This feature is coming soon!"
+    }
+  },
+  {
+    "courseId": 9,
+    "moduleId": "m1",
+    "lessonId": "l1",
+    "title": "Introduction to Cybersecurity",
+    "type": "video",
+    "duration": "12 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "An overview of cybersecurity, why it matters, and the landscape of digital threats every organization faces today.",
+      "transcript": "Welcome to Cybersecurity Fundamentals. Cybersecurity is the practice of protecting systems, networks, programs, and data from digital attacks. These attacks are usually aimed at accessing, changing, or destroying sensitive information, or interrupting normal business processes. In this course, you will learn the core concepts and tools used to defend against these threats."
+    }
+  },
+  {
+    "courseId": 9,
+    "moduleId": "m1",
+    "lessonId": "l2",
+    "title": "The CIA Triad",
+    "type": "video",
+    "duration": "15 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "Understand the three pillars of information security: Confidentiality, Integrity, and Availability.",
+      "transcript": "The CIA triad is the foundation of all information security programs. Confidentiality means only authorized users can access data. Integrity ensures data is accurate and unaltered. Availability guarantees that data and systems are accessible when needed. Every security control you implement ultimately supports one or more of these three goals."
+    }
+  },
+  {
+    "courseId": 9,
+    "moduleId": "m1",
+    "lessonId": "l3",
+    "title": "Threats and Attack Vectors",
+    "type": "reading",
+    "duration": "18 min",
+    "content": {
+      "heading": "Common Threats and Attack Vectors",
+      "sections": [
+        {
+          "title": "Malware and Phishing",
+          "text": "Malware is malicious software such as viruses, worms, and ransomware. Phishing uses deceptive emails or messages to trick users into revealing credentials. These remain the most common entry points for attackers."
+        },
+        {
+          "title": "Social Engineering",
+          "text": "Social engineering manipulates people into breaking security procedures. Attackers exploit trust, urgency, or fear to gain access to systems and data without technical exploits."
+        },
+        {
+          "title": "Insider Threats",
+          "text": "Not all threats come from outside. Disgruntled employees, accidental mistakes, and careless handling of data can cause serious breaches. The principle of least privilege helps limit the damage."
+        },
+        {
+          "title": "Denial of Service",
+          "text": "DoS and DDoS attacks flood a service with traffic until it becomes unavailable. Defenses include rate limiting, load balancing, and traffic filtering."
+        }
+      ]
+    }
+  },
+  {
+    "courseId": 9,
+    "moduleId": "m2",
+    "lessonId": "l4",
+    "title": "Networking Basics for Security",
+    "type": "video",
+    "duration": "16 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "Learn IP addressing, ports, and protocols so you can spot suspicious network activity.",
+      "transcript": "Every attack travels over the network. To defend networks, you must understand how they work. IP addresses identify devices, ports identify services, and protocols like TCP, UDP, and HTTPS define how data flows. A network defender uses this knowledge to recognize anomalies — for example, unexpected outbound connections to unknown IPs."
+    }
+  },
+  {
+    "courseId": 9,
+    "moduleId": "m2",
+    "lessonId": "l5",
+    "title": "Firewalls, VPNs, and IDS",
+    "type": "video",
+    "duration": "18 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "Explore the core network defense tools: firewalls, VPNs, and intrusion detection systems.",
+      "transcript": "Firewalls filter traffic based on rules, allowing or blocking connections at the network perimeter. VPNs encrypt traffic between remote users and the network. Intrusion Detection Systems monitor traffic for suspicious patterns and alert analysts. Together these tools form the first line of network defense."
+    }
+  },
+  {
+    "courseId": 9,
+    "moduleId": "m2",
+    "lessonId": "l6",
+    "title": "Network Security Practice",
+    "type": "practice",
+    "duration": "25 min",
+    "content": {
+      "problems": [
+        {
+          "question": "A server that should only accept HTTPS traffic is also receiving connections on an unexpected high port. What should you do?",
+          "hint": "Think about firewall rules and which ports your services actually need.",
+          "solution": "Update the firewall to block all inbound ports except 443. Then investigate the source of the traffic using logs and an IDS, because unexpected open ports often indicate compromise or misconfiguration."
+        },
+        {
+          "question": "Remote employees need secure access to internal resources. Which tool encrypts this traffic and why does it matter?",
+          "hint": "A VPN creates an encrypted tunnel between two endpoints.",
+          "solution": "Deploy a VPN so that employee traffic is encrypted between the device and the corporate gateway. This protects sensitive data from interception on public networks and enforces authentication before access."
+        }
+      ]
+    }
+  },
+  {
+    "courseId": 9,
+    "moduleId": "m3",
+    "lessonId": "l7",
+    "title": "OWASP Top 10 Web Vulnerabilities",
+    "type": "reading",
+    "duration": "15 min",
+    "content": {
+      "heading": "The OWASP Top 10",
+      "sections": [
+        {
+          "title": "Injection and Broken Access Control",
+          "text": "Injection flaws, such as SQL injection, occur when untrusted input is executed as code. Broken access control lets users act beyond their permissions. Both sit at the top of the OWASP Top 10 because they are common and highly damaging."
+        },
+        {
+          "title": "XSS and Misconfiguration",
+          "text": "Cross-Site Scripting (XSS) injects malicious scripts into pages viewed by other users. Security misconfiguration covers weak defaults, unpatched servers, and exposed error messages."
+        },
+        {
+          "title": "Protecting Your Application",
+          "code": "Input validation -> use parameterized queries\nOutput encoding  -> escape user content\nLeast privilege  -> restrict access by role\nPatch regularly   -> update frameworks and servers"
+        }
+      ]
+    }
+  },
+  {
+    "courseId": 9,
+    "moduleId": "m3",
+    "lessonId": "l8",
+    "title": "SQL Injection and XSS",
+    "type": "video",
+    "duration": "20 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "Understand two of the most common web attacks and how to prevent them with safe coding practices.",
+      "transcript": "SQL injection happens when user input is inserted directly into database queries, letting attackers manipulate the query. The fix is parameterized queries. XSS lets attackers run scripts in another user's browser by injecting unescaped HTML. The fix is output encoding. Both are prevented by treating all user input as untrusted data."
+    }
+  },
+  {
+    "courseId": 9,
+    "moduleId": "m3",
+    "lessonId": "l9",
+    "title": "Web Security Practice",
+    "type": "practice",
+    "duration": "25 min",
+    "content": {
+      "problems": [
+        {
+          "question": "A login form crashes when a user submits `' OR '1'='1`. What vulnerability is present and what is the fix?",
+          "hint": "The input is being treated as part of a SQL command.",
+          "solution": "This is SQL injection. Use parameterized queries prepared statements so the database treats input as data, never as executable SQL. Also validate and sanitize all input on the server side."
+        },
+        {
+          "question": "User comments are displayed on a public page and commenters can post <script> tags. Why is this dangerous?",
+          "hint": "Browsers execute scripts supplied in HTML content.",
+          "solution": "This is stored XSS. Attackers could steal cookies, session tokens, or redirect users to malicious sites. Fix it by HTML-encoding all user-generated content before rendering it in the page."
+        }
+      ]
+    }
+  },
+  {
+    "courseId": 9,
+    "moduleId": "m4",
+    "lessonId": "l10",
+    "title": "Introduction to Cryptography",
+    "type": "reading",
+    "duration": "14 min",
+    "content": {
+      "heading": "Cryptography Basics",
+      "sections": [
+        {
+          "title": "What is Cryptography?",
+          "text": "Cryptography is the science of securing communication by transforming readable data into an unreadable form. It provides the confidentiality, integrity, and authentication at the heart of secure systems."
+        },
+        {
+          "title": "Encryption vs Hashing",
+          "code": "Encryption: reversible  -> ciphertext can be decrypted\n  used for: secrecy of data in transit and at rest\n\nHashing: irreversible  -> one-way, no key to reverse\n  used for: passwords, integrity checks, fingerprints"
+        },
+        {
+          "title": "Why It Matters",
+          "text": "From HTTPS in your browser to encrypted messaging apps and password storage, cryptography protects billions of daily interactions. Understanding its limits is as important as understanding its power."
+        }
+      ]
+    }
+  },
+  {
+    "courseId": 9,
+    "moduleId": "m4",
+    "lessonId": "l11",
+    "title": "Symmetric and Asymmetric Encryption",
+    "type": "video",
+    "duration": "18 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "Compare symmetric and asymmetric encryption and see when each should be used.",
+      "transcript": "Symmetric encryption uses one shared key for both encryption and decryption, so it is fast but requires secure key exchange. Asymmetric encryption uses a public and private key pair, enabling secure exchange without sharing secrets, but it is slower. Modern systems combine both: asymmetric encryption securely exchanges a symmetric key, which then encrypts the bulk of the data."
+    }
+  },
+  {
+    "courseId": 9,
+    "moduleId": "m4",
+    "lessonId": "l12",
+    "title": "Hashing and Public Key Infrastructure",
+    "type": "video",
+    "duration": "16 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "Learn how hashing secures passwords and how PKI establishes trust on the internet.",
+      "transcript": "A hash function maps any input to a fixed-size output that cannot be reversed. Passwords are stored as salted hashes so a database leak does not expose them. Public Key Infrastructure ties public keys to identities using certificates issued by trusted authorities, which is exactly how HTTPS certificates are validated."
+    }
+  },
+  {
+    "courseId": 9,
+    "moduleId": "m5",
+    "lessonId": "l13",
+    "title": "Identity and Access Management",
+    "type": "reading",
+    "duration": "14 min",
+    "content": {
+      "heading": "Identity and Access Management",
+      "sections": [
+        {
+          "title": "Authentication vs Authorization",
+          "text": "Authentication proves who you are — usually through passwords, MFA, or biometrics. Authorization decides what you can do once you are authenticated. Strong IAM enforces both with role-based policies."
+        },
+        {
+          "title": "Multi-Factor Authentication",
+          "code": "Something you know  -> password\nSomething you have  -> phone or security key\nSomething you are   -> fingerprint or face"
+        },
+        {
+          "title": "Least Privilege",
+          "text": "Give every user only the permissions necessary for their role. Combined with regular access reviews, least privilege limits the blast radius of any compromised account."
+        }
+      ]
+    }
+  },
+  {
+    "courseId": 9,
+    "moduleId": "m5",
+    "lessonId": "l14",
+    "title": "Security Best Practices",
+    "type": "video",
+    "duration": "15 min",
+    "content": {
+      "videoPlaceholder": true,
+      "description": "Practical habits and policies that dramatically reduce cyber risk for individuals and organizations.",
+      "transcript": "Good security is mostly about consistent habits. Use strong unique passwords and a password manager. Enable multi-factor authentication everywhere it is offered. Keep software patched, back up critical data, and verify the identity of senders before acting. Policies such as incident response plans and least privilege turn these habits into organizational culture."
+    }
+  },
+  {
+    "courseId": 9,
+    "moduleId": "m5",
+    "lessonId": "l15",
+    "title": "Security Audit Practice",
+    "type": "practice",
+    "duration": "25 min",
+    "content": {
+      "problems": [
+        {
+          "question": "You are auditing a small company. Their Wi-Fi uses WEP, no MFA is enabled, and shared accounts are common. Rank the top fixes.",
+          "hint": "Prioritize changes that remove the largest exposure first.",
+          "solution": "Enable MFA immediately since it blocks most account takeover. Replace WEP with WPA2/WPA3 on the Wi-Fi network. Eliminate shared accounts and enforce individual accounts with least privilege. Then schedule regular patching and security awareness training."
+        },
+        {
+          "question": "During an audit you find hardcoded API keys in source code committed to a shared repository. How do you respond?",
+          "hint": "Assume the key is compromised and rotate, then remove from history.",
+          "solution": "Treat the key as leaked: rotate it immediately, remove it from the code and from git history, then move secrets to a vault or environment variables. Add a secret scanning tool to prevent future commits of credentials."
+        }
+      ]
+    }
+  }
+]

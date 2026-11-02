@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student leaderboard on AI-Learning System. See how you rank by XP, quiz performance, streak and achievements.">
+  <title>Leaderboard - AI-Learning System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+  <!-- ====== NAVBAR ====== -->
+  <!-- ====== NAVBAR ====== -->
+<nav class="navbar" id="navbar" aria-label="Primary">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">
+      <img src="../assets/images/logo.png" alt="AI-Learning System logo" class="brand-logo">
+      <span>AI-<span class="brand-text-accent">Learning</span> System</span>
+    </a>
+
+    <div class="navbar-menu">
+      <a href="../index.html" class="navbar-link">Home</a>
+      <a href="courses.html" class="navbar-link">Courses</a>
+      <a href="learning-path.html" class="navbar-link">Learning Path</a>
+      <a href="ai-tutor.html" class="navbar-link">AI Tutor</a>
+      <a href="dashboard.html" class="navbar-link">Dashboard</a>
+    </div>
+
+    <div class="navbar-actions">
+      <button type="button" class="navbar-icon-btn nav-search-btn" data-search-url="courses.html" aria-label="Search courses">&#128269;</button>
+      <button type="button" class="navbar-icon-btn theme-toggle" aria-label="Toggle theme">&#9790;</button>
+
+      <div class="navbar-auth" id="authGuest">
+        <a href="login.html" class="btn btn-ghost btn-sm">Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+      </div>
+
+      <div class="navbar-auth navbar-user-menu" id="authUser" style="display:none;">
+        <button type="button" class="navbar-user-btn" aria-haspopup="true" aria-expanded="false">
+          <span class="navbar-user-avatar">P</span>
+          <span class="navbar-user-name">User</span>
+          <span class="navbar-user-caret" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="navbar-dropdown" role="menu">
+          <a href="profile.html" class="navbar-dropdown-item" role="menuitem">&#128100; My Profile</a>
+          <a href="achievements.html" class="navbar-dropdown-item" role="menuitem">&#127942; Achievements</a>
+          <a href="bookmarks.html" class="navbar-dropdown-item" role="menuitem">&#128278; Bookmarks</a>
+          <a href="study-planner.html" class="navbar-dropdown-item" role="menuitem">&#128197; Study Planner</a>
+          <a href="analytics.html" class="navbar-dropdown-item" role="menuitem">&#128200; Analytics</a>
+          <a href="settings.html" class="navbar-dropdown-item" role="menuitem">&#9881; Settings</a>
+          <div class="navbar-dropdown-divider" role="separator"></div>
+          <div class="navbar-dropdown-item navbar-dropdown-logout" id="navLogoutBtn" role="menuitem" tabindex="0">&#10140; Logout</div>
+        </div>
+      </div>
+
+      <button type="button" class="navbar-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ====== MOBILE MENU ====== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" class="mobile-menu-link">Home</a>
+  <a href="courses.html" class="mobile-menu-link">Courses</a>
+  <a href="learning-path.html" class="mobile-menu-link">Learning Path</a>
+  <a href="ai-tutor.html" class="mobile-menu-link">AI Tutor</a>
+  <a href="dashboard.html" class="mobile-menu-link">Dashboard</a>
+
+  <div class="mobile-menu-divider">Learning Tools</div>
+  <a href="flashcards.html" class="mobile-menu-link">Flashcards</a>
+  <a href="revision.html" class="mobile-menu-link">Revision</a>
+
+  <div class="mobile-menu-divider">More</div>
+  <a href="achievements.html" class="mobile-menu-link">Achievements</a>
+  <a href="bookmarks.html" class="mobile-menu-link">Bookmarks</a>
+  <a href="study-planner.html" class="mobile-menu-link">Study Planner</a>
+  <a href="analytics.html" class="mobile-menu-link">Analytics</a>
+  <a href="settings.html" class="mobile-menu-link">Settings</a>
+
+  <div class="mobile-menu-actions" id="mobileAuthGuest">
+    <a href="login.html" class="btn btn-secondary btn-block">Login</a>
+    <a href="signup.html" class="btn btn-primary btn-block">Sign Up</a>
+  </div>
+
+  <div class="mobile-menu-actions" id="mobileAuthUser" style="display:none;">
+    <p class="mobile-menu-login-name">Logged in as <strong class="mobile-user-name">User</strong></p>
+    <button type="button" class="btn btn-secondary btn-block" id="mobileLogoutBtn">Logout</button>
+  </div>
+</div>
+
+  <!-- ====== LEADERBOARD CONTENT ====== -->
+  <main class="lb-main">
+
+    <!-- Page Header -->
+    <section class="lb-header">
+      <div class="container">
+        <h1 class="lb-title">Leaderboard</h1>
+        <p class="lb-subtitle">Stay motivated, track your progress and see how you are performing.</p>
+      </div>
+    </section>
+
+    <!-- Summary Cards -->
+    <section class="lb-section" aria-label="Your leaderboard summary">
+      <div class="container">
+        <div class="lb-summary-grid" id="lbSummary"></div>
+      </div>
+    </section>
+
+    <!-- Top 3 -->
+    <section class="lb-section">
+      <div class="container">
+        <div class="lb-section-head">
+          <h2 class="lb-section-title">Top Students</h2>
+        </div>
+        <div class="lb-podium" id="lbPodium"></div>
+      </div>
+    </section>
+
+    <!-- Controls: Search, Tabs, Period -->
+    <section class="lb-section" aria-label="Leaderboard controls">
+      <div class="container">
+        <div class="lb-controls">
+          <label class="lb-search">
+            <span class="sr-only">Search students</span>
+            <span class="lb-search-icon" aria-hidden="true">&#128269;</span>
+            <input type="search" id="lbSearch" placeholder="Search students" autocomplete="off" aria-label="Search students by name">
+          </label>
+
+          <div class="lb-tabs" id="lbTabs" role="tablist" aria-label="Leaderboard categories"></div>
+
+          <label class="lb-period">
+            <span class="sr-only">Time period</span>
+            <select id="lbPeriod" aria-label="Time period">
+              <option value="week">This Week</option>
+              <option value="month">This Month</option>
+              <option value="all" selected>All Time</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="lb-period-notice" id="lbPeriodNotice" hidden>
+          <p>Time-based rankings will be available after backend integration.</p>
+        </div>
+
+        <div class="lb-board-wrap">
+          <table class="lb-table">
+            <thead>
+              <tr>
+                <th scope="col">Rank</th>
+                <th scope="col">Student</th>
+                <th scope="col">Level</th>
+                <th scope="col">XP</th>
+                <th scope="col">Progress</th>
+                <th scope="col">Streak</th>
+                <th scope="col">Achievements</th>
+              </tr>
+            </thead>
+            <tbody id="lbTbody">
+              <tr>
+                <td colspan="7">
+                  <div class="lb-empty">
+                    <p class="lb-empty-title">Loading leaderboard&hellip;</p>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="lb-demo-note">Leaderboard includes demo students for preview. Rankings are computed locally until backend integration adds real multi-user data.</p>
+      </div>
+    </section>
+
+    <!-- Your Position + Keep Going -->
+    <section class="lb-section">
+      <div class="container">
+        <div class="lb-bottom-layout">
+
+          <article class="lb-card">
+            <h2 class="lb-card-title">Your Position</h2>
+            <div class="lb-card-body" id="lbPosition"></div>
+          </article>
+
+          <article class="lb-card">
+            <h2 class="lb-card-title">Keep Going</h2>
+            <div class="lb-card-body" id="lbInsight"></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;padding-top:0;">
+        <p>&copy; 2026 AI-Learning System. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
+
+  <!-- Scripts -->
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/leaderboard.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      LearnSphereTheme.init();
+      LearnSphereNav.init();
+
+      fetch('../data/leaderboard.json')
+        .then(function (r) { return r.json(); })
+        .then(function (leaderboard) {
+          fetch('../data/courses.json')
+            .then(function (r) { return r.json(); })
+            .then(function (courses) {
+              fetch('../data/quizzes.json')
+                .then(function (r) { return r.json(); })
+                .then(function (quizzes) {
+                  fetch('../data/flashcards.json')
+                    .then(function (r) { return r.json(); })
+                    .then(function (flashcards) {
+                      LearnSphereAPI.initCourseData(courses, null);
+                      LearnSphereAPI.initQuizData(quizzes);
+                      LearnSphereAPI.initFlashcardData(flashcards);
+                      LearnSphereAPI.initLeaderboardData(leaderboard);
+                      LearnSphereLeaderboard.init();
+                    })
+                    .catch(function () {
+                      LearnSphereAPI.initCourseData(courses, null);
+                      LearnSphereAPI.initQuizData(quizzes);
+                      LearnSphereAPI.initLeaderboardData(leaderboard);
+                      LearnSphereLeaderboard.init();
+                    });
+                })
+                .catch(function () {
+                  LearnSphereAPI.initCourseData(courses, null);
+                  LearnSphereAPI.initLeaderboardData(leaderboard);
+                  LearnSphereLeaderboard.init();
+                });
+            })
+            .catch(function () {
+              LearnSphereAPI.initLeaderboardData(leaderboard);
+              LearnSphereLeaderboard.init();
+            });
+        })
+        .catch(function () {
+          var main = document.querySelector('.lb-main');
+          if (main) {
+            main.innerHTML =
+              '<div class="lb-fatal">' +
+              '  <div class="lb-fatal-icon">&#9888;</div>' +
+              '  <h3>Unable to load the leaderboard</h3>' +
+              '  <p>Please try again later.</p>' +
+              '  <a href="../pages/dashboard.html" class="btn btn-primary btn-sm">Back to Dashboard</a>' +
+              '</div>';
+          }
+        });
+
+    });
+  </script>
+
+</body>
+</html>

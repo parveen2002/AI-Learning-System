@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Flashcards with spaced repetition for AI-Learning System. Recall answers, rate difficulty, and build your memory schedule.">
+  <title>Flashcards - AI-Learning System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <!-- ====== NAVBAR ====== -->
+<nav class="navbar" id="navbar" aria-label="Primary">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">
+      <img src="../assets/images/logo.png" alt="AI-Learning System logo" class="brand-logo">
+      <span>AI-<span class="brand-text-accent">Learning</span> System</span>
+    </a>
+
+    <div class="navbar-menu">
+      <a href="../index.html" class="navbar-link">Home</a>
+      <a href="courses.html" class="navbar-link">Courses</a>
+      <a href="learning-path.html" class="navbar-link">Learning Path</a>
+      <a href="ai-tutor.html" class="navbar-link">AI Tutor</a>
+      <a href="dashboard.html" class="navbar-link">Dashboard</a>
+    </div>
+
+    <div class="navbar-actions">
+      <button type="button" class="navbar-icon-btn nav-search-btn" data-search-url="courses.html" aria-label="Search courses">&#128269;</button>
+      <button type="button" class="navbar-icon-btn theme-toggle" aria-label="Toggle theme">&#9790;</button>
+
+      <div class="navbar-auth" id="authGuest">
+        <a href="login.html" class="btn btn-ghost btn-sm">Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+      </div>
+
+      <div class="navbar-auth navbar-user-menu" id="authUser" style="display:none;">
+        <button type="button" class="navbar-user-btn" aria-haspopup="true" aria-expanded="false">
+          <span class="navbar-user-avatar">P</span>
+          <span class="navbar-user-name">User</span>
+          <span class="navbar-user-caret" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="navbar-dropdown" role="menu">
+          <a href="profile.html" class="navbar-dropdown-item" role="menuitem">&#128100; My Profile</a>
+          <a href="achievements.html" class="navbar-dropdown-item" role="menuitem">&#127942; Achievements</a>
+          <a href="bookmarks.html" class="navbar-dropdown-item" role="menuitem">&#128278; Bookmarks</a>
+          <a href="study-planner.html" class="navbar-dropdown-item" role="menuitem">&#128197; Study Planner</a>
+          <a href="analytics.html" class="navbar-dropdown-item" role="menuitem">&#128200; Analytics</a>
+          <a href="settings.html" class="navbar-dropdown-item" role="menuitem">&#9881; Settings</a>
+          <div class="navbar-dropdown-divider" role="separator"></div>
+          <div class="navbar-dropdown-item navbar-dropdown-logout" id="navLogoutBtn" role="menuitem" tabindex="0">&#10140; Logout</div>
+        </div>
+      </div>
+
+      <button type="button" class="navbar-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ====== MOBILE MENU ====== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" class="mobile-menu-link">Home</a>
+  <a href="courses.html" class="mobile-menu-link">Courses</a>
+  <a href="learning-path.html" class="mobile-menu-link">Learning Path</a>
+  <a href="ai-tutor.html" class="mobile-menu-link">AI Tutor</a>
+  <a href="dashboard.html" class="mobile-menu-link">Dashboard</a>
+
+  <div class="mobile-menu-divider">Learning Tools</div>
+  <a href="flashcards.html" class="mobile-menu-link">Flashcards</a>
+  <a href="revision.html" class="mobile-menu-link">Revision</a>
+
+  <div class="mobile-menu-divider">More</div>
+  <a href="achievements.html" class="mobile-menu-link">Achievements</a>
+  <a href="bookmarks.html" class="mobile-menu-link">Bookmarks</a>
+  <a href="study-planner.html" class="mobile-menu-link">Study Planner</a>
+  <a href="analytics.html" class="mobile-menu-link">Analytics</a>
+  <a href="settings.html" class="mobile-menu-link">Settings</a>
+
+  <div class="mobile-menu-actions" id="mobileAuthGuest">
+    <a href="login.html" class="btn btn-secondary btn-block">Login</a>
+    <a href="signup.html" class="btn btn-primary btn-block">Sign Up</a>
+  </div>
+
+  <div class="mobile-menu-actions" id="mobileAuthUser" style="display:none;">
+    <p class="mobile-menu-login-name">Logged in as <strong class="mobile-user-name">User</strong></p>
+    <button type="button" class="btn btn-secondary btn-block" id="mobileLogoutBtn">Logout</button>
+  </div>
+</div>
+
+  <!-- MAIN CONTENT -->
+  <main class="fc-main">
+    <div class="container">
+
+      <!-- Page Header -->
+      <section class="fc-header">
+        <h1 class="fc-title">Flashcards</h1>
+        <p class="fc-subtitle" id="fcSubtitle">Recall each answer, rate your memory, and let the spaced repetition schedule plan your next review.</p>
+      </section>
+
+      <!-- Error State -->
+      <div id="fcError" class="fc-state" style="display:none;"></div>
+
+      <!-- Course Selection (no course selected) -->
+      <section id="fcCourseSection" style="display:none;">
+        <div class="fc-section-head">
+          <h2 class="fc-section-title">Choose a Course</h2>
+          <a href="revision.html" class="btn btn-ghost btn-sm">&#128202; Revision Center</a>
+        </div>
+        <div class="fc-course-grid" id="fcCourseGrid">
+          <!-- Rendered by JS -->
+        </div>
+      </section>
+
+      <!-- Card Study Session -->
+      <section id="fcSessionSection" style="display:none;">
+
+        <!-- Toolbar -->
+        <div class="fc-toolbar">
+          <div class="fc-toolbar-left">
+            <label class="fc-toolbar-label" for="fcCourseSelect">Course:</label>
+            <select id="fcCourseSelect" class="fc-select" aria-label="Select course to study">
+              <!-- Populated by JS -->
+            </select>
+            <span class="fc-mode-badge" id="fcModeBadge" style="display:none;">Revision</span>
+          </div>
+          <div class="fc-toolbar-right">
+            <a href="revision.html" class="btn btn-ghost btn-sm">Revision Center</a>
+          </div>
+        </div>
+
+        <!-- Session Progress -->
+        <div class="fc-progress-row">
+          <span class="fc-progress-label" id="fcProgressText">Card 0 of 0</span>
+          <span class="fc-progress-count" id="fcProgressPct">0%</span>
+        </div>
+        <div class="fc-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="fcProgressBar">
+          <div class="fc-progress-fill" id="fcProgressFill" style="width:0%;"></div>
+        </div>
+
+        <!-- Flashcard -->
+        <article class="fc-card" id="fcCardPanel">
+          <div class="fc-card-top">
+            <span class="fc-badge fc-badge-topic" id="fcTopicBadge">Topic</span>
+            <span class="fc-badge fc-badge-course" id="fcCourseBadge">Course</span>
+          </div>
+          <h2 class="fc-question-label">Question</h2>
+          <p class="fc-question" id="fcQuestion">Loading...</p>
+          <div class="fc-reveal-zone">
+            <button class="btn btn-primary btn-lg" id="fcShowAnswerBtn">Show Answer</button>
+          </div>
+          <div class="fc-answer-block" id="fcAnswerPanel" style="display:none;">
+            <div class="fc-answer">
+              <h3 class="fc-answer-label">Answer</h3>
+              <p id="fcAnswerText"></p>
+            </div>
+            <div class="fc-explanation">
+              <h3 class="fc-explanation-label">Why it matters</h3>
+              <p id="fcExplanationText"></p>
+            </div>
+            <div class="fc-mastered-note" id="fcMasteredNote" style="display:none;">
+              &#127942; Card mastered! Three easy ratings in a row.
+            </div>
+            <div class="fc-rating">
+              <span class="fc-rating-label">How did you do?</span>
+              <div class="fc-rating-row" id="fcRatingRow">
+                <button class="fc-rating-btn fc-rating-hard" data-rating="hard">Hard</button>
+                <button class="fc-rating-btn fc-rating-medium" data-rating="medium">Medium</button>
+                <button class="fc-rating-btn fc-rating-easy" data-rating="easy">Easy</button>
+              </div>
+              <p class="fc-rating-hint">Hard = struggled &middot; Medium = some effort &middot; Easy = confident</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- No Cards / All Caught Up -->
+      <section id="fcEmpty" class="fc-state" style="display:none;">
+        <div class="fc-state-icon" id="fcEmptyIcon">&#127881;</div>
+        <h2 id="fcEmptyTitle">You're all caught up!</h2>
+        <p id="fcEmptyText">There are no cards due for review right now.</p>
+        <p class="fc-next-review" id="fcEmptyNextReview"></p>
+        <div class="fc-state-actions">
+          <a href="revision.html" class="btn btn-secondary" id="fcEmptyRevisionBtn">Back to Revision</a>
+          <a href="#" class="btn btn-primary" id="fcEmptyStudyBtn">Study New Cards</a>
+        </div>
+      </section>
+
+      <!-- Session Complete -->
+      <section id="fcComplete" class="fc-state" style="display:none;">
+        <div class="fc-state-icon">&#127881;</div>
+        <h2>Revision complete!</h2>
+        <p class="fc-complete-sub">You reviewed all the cards in this session.</p>
+        <div class="fc-complete-stats">
+          <div class="fc-complete-stat fc-complete-easy"><span class="fc-complete-value" id="fcCompEasy">0</span><span class="fc-complete-label">Easy</span></div>
+          <div class="fc-complete-stat fc-complete-medium"><span class="fc-complete-value" id="fcCompMedium">0</span><span class="fc-complete-label">Medium</span></div>
+          <div class="fc-complete-stat fc-complete-hard"><span class="fc-complete-value" id="fcCompHard">0</span><span class="fc-complete-label">Hard</span></div>
+        </div>
+        <p class="fc-next-review" id="fcCompleteNextReview">Next review: tomorrow.</p>
+        <div class="fc-state-actions">
+          <a href="revision.html" class="btn btn-secondary" id="fcCompRevisionBtn">Back to Revision</a>
+          <a href="#" class="btn btn-primary" id="fcCompContinueBtn">Continue Learning</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 AI-Learning System. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top" id="backToTop">&#8593;</div>
+
+  <!-- SCRIPTS -->
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/flashcards.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      LearnSphereTheme.init();
+      LearnSphereNav.init();
+
+      Promise.all([
+        fetch('../data/courses.json').then(function (r) { return r.json(); }),
+        fetch('../data/flashcards.json').then(function (r) { return r.json(); }),
+      ]).then(function (results) {
+        var courses = results[0];
+        var flashcards = results[1];
+        LearnSphereAPI.initCourseData(courses, null);
+        LearnSphereAPI.initFlashcardData(flashcards);
+        LearnSphereFlashcards.init();
+      }).catch(function () {
+        LearnSphereFlashcards.showError();
+      });
+    });
+  </script>
+
+</body>
+</html>

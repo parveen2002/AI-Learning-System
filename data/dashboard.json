@@ -1,0 +1,43 @@
+{
+  "overview": {
+    "progress": 72,
+    "quizAccuracy": 84,
+    "studyStreak": 7,
+    "topicsMastered": 18
+  },
+  "dailyGoal": {
+    "targetMinutes": 30,
+    "todayMinutes": 18,
+    "unit": "minutes"
+  },
+  "streak": {
+    "current": 7,
+    "week": [
+      { "day": "Mon", "completed": true },
+      { "day": "Tue", "completed": true },
+      { "day": "Wed", "completed": true },
+      { "day": "Thu", "completed": true },
+      { "day": "Fri", "completed": true },
+      { "day": "Sat", "completed": true },
+      { "day": "Sun", "completed": false, "isToday": true }
+    ]
+  },
+  "recommendedNextStep": {
+    "courseId": 1,
+    "courseTitle": "Data Structures & Algorithms",
+    "lessonTitle": "Recursion Basics",
+    "reason": "You recently completed Arrays and need more practice with recursive problem solving."
+  },
+  "recentActivity": [
+    { "icon": "&#10003;", "text": "Completed \"Arrays Basics\"", "date": "Today, 2:30 PM" },
+    { "icon": "&#9733;", "text": "Scored 85% in \"Python Variables Quiz\"", "date": "Today, 11:15 AM" },
+    { "icon": "&#9654;", "text": "Started \"Data Structures & Algorithms\"", "date": "Yesterday" },
+    { "icon": "&#9734;", "text": "Bookmarked \"Machine Learning Basics\"", "date": "2 days ago" }
+  ],
+  "quickActions": [
+    { "label": "Continue Learning", "url": "course-details.html", "icon": "&#9654;" },
+    { "label": "Explore Courses", "url": "courses.html", "icon": "&#128218;" },
+    { "label": "Review Topics", "url": "#", "icon": "&#128202;" },
+    { "label": "AI Tutor", "url": "#", "icon": "&#129302;" }
+  ]
+}

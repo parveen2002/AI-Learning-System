@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Tutor - Ask questions, get explanations, and practice - AI-Learning System">
+  <title>AI Tutor - AI-Learning System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <!-- ====== NAVBAR ====== -->
+<nav class="navbar" id="navbar" aria-label="Primary">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">
+      <img src="../assets/images/logo.png" alt="AI-Learning System logo" class="brand-logo">
+      <span>AI-<span class="brand-text-accent">Learning</span> System</span>
+    </a>
+
+    <div class="navbar-menu">
+      <a href="../index.html" class="navbar-link">Home</a>
+      <a href="courses.html" class="navbar-link">Courses</a>
+      <a href="learning-path.html" class="navbar-link">Learning Path</a>
+      <a href="ai-tutor.html" class="navbar-link active">AI Tutor</a>
+      <a href="dashboard.html" class="navbar-link">Dashboard</a>
+    </div>
+
+    <div class="navbar-actions">
+      <button type="button" class="navbar-icon-btn nav-search-btn" data-search-url="courses.html" aria-label="Search courses">&#128269;</button>
+      <button type="button" class="navbar-icon-btn theme-toggle" aria-label="Toggle theme">&#9790;</button>
+
+      <div class="navbar-auth" id="authGuest">
+        <a href="login.html" class="btn btn-ghost btn-sm">Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+      </div>
+
+      <div class="navbar-auth navbar-user-menu" id="authUser" style="display:none;">
+        <button type="button" class="navbar-user-btn" aria-haspopup="true" aria-expanded="false">
+          <span class="navbar-user-avatar">P</span>
+          <span class="navbar-user-name">User</span>
+          <span class="navbar-user-caret" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="navbar-dropdown" role="menu">
+          <a href="profile.html" class="navbar-dropdown-item" role="menuitem">&#128100; My Profile</a>
+          <a href="achievements.html" class="navbar-dropdown-item" role="menuitem">&#127942; Achievements</a>
+          <a href="bookmarks.html" class="navbar-dropdown-item" role="menuitem">&#128278; Bookmarks</a>
+          <a href="study-planner.html" class="navbar-dropdown-item" role="menuitem">&#128197; Study Planner</a>
+          <a href="analytics.html" class="navbar-dropdown-item" role="menuitem">&#128200; Analytics</a>
+          <a href="settings.html" class="navbar-dropdown-item" role="menuitem">&#9881; Settings</a>
+          <div class="navbar-dropdown-divider" role="separator"></div>
+          <div class="navbar-dropdown-item navbar-dropdown-logout" id="navLogoutBtn" role="menuitem" tabindex="0">&#10140; Logout</div>
+        </div>
+      </div>
+
+      <button type="button" class="navbar-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ====== MOBILE MENU ====== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" class="mobile-menu-link">Home</a>
+  <a href="courses.html" class="mobile-menu-link">Courses</a>
+  <a href="learning-path.html" class="mobile-menu-link">Learning Path</a>
+  <a href="ai-tutor.html" class="mobile-menu-link active">AI Tutor</a>
+  <a href="dashboard.html" class="mobile-menu-link">Dashboard</a>
+
+  <div class="mobile-menu-divider">Learning Tools</div>
+  <a href="flashcards.html" class="mobile-menu-link">Flashcards</a>
+  <a href="revision.html" class="mobile-menu-link">Revision</a>
+
+  <div class="mobile-menu-divider">More</div>
+  <a href="achievements.html" class="mobile-menu-link">Achievements</a>
+  <a href="bookmarks.html" class="mobile-menu-link">Bookmarks</a>
+  <a href="study-planner.html" class="mobile-menu-link">Study Planner</a>
+  <a href="analytics.html" class="mobile-menu-link">Analytics</a>
+  <a href="settings.html" class="mobile-menu-link">Settings</a>
+
+  <div class="mobile-menu-actions" id="mobileAuthGuest">
+    <a href="login.html" class="btn btn-secondary btn-block">Login</a>
+    <a href="signup.html" class="btn btn-primary btn-block">Sign Up</a>
+  </div>
+
+  <div class="mobile-menu-actions" id="mobileAuthUser" style="display:none;">
+    <p class="mobile-menu-login-name">Logged in as <strong class="mobile-user-name">User</strong></p>
+    <button type="button" class="btn btn-secondary btn-block" id="mobileLogoutBtn">Logout</button>
+  </div>
+</div>
+
+  <!-- MAIN CONTENT -->
+  <main class="tutor-main">
+    <div class="container">
+
+      <!-- Page Header -->
+      <section class="tutor-header">
+        <h1 class="tutor-title">AI Tutor</h1>
+        <p class="tutor-subtitle" id="tutorSubtitle">Ask questions, clear your doubts, and practice anytime</p>
+      </section>
+
+      <!-- Error State -->
+      <div id="tutorError" class="tutor-error" style="display:none;"></div>
+
+      <div class="tutor-layout" id="tutorLayout">
+
+        <!-- LEFT: Tutor Info + Learning Context -->
+        <aside class="tutor-info">
+
+          <div class="card tutor-about">
+            <div class="tutor-avatar" id="tutorAvatar">AI</div>
+            <div>
+              <h3 class="tutor-about-name">Your AI Tutor</h3>
+              <p class="tutor-about-desc">I help you understand concepts step by step, show examples, and give you practice questions.</p>
+            </div>
+          </div>
+
+          <!-- Learning Context -->
+          <div class="card tutor-context-card" id="tutorContextCard">
+            <h3 class="tutor-context-title">&#128218; Your Learning Context</h3>
+            <div class="tutor-context-rows" id="tutorContextRows">
+              <!-- Rendered by JS -->
+            </div>
+            <a href="learning-path.html" class="btn btn-ghost btn-sm tutor-context-link">View Learning Path</a>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="card tutor-actions-card">
+            <h3 class="tutor-context-title">&#9889; Quick Actions</h3>
+            <div class="tutor-quick-actions">
+              <button class="btn btn-primary btn-sm" id="tutorExplainBtn">Explain this concept</button>
+              <button class="btn btn-secondary btn-sm" id="tutorPracticeBtn">Give me a practice question</button>
+              <button class="btn btn-ghost btn-sm tutor-clear-btn" id="tutorClearBtn">&#128465; Clear Chat</button>
+            </div>
+          </div>
+
+        </aside>
+
+        <!-- RIGHT: Chat -->
+        <section class="tutor-chat-card card" id="tutorChatCard">
+
+          <!-- Chat Header -->
+          <div class="tutor-chat-header">
+            <div class="tutor-chat-avatar">AI</div>
+            <div class="tutor-chat-status">
+              <span class="tutor-chat-name">AI Assistant Tutor</span>
+              <span class="tutor-chat-online" id="tutorChatStatus">AI is typing...</span>
+            </div>
+            <button class="tutor-clear-icon" id="tutorClearIconBtn" aria-label="Clear chat">&#128465;</button>
+          </div>
+
+          <!-- Messages -->
+          <div class="tutor-messages" id="tutorMessages">
+            <!-- Empty state -->
+            <div class="tutor-empty" id="tutorEmpty">
+              <div class="tutor-empty-icon">&#128172;</div>
+              <h3>Ask me anything about your learning.</h3>
+              <p>Try one of the suggestions below, or type your own question.</p>
+            </div>
+          </div>
+
+          <!-- Suggestions -->
+          <div class="tutor-suggestions" id="tutorSuggestions">
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Input -->
+          <div class="tutor-input-area">
+            <textarea id="tutorInput" rows="1" placeholder="Type your question..." aria-label="Ask the AI tutor"></textarea>
+            <button class="tutor-send-btn" id="tutorSendBtn" aria-label="Send message">
+              <span class="tutor-send-icon">&#10148;</span>
+            </button>
+            <div class="tutor-input-hint">Enter to send &middot; Shift + Enter for a new line</div>
+          </div>
+
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- CLEAR CHAT CONFIRMATION MODAL -->
+  <div class="tutor-modal-backdrop" id="tutorConfirmModal" style="display:none;" aria-hidden="true">
+    <div class="tutor-modal" role="dialog" aria-modal="true" aria-labelledby="tutorModalTitle">
+      <h3 class="tutor-modal-title" id="tutorModalTitle">Clear chat history?</h3>
+      <p class="tutor-modal-text">This will permanently remove all messages in this conversation. This cannot be undone.</p>
+      <div class="tutor-modal-actions">
+        <button class="btn btn-ghost" id="tutorModalCancelBtn">Cancel</button>
+        <button class="btn btn-danger" id="tutorModalConfirmBtn">Clear Chat</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 AI-Learning System. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top" id="backToTop">&#8593;</div>
+
+  <!-- SCRIPTS -->
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/ai-tutor.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      LearnSphereTheme.init();
+      LearnSphereNav.init();
+
+      // Load data
+      Promise.all([
+        fetch('../data/courses.json').then(function (r) { return r.json(); }),
+        fetch('../data/lessons.json').then(function (r) { return r.json(); }),
+        fetch('../data/quizzes.json').then(function (r) { return r.json(); }),
+        fetch('../data/ai-tutor.json').then(function (r) { return r.json(); }),
+      ]).then(function (results) {
+        var courses = results[0];
+        var lessons = results[1];
+        var quizzes = results[2];
+        var tutorData = results[3];
+
+        LearnSphereAPI.initCourseData(courses, lessons);
+        LearnSphereAPI.initQuizData(quizzes);
+        LearnSphereAPI.initTutorData(tutorData);
+
+        LearnSphereTutor.init();
+      }).catch(function () {
+        LearnSphereTutor.showError();
+      });
+    });
+  </script>
+
+</body>
+</html>

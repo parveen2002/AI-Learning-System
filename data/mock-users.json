@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": "usr_001",
+      "name": "Priya Sharma",
+      "email": "priya@example.com",
+      "educationLevel": "Undergraduate",
+      "learningGoal": "Skill Development",
+      "preferredFormat": "Mixed",
+      "dailyGoal": "60 minutes"
+    },
+    {
+      "id": "usr_002",
+      "name": "Arjun Patel",
+      "email": "arjun@example.com",
+      "educationLevel": "Postgraduate",
+      "learningGoal": "Exam Preparation",
+      "preferredFormat": "Practice",
+      "dailyGoal": "45 minutes"
+    },
+    {
+      "id": "usr_003",
+      "name": "Sneha Reddy",
+      "email": "sneha@example.com",
+      "educationLevel": "School",
+      "learningGoal": "Competitive Exams",
+      "preferredFormat": "Video",
+      "dailyGoal": "30 minutes"
+    }
+  ]
+}

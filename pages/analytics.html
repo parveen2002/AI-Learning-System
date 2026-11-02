@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student analytics and progress dashboard on AI-Learning System. Track course progress, quiz performance, topics mastered and revision statistics.">
+  <title>Learning Analytics - AI-Learning System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+  <!-- ====== NAVBAR ====== -->
+  <!-- ====== NAVBAR ====== -->
+<nav class="navbar" id="navbar" aria-label="Primary">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">
+      <img src="../assets/images/logo.png" alt="AI-Learning System logo" class="brand-logo">
+      <span>AI-<span class="brand-text-accent">Learning</span> System</span>
+    </a>
+
+    <div class="navbar-menu">
+      <a href="../index.html" class="navbar-link">Home</a>
+      <a href="courses.html" class="navbar-link">Courses</a>
+      <a href="learning-path.html" class="navbar-link">Learning Path</a>
+      <a href="ai-tutor.html" class="navbar-link">AI Tutor</a>
+      <a href="dashboard.html" class="navbar-link">Dashboard</a>
+    </div>
+
+    <div class="navbar-actions">
+      <button type="button" class="navbar-icon-btn nav-search-btn" data-search-url="courses.html" aria-label="Search courses">&#128269;</button>
+      <button type="button" class="navbar-icon-btn theme-toggle" aria-label="Toggle theme">&#9790;</button>
+
+      <div class="navbar-auth" id="authGuest">
+        <a href="login.html" class="btn btn-ghost btn-sm">Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+      </div>
+
+      <div class="navbar-auth navbar-user-menu" id="authUser" style="display:none;">
+        <button type="button" class="navbar-user-btn" aria-haspopup="true" aria-expanded="false">
+          <span class="navbar-user-avatar">P</span>
+          <span class="navbar-user-name">User</span>
+          <span class="navbar-user-caret" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="navbar-dropdown" role="menu">
+          <a href="profile.html" class="navbar-dropdown-item" role="menuitem">&#128100; My Profile</a>
+          <a href="achievements.html" class="navbar-dropdown-item" role="menuitem">&#127942; Achievements</a>
+          <a href="bookmarks.html" class="navbar-dropdown-item" role="menuitem">&#128278; Bookmarks</a>
+          <a href="study-planner.html" class="navbar-dropdown-item" role="menuitem">&#128197; Study Planner</a>
+          <a href="analytics.html" class="navbar-dropdown-item" role="menuitem">&#128200; Analytics</a>
+          <a href="settings.html" class="navbar-dropdown-item" role="menuitem">&#9881; Settings</a>
+          <div class="navbar-dropdown-divider" role="separator"></div>
+          <div class="navbar-dropdown-item navbar-dropdown-logout" id="navLogoutBtn" role="menuitem" tabindex="0">&#10140; Logout</div>
+        </div>
+      </div>
+
+      <button type="button" class="navbar-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ====== MOBILE MENU ====== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" class="mobile-menu-link">Home</a>
+  <a href="courses.html" class="mobile-menu-link">Courses</a>
+  <a href="learning-path.html" class="mobile-menu-link">Learning Path</a>
+  <a href="ai-tutor.html" class="mobile-menu-link">AI Tutor</a>
+  <a href="dashboard.html" class="mobile-menu-link">Dashboard</a>
+
+  <div class="mobile-menu-divider">Learning Tools</div>
+  <a href="flashcards.html" class="mobile-menu-link">Flashcards</a>
+  <a href="revision.html" class="mobile-menu-link">Revision</a>
+
+  <div class="mobile-menu-divider">More</div>
+  <a href="achievements.html" class="mobile-menu-link">Achievements</a>
+  <a href="bookmarks.html" class="mobile-menu-link">Bookmarks</a>
+  <a href="study-planner.html" class="mobile-menu-link">Study Planner</a>
+  <a href="analytics.html" class="mobile-menu-link">Analytics</a>
+  <a href="settings.html" class="mobile-menu-link">Settings</a>
+
+  <div class="mobile-menu-actions" id="mobileAuthGuest">
+    <a href="login.html" class="btn btn-secondary btn-block">Login</a>
+    <a href="signup.html" class="btn btn-primary btn-block">Sign Up</a>
+  </div>
+
+  <div class="mobile-menu-actions" id="mobileAuthUser" style="display:none;">
+    <p class="mobile-menu-login-name">Logged in as <strong class="mobile-user-name">User</strong></p>
+    <button type="button" class="btn btn-secondary btn-block" id="mobileLogoutBtn">Logout</button>
+  </div>
+</div>
+
+  <!-- ====== ANALYTICS CONTENT ====== -->
+  <main class="analytics-main">
+
+    <!-- Page Header -->
+    <section class="analytics-header">
+      <div class="container">
+        <h1 class="analytics-title">Learning Analytics</h1>
+        <p class="analytics-subtitle">Understand your learning progress, performance and improvement areas.</p>
+        <p class="analytics-note">Analytics are rule-based estimates computed from your saved learning activity in this browser. They are not AI-generated.</p>
+      </div>
+    </section>
+
+    <!-- KPI Summary Cards -->
+    <section class="analytics-section" aria-label="Summary statistics">
+      <div class="container">
+        <div class="an-kpi-grid" id="analyticsKpis"></div>
+      </div>
+    </section>
+
+    <!-- Main Analytics Grid -->
+    <section class="analytics-section">
+      <div class="container">
+        <div class="an-grid">
+
+          <!-- Overall Learning Progress -->
+          <article class="an-card">
+            <h2 class="an-card-title">Overall Learning Progress</h2>
+            <div class="an-card-body" id="analyticsOverall"></div>
+          </article>
+
+          <!-- Course Progress -->
+          <article class="an-card">
+            <h2 class="an-card-title">Course Progress</h2>
+            <div class="an-card-body" id="analyticsCourses"></div>
+          </article>
+
+          <!-- Quiz Performance -->
+          <article class="an-card">
+            <h2 class="an-card-title">Quiz Performance</h2>
+            <div class="an-card-body" id="analyticsQuiz"></div>
+          </article>
+
+          <!-- Topic Mastery -->
+          <article class="an-card">
+            <h2 class="an-card-title">Topic Mastery</h2>
+            <div class="an-card-body" id="analyticsTopics"></div>
+          </article>
+
+          <!-- Your Strengths -->
+          <article class="an-card">
+            <h2 class="an-card-title">Your Strengths</h2>
+            <div class="an-card-body" id="analyticsStrong"></div>
+          </article>
+
+          <!-- Needs More Practice -->
+          <article class="an-card">
+            <h2 class="an-card-title">Needs More Practice</h2>
+            <div class="an-card-body" id="analyticsWeak"></div>
+          </article>
+
+          <!-- Learning Streak -->
+          <article class="an-card">
+            <h2 class="an-card-title">Learning Streak</h2>
+            <div class="an-card-body" id="analyticsStreak"></div>
+          </article>
+
+          <!-- Revision Statistics -->
+          <article class="an-card">
+            <h2 class="an-card-title">Revision Statistics</h2>
+            <div class="an-card-body" id="analyticsRevision"></div>
+          </article>
+
+          <!-- Learning Improvement -->
+          <article class="an-card">
+            <h2 class="an-card-title">Learning Improvement</h2>
+            <div class="an-card-body" id="analyticsImprovement"></div>
+          </article>
+
+          <!-- Your Learning Insight -->
+          <article class="an-card">
+            <h2 class="an-card-title">Your Learning Insight</h2>
+            <div class="an-card-body" id="analyticsInsight"></div>
+          </article>
+
+          <!-- Recent Learning Activity -->
+          <article class="an-card an-card-wide">
+            <h2 class="an-card-title">Recent Learning Activity</h2>
+            <div class="an-card-body" id="analyticsActivity"></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;padding-top:0;">
+        <p>&copy; 2026 AI-Learning System. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
+
+  <!-- Scripts -->
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/analytics.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      LearnSphereTheme.init();
+      LearnSphereNav.init();
+
+      fetch('../data/courses.json')
+        .then(function (r) { return r.json(); })
+        .then(function (courses) {
+          fetch('../data/quizzes.json')
+            .then(function (r) { return r.json(); })
+            .then(function (quizzes) {
+              fetch('../data/flashcards.json')
+                .then(function (r) { return r.json(); })
+                .then(function (flashcards) {
+                  LearnSphereAPI.initCourseData(courses, null);
+                  LearnSphereAPI.initQuizData(quizzes);
+                  LearnSphereAPI.initFlashcardData(flashcards);
+                  LearnSphereAnalytics.init();
+                })
+                .catch(function () {
+                  LearnSphereAPI.initCourseData(courses, null);
+                  LearnSphereAPI.initQuizData(quizzes);
+                  LearnSphereAnalytics.init();
+                });
+            })
+            .catch(function () {
+              LearnSphereAPI.initCourseData(courses, null);
+              LearnSphereAnalytics.init();
+            });
+        })
+        .catch(function () {
+          var main = document.querySelector('.analytics-main');
+          if (main) {
+            main.innerHTML =
+              '<div class="an-fatal">' +
+              '  <div class="an-fatal-icon">&#9888;</div>' +
+              '  <h3>Unable to load analytics</h3>' +
+              '  <p>Please try again later.</p>' +
+              '  <a href="../index.html" class="btn btn-primary btn-sm">Go Home</a>' +
+              '</div>';
+          }
+        });
+
+    });
+  </script>
+
+</body>
+</html>

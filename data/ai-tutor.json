@@ -1,0 +1,219 @@
+{
+  "greeting": "Hi! I'm your AI Tutor. What would you like to learn today?",
+  "greetingWithContext": "You're currently studying {course}. Ask me anything about this topic!",
+  "greetingWithLesson": "You're currently studying \"{lesson}\" in {course}. Ask me anything about this topic.",
+  "emptyState": "Ask me anything about your learning.",
+  "typingStatus": "AI is typing...",
+  "genericResponse": "I can help you understand this concept step by step. Try asking about a specific topic, example, or problem.\n\nYou can ask me about JavaScript, Python, HTML, CSS, SQL, databases, algorithms, loops, variables, functions, arrays, and more.",
+  "suggestions": [
+    "What is JavaScript?",
+    "Explain arrays",
+    "What is a database?",
+    "Explain loops",
+    "How does SQL work?",
+    "Give me a simple example"
+  ],
+  "topics": {
+    "javascript": {
+      "keywords": ["javascript", "js", "ecmascript", "web dev", "browser"],
+      "title": "JavaScript",
+      "intro": "JavaScript is a programming language that makes web pages interactive. It runs directly in the browser and is one of the three core web technologies.",
+      "points": [
+        "Uses variables to store data and functions to group reusable logic",
+        "Can change the page content and styles while the page is open (DOM manipulation)",
+        "Handles user events like clicks, key presses, and form submissions",
+        "Runs on almost every browser without any special setup"
+      ],
+      "example": "// A simple JavaScript example\nlet name = \"Alex\";\nfunction greet(user) {\n  return \"Hello, \" + user + \"!\";\n}\nconsole.log(greet(name)); // Hello, Alex!"
+    },
+    "function": {
+      "keywords": ["function", "method", "procedure", "reusable"],
+      "title": "Functions",
+      "intro": "A function is a reusable block of code that performs a specific task. You define it once, then call it whenever you need that behavior.",
+      "points": [
+        "Takes optional inputs called parameters",
+        "Can return a result using the return keyword",
+        "Helps avoid repeating the same code",
+        "Makes programs easier to read and test"
+      ],
+      "example": "function add(a, b) {\n  return a + b;\n}\n\nlet result = add(3, 5);\nconsole.log(result); // 8"
+    },
+    "array": {
+      "keywords": ["array", "list", "collection"],
+      "title": "Arrays",
+      "intro": "An array is an ordered collection of values. It lets you store multiple items in a single variable and access them by index.",
+      "points": [
+        "Arrays in JavaScript start at index 0",
+        "You can add, remove, and search for elements",
+        "Loops are often used to process every element",
+        "Methods like push, pop, map, and filter make arrays powerful"
+      ],
+      "example": "let fruits = [\"apple\", \"banana\", \"cherry\"];\nconsole.log(fruits[0]);      // apple\nfruits.push(\"date\");          // add to the end\nconsole.log(fruits.length);   // 4"
+    },
+    "html": {
+      "keywords": ["html", "hypertext", "markup", "tag", "element"],
+      "title": "HTML",
+      "intro": "HTML (HyperText Markup Language) is the backbone of every web page. It uses tags to structure content like headings, paragraphs, links, and images.",
+      "points": [
+        "Uses elements such as <h1>, <p>, <a>, and <img>",
+        "Nesting elements creates a document structure called the DOM",
+        "Attributes like href and src add extra information to elements",
+        "HTML describes content, while CSS controls its appearance"
+      ],
+      "example": "<h1>My Page</h1>\n<p>This is a <strong>paragraph</strong>.</p>\n<a href=\"https://example.com\">Visit a site</a>"
+    },
+    "css": {
+      "keywords": ["css", "style", "styling", "layout", "flexbox", "grid"],
+      "title": "CSS",
+      "intro": "CSS (Cascading Style Sheets) controls how HTML content looks. It handles colors, fonts, spacing, layout, and responsive behavior.",
+      "points": [
+        "Selectors target elements, IDs, classes, or attributes",
+        "The box model controls margins, borders, and padding",
+        "Flexbox and Grid create flexible layouts",
+        "Media queries make pages responsive on different screens"
+      ],
+      "example": "h1 {\n  color: #2563EB;\n  font-size: 2rem;\n}\n\n.card {\n  display: flex;\n  gap: 1rem;\n  padding: 1rem;\n  border-radius: 12px;\n}"
+    },
+    "python": {
+      "keywords": ["python"],
+      "title": "Python",
+      "intro": "Python is a beginner-friendly programming language known for its clear, readable syntax. It is used for web development, data science, automation, and more.",
+      "points": [
+        "Uses indentation instead of braces to define blocks",
+        "Strong for working with data, files, and automation",
+        "Huge ecosystem of libraries for almost any task",
+        "Great choice for a first programming language"
+      ],
+      "example": "# A simple Python example\ndef greet(name):\n    return \"Hello, \" + name + \"!\"\n\nname = \"Alex\"\nprint(greet(name))  # Hello, Alex!"
+    },
+    "database": {
+      "keywords": ["database", "db", "mysql", "data store", "storage"],
+      "title": "Databases",
+      "intro": "A database is an organized collection of data that can be stored, queried, and managed efficiently. Relational databases store data in tables with rows and columns.",
+      "points": [
+        "Tables relate to each other using keys",
+        "SQL is the standard language for querying relational databases",
+        "Normalization reduces redundancy and improves consistency",
+        "Indexes speed up lookups on large tables"
+      ],
+      "example": "A simple student table:\n\nstudents\n-------\nid | name  | level\n1  | Alex  | Beginner\n2  | Mia   | Intermediate"
+    },
+    "sql": {
+      "keywords": ["sql", "select", "query", "join", "database"],
+      "title": "SQL",
+      "intro": "SQL (Structured Query Language) is how you talk to relational databases. You use it to create, read, update, and delete data.",
+      "points": [
+        "SELECT reads data, INSERT adds rows, UPDATE changes them, DELETE removes them",
+        "WHERE filters results, ORDER BY sorts them",
+        "JOIN combines data from multiple tables",
+        "GROUP BY aggregates data, such as counting or averaging"
+      ],
+      "example": "SELECT name, level\nFROM students\nWHERE level = 'Beginner'\nORDER BY name;"
+    },
+    "algorithm": {
+      "keywords": ["algorithm", "complexity", "sorting", "searching", "binary search", "big o"],
+      "title": "Algorithms",
+      "intro": "An algorithm is a step-by-step procedure for solving a problem. Good algorithms are not only correct, but also efficient.",
+      "points": [
+        "Sorting algorithms: Bubble, Merge, and Quick Sort",
+        "Searching: Linear Search and Binary Search",
+        "Big-O notation describes how runtime grows with input size",
+        "Choosing the right data structure makes algorithms faster"
+      ],
+      "example": "Binary Search (list must be sorted):\n\n1. Compare the middle element.\n2. If it matches, stop.\n3. If smaller, search the left half.\n4. If larger, search the right half.\n5. Repeat until found or the search space is empty."
+    },
+    "loop": {
+      "keywords": ["loop", "iteration", "for", "while", "repeat", "iterate"],
+      "title": "Loops",
+      "intro": "A loop repeats a block of code a certain number of times or while a condition is true. Loops help you avoid writing the same code over and over.",
+      "points": [
+        "for loops repeat a known number of times",
+        "while loops repeat as long as a condition is true",
+        "break exits a loop early, continue skips to the next iteration",
+        "Loops are ideal for processing arrays and collections"
+      ],
+      "example": "for (let i = 1; i <= 5; i++) {\n  console.log(\"Step \" + i);\n}\n\nlet count = 0;\nwhile (count < 3) {\n  console.log(\"Running...\");\n  count++;\n}"
+    },
+    "variable": {
+      "keywords": ["variable", "var", "let", "const", "declare", "data type"],
+      "title": "Variables",
+      "intro": "A variable is a named container that stores a value, such as a number, text, or boolean. Programs use variables to remember and reuse data.",
+      "points": [
+        "let creates a variable that can be changed",
+        "const creates a value that cannot be reassigned",
+        "Common types: number, string, boolean, and null",
+        "Names are case-sensitive and should be descriptive"
+      ],
+      "example": "let score = 10;        // number\nconst name = \"Alex\";  // string\nlet finished = false; // boolean\n\nscore = score + 5;   // score is now 15"
+    },
+    "quiz": {
+      "keywords": ["quiz", "test", "assessment", "exam", "practice question"],
+      "title": "Quizzes",
+      "intro": "Taking quizzes is a great way to check what you know and find weak topics to review.",
+      "points": [
+        "Review the topics you scored lowest on",
+        "Use your quiz results to guide your study plan",
+        "Retry quizzes after reviewing to improve your score",
+        "Visit the Learning Path page for personalized recommendations"
+      ],
+      "example": ""
+    }
+  },
+  "practiceQuestions": [
+    {
+      "topic": "javascript",
+      "question": "What will this JavaScript code output?\n\nlet x = 5;\nlet y = x + 2;\nconsole.log(y);",
+      "answer": "It outputs 7."
+    },
+    {
+      "topic": "function",
+      "question": "What will this JavaScript code output?\n\nfunction square(n) {\n  return n * n;\n}\nconsole.log(square(4));",
+      "answer": "It outputs 16."
+    },
+    {
+      "topic": "array",
+      "question": "What will this JavaScript code output?\n\nlet items = [\"a\", \"b\", \"c\"];\nconsole.log(items[1]);",
+      "answer": "It outputs \"b\" (arrays are zero-indexed)."
+    },
+    {
+      "topic": "loop",
+      "question": "How many times will \"Hello\" be printed by this loop?\n\nfor (let i = 0; i < 3; i++) {\n  console.log(\"Hello\");\n}",
+      "answer": "3 times."
+    },
+    {
+      "topic": "variable",
+      "question": "Which keyword, let or const, would you use for a value that should never be reassigned?",
+      "answer": "const."
+    },
+    {
+      "topic": "sql",
+      "question": "Write a SQL query to get the names of all students whose level is 'Beginner'.",
+      "answer": "SELECT name FROM students WHERE level = 'Beginner';"
+    },
+    {
+      "topic": "css",
+      "question": "Which CSS property would you use to make a container display items in a row that can wrap?",
+      "answer": "display: flex; combined with flex-wrap: wrap;"
+    },
+    {
+      "topic": "html",
+      "question": "Which HTML element is used to create a clickable link?",
+      "answer": "The <a> (anchor) element, with an href attribute."
+    },
+    {
+      "topic": "python",
+      "question": "What does the following Python code print?\n\nfor i in range(2):\n    print(i)",
+      "answer": "It prints 0 and 1."
+    },
+    {
+      "topic": "algorithm",
+      "question": "Which search algorithm requires the list to be sorted in advance?",
+      "answer": "Binary Search."
+    }
+  ],
+  "explainLessonTemplates": {
+    "generic": "Let's understand \"{lessonTitle}\" step by step:\n\n1. Start with the core idea behind \"{lessonTitle}\".\n2. Look at a simple example so the concept is clear.\n3. Connect it to a realistic problem you can practice.\n4. Review key terms and try explaining it in your own words.\n\nTell me the part you find confusing and I'll break it down further.",
+    "completion": "Let's review \"{lessonTitle}\" together:\n\n1. Recall the main ideas and key terms from the lesson.\n2. Try one example problem without looking at the solution.\n3. Check your answer, then explain the steps out loud.\n4. If any step feels unclear, ask me and we'll go deeper.\n\nYou can also take the related quiz to test your understanding."
+  },
+  "quizPrompt": "You can practice with a quiz to check your understanding of {topic}.\n\nOpen the Learning Path page or your course syllabus, find the quiz for this topic, and give it a try. After you finish, I can help you review any questions you got wrong."
+}

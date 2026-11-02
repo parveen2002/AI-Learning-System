@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personalized Learning Path - AI-Learning System">
+  <title>Personalized Learning Path - AI-Learning System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <!-- ====== NAVBAR ====== -->
+<nav class="navbar" id="navbar" aria-label="Primary">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">
+      <img src="../assets/images/logo.png" alt="AI-Learning System logo" class="brand-logo">
+      <span>AI-<span class="brand-text-accent">Learning</span> System</span>
+    </a>
+
+    <div class="navbar-menu">
+      <a href="../index.html" class="navbar-link">Home</a>
+      <a href="courses.html" class="navbar-link">Courses</a>
+      <a href="learning-path.html" class="navbar-link active">Learning Path</a>
+      <a href="ai-tutor.html" class="navbar-link">AI Tutor</a>
+      <a href="dashboard.html" class="navbar-link">Dashboard</a>
+    </div>
+
+    <div class="navbar-actions">
+      <button type="button" class="navbar-icon-btn nav-search-btn" data-search-url="courses.html" aria-label="Search courses">&#128269;</button>
+      <button type="button" class="navbar-icon-btn theme-toggle" aria-label="Toggle theme">&#9790;</button>
+
+      <div class="navbar-auth" id="authGuest">
+        <a href="login.html" class="btn btn-ghost btn-sm">Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+      </div>
+
+      <div class="navbar-auth navbar-user-menu" id="authUser" style="display:none;">
+        <button type="button" class="navbar-user-btn" aria-haspopup="true" aria-expanded="false">
+          <span class="navbar-user-avatar">P</span>
+          <span class="navbar-user-name">User</span>
+          <span class="navbar-user-caret" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="navbar-dropdown" role="menu">
+          <a href="profile.html" class="navbar-dropdown-item" role="menuitem">&#128100; My Profile</a>
+          <a href="achievements.html" class="navbar-dropdown-item" role="menuitem">&#127942; Achievements</a>
+          <a href="bookmarks.html" class="navbar-dropdown-item" role="menuitem">&#128278; Bookmarks</a>
+          <a href="study-planner.html" class="navbar-dropdown-item" role="menuitem">&#128197; Study Planner</a>
+          <a href="analytics.html" class="navbar-dropdown-item" role="menuitem">&#128200; Analytics</a>
+          <a href="settings.html" class="navbar-dropdown-item" role="menuitem">&#9881; Settings</a>
+          <div class="navbar-dropdown-divider" role="separator"></div>
+          <div class="navbar-dropdown-item navbar-dropdown-logout" id="navLogoutBtn" role="menuitem" tabindex="0">&#10140; Logout</div>
+        </div>
+      </div>
+
+      <button type="button" class="navbar-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ====== MOBILE MENU ====== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" class="mobile-menu-link">Home</a>
+  <a href="courses.html" class="mobile-menu-link">Courses</a>
+  <a href="learning-path.html" class="mobile-menu-link active">Learning Path</a>
+  <a href="ai-tutor.html" class="mobile-menu-link">AI Tutor</a>
+  <a href="dashboard.html" class="mobile-menu-link">Dashboard</a>
+
+  <div class="mobile-menu-divider">Learning Tools</div>
+  <a href="flashcards.html" class="mobile-menu-link">Flashcards</a>
+  <a href="revision.html" class="mobile-menu-link">Revision</a>
+
+  <div class="mobile-menu-divider">More</div>
+  <a href="achievements.html" class="mobile-menu-link">Achievements</a>
+  <a href="bookmarks.html" class="mobile-menu-link">Bookmarks</a>
+  <a href="study-planner.html" class="mobile-menu-link">Study Planner</a>
+  <a href="analytics.html" class="mobile-menu-link">Analytics</a>
+  <a href="settings.html" class="mobile-menu-link">Settings</a>
+
+  <div class="mobile-menu-actions" id="mobileAuthGuest">
+    <a href="login.html" class="btn btn-secondary btn-block">Login</a>
+    <a href="signup.html" class="btn btn-primary btn-block">Sign Up</a>
+  </div>
+
+  <div class="mobile-menu-actions" id="mobileAuthUser" style="display:none;">
+    <p class="mobile-menu-login-name">Logged in as <strong class="mobile-user-name">User</strong></p>
+    <button type="button" class="btn btn-secondary btn-block" id="mobileLogoutBtn">Logout</button>
+  </div>
+</div>
+
+  <!-- MAIN CONTENT -->
+  <main class="lp-main">
+    <div class="container">
+
+      <!-- Page Header -->
+      <section class="lp-header">
+        <h1 class="lp-title">Personalized Learning Path</h1>
+        <p class="lp-subtitle" id="lpSubtitle">Your adaptive learning journey powered by AI-Learning System</p>
+      </section>
+
+      <!-- Error State -->
+      <div id="lpError" class="lp-error" style="display:none;"></div>
+
+      <!-- Empty State -->
+      <div id="lpEmpty" class="lp-empty" style="display:none;">
+        <div class="lp-empty-icon">&#128218;</div>
+        <h2>No Learning Activity Yet</h2>
+        <p>Start learning to build your personalized path. Your progress, quiz results, and recommendations will appear here.</p>
+        <a href="courses.html" class="btn btn-primary btn-lg">Browse Courses</a>
+      </div>
+
+      <!-- Main Content (hidden until loaded) -->
+      <div id="lpContent" style="display:none;">
+
+        <!-- Course Selector -->
+        <section class="lp-course-selector">
+          <label class="lp-course-label" for="lpCourseSelect">Personalized Path for:</label>
+          <select id="lpCourseSelect" class="lp-course-select">
+            <!-- Populated by JS -->
+          </select>
+          <a href="ai-tutor.html" class="btn btn-ghost btn-sm lp-ask-tutor-btn" id="lpAskTutorBtn">Ask AI Tutor</a>
+        </section>
+
+        <!-- Performance Summary -->
+        <section class="lp-stats-grid" id="lpStatsGrid">
+          <div class="lp-stat-card">
+            <div class="lp-stat-icon lp-stat-progress">&#128200;</div>
+            <div class="lp-stat-value" id="lpStatProgress">0%</div>
+            <div class="lp-stat-label">Overall Progress</div>
+          </div>
+          <div class="lp-stat-card">
+            <div class="lp-stat-icon lp-stat-quiz">&#128221;</div>
+            <div class="lp-stat-value" id="lpStatQuiz">--</div>
+            <div class="lp-stat-label">Latest Quiz</div>
+          </div>
+          <div class="lp-stat-card">
+            <div class="lp-stat-icon lp-stat-best">&#11088;</div>
+            <div class="lp-stat-value" id="lpStatBest">--</div>
+            <div class="lp-stat-label">Best Score</div>
+          </div>
+          <div class="lp-stat-card">
+            <div class="lp-stat-icon lp-stat-mastery">&#127942;</div>
+            <div class="lp-stat-value" id="lpStatMastery">--</div>
+            <div class="lp-stat-label">Mastery Level</div>
+          </div>
+          <div class="lp-stat-card">
+            <div class="lp-stat-icon lp-stat-lessons">&#128214;</div>
+            <div class="lp-stat-value" id="lpStatLessons">0 / 0</div>
+            <div class="lp-stat-label">Lessons Completed</div>
+          </div>
+        </section>
+
+        <!-- Personalized Message -->
+        <section class="lp-message-card card" id="lpMessageCard">
+          <div class="lp-message-icon" id="lpMessageIcon">&#128161;</div>
+          <div class="lp-message-content">
+            <h3 class="lp-message-title" id="lpMessageTitle">Welcome</h3>
+            <p class="lp-message-text" id="lpMessageText"></p>
+          </div>
+        </section>
+
+        <!-- Recommended Next Step -->
+        <section class="lp-recommendation card" id="lpRecommendation">
+          <div class="lp-recommendation-header">
+            <span class="lp-recommendation-badge" id="lpRecBadge">Recommended</span>
+            <h2 class="lp-recommendation-title" id="lpRecTitle">Next Step</h2>
+          </div>
+          <p class="lp-recommendation-text" id="lpRecText"></p>
+          <p class="lp-recommendation-reason" id="lpRecReason"></p>
+          <div class="lp-recommendation-actions">
+            <a href="#" class="btn btn-primary btn-lg" id="lpRecActionBtn">Start</a>
+            <a href="#" class="btn btn-ghost" id="lpRecSecondaryBtn" style="display:none;">View Course</a>
+          </div>
+        </section>
+
+        <!-- Two Column Layout: Timeline + Side -->
+        <div class="lp-layout">
+
+          <!-- Left: Timeline -->
+          <section class="lp-timeline-section">
+            <h2 class="lp-section-title">Learning Path Timeline</h2>
+            <div class="lp-timeline" id="lpTimeline">
+              <!-- Rendered by JS -->
+            </div>
+          </section>
+
+<!-- Right: Side Panels -->
+          <aside class="lp-side">
+
+            <!-- Flashcard Review -->
+            <div class="lp-side-card card" id="lpRevisionCard">
+              <h3 class="lp-side-title">&#127912; Flashcard Review</h3>
+              <div class="lp-side-list" id="lpRevision">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Weak Topics -->
+            <div class="lp-side-card card" id="lpWeakCard">
+              <h3 class="lp-side-title lp-weak-title">&#9888; Weak Topics</h3>
+              <div class="lp-side-list" id="lpWeakTopics">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Strong Topics -->
+            <div class="lp-side-card card" id="lpStrongCard">
+              <h3 class="lp-side-title lp-strong-title">&#10003; Strong Topics</h3>
+              <div class="lp-side-list" id="lpStrongTopics">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Difficulty Recommendation -->
+            <div class="lp-side-card lp-difficulty-card card" id="lpDifficultyCard">
+              <h3 class="lp-side-title lp-diff-title">&#127919; Difficulty Level</h3>
+              <div class="lp-difficulty-info" id="lpDifficulty">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+          </aside>
+        </div>
+
+        <!-- Action Buttons -->
+<section class="lp-actions">
+          <a href="courses.html" class="btn btn-secondary">View All Courses</a>
+          <a href="analytics.html" class="btn btn-ghost">&#128200; View Analytics</a>
+          <a href="dashboard.html" class="btn btn-ghost">Back to Dashboard</a>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 AI-Learning System. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="back-to-top" id="backToTop">&#8593;</div>
+
+  <!-- SCRIPTS -->
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/learning-path.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      LearnSphereTheme.init();
+      LearnSphereNav.init();
+
+// Load data
+      Promise.all([
+        fetch('../data/courses.json').then(function (r) { return r.json(); }),
+        fetch('../data/lessons.json').then(function (r) { return r.json(); }),
+        fetch('../data/quizzes.json').then(function (r) { return r.json(); }),
+        fetch('../data/recommendations.json').then(function (r) { return r.json(); }),
+        fetch('../data/flashcards.json').then(function (r) { return r.json(); }).catch(function () {
+          return [];
+        }),
+      ]).then(function (results) {
+        var courses = results[0];
+        var lessons = results[1];
+        var quizzes = results[2];
+        var recommendations = results[3];
+        var flashcards = results[4] || [];
+
+        LearnSphereAPI.initCourseData(courses, lessons);
+        LearnSphereAPI.initQuizData(quizzes);
+        LearnSphereAPI.initFlashcardData(flashcards);
+
+        LearnSphereLearningPath.init(courses, recommendations);
+      }).catch(function () {
+        LearnSphereLearningPath.showError();
+      });
+});
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI-Learning System - Learning That Adapts To You. Personalized AI-powered education platform.">
+  <title>AI-Learning System - Learning That Adapts To You</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<!-- ====== NAVBAR ====== -->
+<nav class="navbar" id="navbar" aria-label="Primary">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-brand">
+      <img src="assets/images/logo.png" alt="AI-Learning System logo" class="brand-logo">
+      <span>AI-<span class="brand-text-accent">Learning</span> System</span>
+    </a>
+
+    <div class="navbar-menu">
+      <a href="index.html" class="navbar-link active">Home</a>
+      <a href="pages/courses.html" class="navbar-link">Courses</a>
+      <a href="pages/learning-path.html" class="navbar-link">Learning Path</a>
+      <a href="pages/ai-tutor.html" class="navbar-link">AI Tutor</a>
+      <a href="pages/dashboard.html" class="navbar-link">Dashboard</a>
+    </div>
+
+    <div class="navbar-actions">
+      <button type="button" class="navbar-icon-btn nav-search-btn" data-search-url="pages/courses.html" aria-label="Search courses">&#128269;</button>
+      <button type="button" class="navbar-icon-btn theme-toggle" aria-label="Toggle theme">&#9790;</button>
+
+      <div class="navbar-auth" id="authGuest">
+        <a href="pages/login.html" class="btn btn-ghost btn-sm">Login</a>
+        <a href="pages/signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+      </div>
+
+      <div class="navbar-auth navbar-user-menu" id="authUser" style="display:none;">
+        <button type="button" class="navbar-user-btn" aria-haspopup="true" aria-expanded="false">
+          <span class="navbar-user-avatar">P</span>
+          <span class="navbar-user-name">User</span>
+          <span class="navbar-user-caret" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="navbar-dropdown" role="menu">
+          <a href="pages/profile.html" class="navbar-dropdown-item" role="menuitem">&#128100; My Profile</a>
+          <a href="pages/achievements.html" class="navbar-dropdown-item" role="menuitem">&#127942; Achievements</a>
+          <a href="pages/bookmarks.html" class="navbar-dropdown-item" role="menuitem">&#128278; Bookmarks</a>
+          <a href="pages/study-planner.html" class="navbar-dropdown-item" role="menuitem">&#128197; Study Planner</a>
+          <a href="pages/analytics.html" class="navbar-dropdown-item" role="menuitem">&#128200; Analytics</a>
+          <a href="pages/settings.html" class="navbar-dropdown-item" role="menuitem">&#9881; Settings</a>
+          <div class="navbar-dropdown-divider" role="separator"></div>
+          <div class="navbar-dropdown-item navbar-dropdown-logout" id="navLogoutBtn" role="menuitem" tabindex="0">&#10140; Logout</div>
+        </div>
+      </div>
+
+      <button type="button" class="navbar-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ====== MOBILE MENU ====== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" class="mobile-menu-link active">Home</a>
+  <a href="pages/courses.html" class="mobile-menu-link">Courses</a>
+  <a href="pages/learning-path.html" class="mobile-menu-link">Learning Path</a>
+  <a href="pages/ai-tutor.html" class="mobile-menu-link">AI Tutor</a>
+  <a href="pages/dashboard.html" class="mobile-menu-link">Dashboard</a>
+
+  <div class="mobile-menu-divider">Learning Tools</div>
+  <a href="pages/flashcards.html" class="mobile-menu-link">Flashcards</a>
+  <a href="pages/revision.html" class="mobile-menu-link">Revision</a>
+
+  <div class="mobile-menu-divider">More</div>
+  <a href="pages/achievements.html" class="mobile-menu-link">Achievements</a>
+  <a href="pages/bookmarks.html" class="mobile-menu-link">Bookmarks</a>
+  <a href="pages/study-planner.html" class="mobile-menu-link">Study Planner</a>
+  <a href="pages/analytics.html" class="mobile-menu-link">Analytics</a>
+  <a href="pages/settings.html" class="mobile-menu-link">Settings</a>
+
+  <div class="mobile-menu-actions" id="mobileAuthGuest">
+    <a href="pages/login.html" class="btn btn-secondary btn-block">Login</a>
+    <a href="pages/signup.html" class="btn btn-primary btn-block">Sign Up</a>
+  </div>
+
+  <div class="mobile-menu-actions" id="mobileAuthUser" style="display:none;">
+    <p class="mobile-menu-login-name">Logged in as <strong class="mobile-user-name">User</strong></p>
+    <button type="button" class="btn btn-secondary btn-block" id="mobileLogoutBtn">Logout</button>
+  </div>
+</div>
+
+  <!-- ====== HERO SECTION ====== -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content animate-fade-in-up">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          AI-Powered Learning Platform
+        </div>
+
+        <h1 class="hero-title">
+          Learning That<br>
+          <span class="text-gradient">Adapts To You</span>
+        </h1>
+
+        <p class="hero-description">
+           AI Learning System creates a personalized learning experience that adapts to your knowledge, learning speed, strengths and weaknesses.
+        </p>
+
+        <div class="hero-actions">
+          <a href="pages/signup.html" class="btn btn-primary btn-lg">Start Learning</a>
+          <a href="pages/courses.html" class="btn btn-secondary btn-lg">Explore Courses</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-value" data-count="12500" data-suffix="+">0</div>
+            <div class="hero-stat-label">Active Students</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value" data-count="85" data-suffix="+">0</div>
+            <div class="hero-stat-label">Courses</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-value" data-count="320" data-suffix="+">0</div>
+            <div class="hero-stat-label">Topics</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual: Dashboard Mockup -->
+      <div class="hero-visual animate-fade-in-right delay-300">
+        <div class="hero-mockup">
+          <!-- Floating AI Card -->
+          <div class="mockup-float-card card-ai">
+            <div class="ai-icon">&#9733;</div>
+            <div>
+              <div class="ai-text">AI Recommends</div>
+              <div class="ai-sub">Next: Dynamic Programming</div>
+            </div>
+          </div>
+         
+
+          <!-- Floating Score Card --> 
+          <div class="mockup-float-card card-score">
+            <div class="score-circle">
+              <div class="score-circle-inner">84%</div>
+            </div>
+            <div style="margin-left:8px;">
+              <div style="font-size:0.75rem;font-weight:600;color:var(--text-primary);">Accuracy</div>
+              <div style="font-size:0.65rem;color:var(--text-tertiary);">This Week</div>
+            </div>
+          </div>
+
+          <!-- Mockup Header -->
+          <div class="mockup-header">
+            <div class="mockup-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="mockup-title">Learning System Dashboard</div>
+          </div>
+
+          <!-- Mockup Body -->
+          <div class="mockup-body">
+            <div class="mockup-progress-card">
+              <div class="mockup-progress-label">
+                <span style="font-weight:600;">Data Structures</span>
+                <span style="color:var(--primary);font-weight:600;">72%</span>
+              </div>
+              <div class="mockup-progress-bar">
+                <div class="mockup-progress-fill" style="width:72%;"></div>
+              </div>
+            </div>
+
+            <div class="mockup-progress-card">
+              <div class="mockup-progress-label">
+                <span style="font-weight:600;">Algorithms</span>
+                <span style="color:var(--success);font-weight:600;">84%</span>
+              </div>
+              <div class="mockup-progress-bar">
+                <div class="mockup-progress-fill" style="width:84%;background:linear-gradient(135deg,#10b981,#06b6d4);"></div>
+              </div>
+            </div>
+
+            <div class="mockup-topics">
+              <div class="mockup-topic completed">
+                <span class="topic-icon">&#10003;</span>
+                Arrays
+              </div>
+              <div class="mockup-topic completed">
+                <span class="topic-icon">&#10003;</span>
+                Linked Lists
+              </div>
+              <div class="mockup-topic in-progress">
+                <span class="topic-icon">&#9654;</span>
+                Trees
+              </div>
+              <div class="mockup-topic in-progress">
+                <span class="topic-icon">&#9654;</span>
+                Graphs
+              </div>
+              <div class="mockup-topic">
+                <span class="topic-icon" style="color:var(--text-tertiary);">&#9675;</span>
+                Recursion
+              </div>
+              <div class="mockup-topic">
+                <span class="topic-icon" style="color:var(--text-tertiary);">&#9675;</span>
+                DP
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FEATURES SECTION ====== -->
+  <section class="section" id="features">
+    <div class="container">
+      <h2 class="section-title" data-animate>
+        Why <span class="text-gradient">AI Learning System</span>?
+      </h2>
+      <p class="section-subtitle" data-animate>
+        Built with AI at the core, every feature is designed to make your learning smarter, faster, and more effective.
+      </p>
+
+      <div class="features-grid stagger-children">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon">&#127919;</div>
+          <h3 class="feature-title">Personalized Learning</h3>
+          <p class="feature-desc">Every student gets a unique learning path tailored to their knowledge level, strengths, and weaknesses.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon">&#10024;</div>
+          <h3 class="feature-title">AI-Based Recommendations</h3>
+          <p class="feature-desc">Our AI engine analyzes your performance and recommends the best next topic, resource, or activity.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon">&#128260;</div>
+          <h3 class="feature-title">Smart Revision</h3>
+          <p class="feature-desc">Spaced repetition algorithms ensure you revisit concepts at the optimal time for long-term retention.</p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon">&#129504;</div>
+          <h3 class="feature-title">Adaptive Quizzes</h3>
+          <p class="feature-desc">Quizzes that adapt in difficulty based on your answers, providing the right level of challenge.</p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon">&#128200;</div>
+          <h3 class="feature-title">Progress Analytics</h3>
+          <p class="feature-desc">Detailed dashboards showing your learning progress, accuracy trends, and areas to improve.</p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="feature-icon">&#129302;</div>
+          <h3 class="feature-title">AI Tutor</h3>
+          <p class="feature-desc">Get instant explanations, examples, and guidance from an AI tutor available 24/7.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== HOW IT WORKS ====== -->
+  <section class="section" style="background:var(--bg-secondary);">
+    <div class="container">
+      <h2 class="section-title" data-animate>How It Works</h2>
+      <p class="section-subtitle" data-animate>
+         AI Learning System follows a continuous cycle to personalize your learning journey.
+      </p>
+
+      <div class="process-flow" data-animate>
+        <div class="process-step">
+          <div class="process-item">
+            <div class="process-circle"><span class="process-icon">&#128202;</span></div>
+            <span class="process-label">Assess</span>
+          </div>
+          <span class="process-arrow">&#10132;</span>
+
+          <div class="process-item">
+            <div class="process-circle"><span class="process-icon">&#128218;</span></div>
+            <span class="process-label">Learn</span>
+          </div>
+          <span class="process-arrow">&#10132;</span>
+
+          <div class="process-item">
+            <div class="process-circle"><span class="process-icon">&#9997;</span></div>
+            <span class="process-label">Practice</span>
+          </div>
+          <span class="process-arrow">&#10132;</span>
+
+          <div class="process-item">
+            <div class="process-circle"><span class="process-icon">&#128200;</span></div>
+            <span class="process-label">Analyze</span>
+          </div>
+          <span class="process-arrow">&#10132;</span>
+
+          <div class="process-item">
+            <div class="process-circle"><span class="process-icon">&#128260;</span></div>
+            <span class="process-label">Adapt</span>
+          </div>
+          <span class="process-arrow">&#10132;</span>
+
+          <div class="process-item">
+            <div class="process-circle"><span class="process-icon">&#127942;</span></div>
+            <span class="process-label">Master</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="process-description" data-animate>
+         AI Learning System continuously assesses your understanding, recommends the right content, lets you practice with adaptive quizzes, analyzes your performance, and adapts your learning path accordingly until you master each topic.
+      </p>
+    </div>
+  </section>
+
+  <!-- ====== LEARNING PATH EXAMPLE ====== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title" data-animate>Personalized Learning <span class="text-gradient">In Action</span></h2>
+      <p class="section-subtitle" data-animate>
+        See how AI Learning System adapts when a student struggles with a specific topic.
+      </p>
+
+      <div class="learning-path-container">
+        <!-- Problem Side -->
+        <div class="path-problem" data-animate="fade-left">
+          <div class="path-problem-label">&#9888; Weakness Detected</div>
+          <h3 class="path-problem-title">Student is weak in Recursion</h3>
+          <p class="path-problem-desc">
+            After analyzing quiz results and practice performance, the AI identifies that the student struggles with understanding recursive thinking and base cases.
+          </p>
+
+          <div class="path-metrics">
+            <div class="path-metric">
+              <div class="path-metric-value">38%</div>
+              <div class="path-metric-label">Quiz Accuracy</div>
+            </div>
+            <div class="path-metric">
+              <div class="path-metric-value">2/8</div>
+              <div class="path-metric-label">Problems Solved</div>
+            </div>
+            <div class="path-metric">
+              <div class="path-metric-value">12 min</div>
+              <div class="path-metric-label">Avg. Time / Problem</div>
+            </div>
+            <div class="path-metric">
+              <div class="path-metric-value">High</div>
+              <div class="path-metric-label">Frustration Level</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Solution Steps -->
+        <div class="path-steps" data-animate="fade-right">
+          <div class="path-step">
+            <div class="path-step-number">1</div>
+            <div class="path-step-content">
+              <h4>Recursion Basics</h4>
+              <p>Foundation module on what recursion is and how it works.</p>
+            </div>
+          </div>
+
+          <div class="path-step">
+            <div class="path-step-number">2</div>
+            <div class="path-step-content">
+              <h4>Concept Explanation</h4>
+              <p>Visual walkthrough with call stack diagrams and real examples.</p>
+            </div>
+          </div>
+
+          <div class="path-step">
+            <div class="path-step-number">3</div>
+            <div class="path-step-content">
+              <h4>Practice Questions</h4>
+              <p>Guided problems with hints, starting from easy to moderate.</p>
+            </div>
+          </div>
+
+          <div class="path-step">
+            <div class="path-step-number">4</div>
+            <div class="path-step-content">
+              <h4>Adaptive Quiz</h4>
+              <p>Difficulty adjusts based on your responses in real time.</p>
+            </div>
+          </div>
+
+          <div class="path-step">
+            <div class="path-step-number">5</div>
+            <div class="path-step-content">
+              <h4>Flashcards & Revision</h4>
+              <p>Key concepts reinforced through spaced repetition.</p>
+            </div>
+          </div>
+
+          <div class="path-step">
+            <div class="path-step-number">6</div>
+            <div class="path-step-content">
+              <h4>Next Level: Dynamic Programming</h4>
+              <p>Once recursion is mastered, seamlessly advance to DP.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== AI TUTOR PREVIEW ====== -->
+  <section class="section ai-tutor-section">
+    <div class="container">
+      <div class="ai-tutor-container">
+        <!-- Info -->
+        <div class="ai-tutor-info" data-animate="fade-left">
+          <h2>Meet Your <span class="text-gradient">AI Tutor</span></h2>
+          <p>
+            Our AI Tutor understands your questions, explains concepts in simple terms, provides examples, and guides you through difficult topics step by step.
+          </p>
+
+          <div class="ai-tutor-features">
+            <div class="ai-tutor-feature">
+              <span class="check-icon">&#10003;</span>
+              Explains concepts in simple language
+            </div>
+            <div class="ai-tutor-feature">
+              <span class="check-icon">&#10003;</span>
+              Provides real-world examples
+            </div>
+            <div class="ai-tutor-feature">
+              <span class="check-icon">&#10003;</span>
+              Adapts to your learning level
+            </div>
+            <div class="ai-tutor-feature">
+              <span class="check-icon">&#10003;</span>
+              Available 24/7
+            </div>
+            <div class="ai-tutor-feature">
+              <span class="check-icon">&#10003;</span>
+              Answers follow-up questions
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Mockup -->
+        <div class="ai-chat-mockup" data-animate="fade-right">
+          <div class="ai-chat-header">
+            <div class="ai-chat-avatar">&#129302;</div>
+            <div class="ai-chat-status">
+              <div class="ai-chat-name">AI Learning System Tutor</div>
+              <div class="ai-chat-online">Online</div>
+            </div>
+          </div>
+
+          <div class="ai-chat-messages">
+            <div class="chat-message student">
+              <div class="chat-bubble">I don't understand recursion.</div>
+              <div class="chat-avatar-small">S</div>
+            </div>
+
+            <div class="chat-message ai">
+              <div class="chat-avatar-small">AI</div>
+              <div class="chat-bubble">
+                No problem! Let's understand it using a simple example.<br><br>
+                Imagine you're standing in a line of people, and you ask the person in front of you: "What position am I in?" They don't know either, so they ask the person in front of <em>them</em>... and so on until someone at the front says "I'm first!"<br><br>
+                That's recursion &mdash; a function that calls itself until it hits a base case. &#128522;
+              </div>
+            </div>
+
+            <div class="chat-message student">
+              <div class="chat-bubble">Oh, that makes sense! What's a base case?</div>
+              <div class="chat-avatar-small">S</div>
+            </div>
+
+            <div class="chat-message ai">
+              <div class="chat-avatar-small">AI</div>
+              <div class="chat-bubble">
+                Great question! The base case is the condition that stops the recursion. In our example, it's the person at the front saying "I'm first!" &mdash; that's when the answers start coming back. Without a base case, the function would call itself forever! &#128161;
+              </div>
+            </div>
+          </div>
+
+          <div class="ai-chat-input">
+            <input type="text" placeholder="Ask the AI Tutor..." disabled>
+            <div class="ai-chat-send">&#10148;</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ANALYTICS PREVIEW ====== -->
+  <section class="section analytics-section">
+    <div class="container">
+      <h2 class="section-title" data-animate>Your Learning <span class="text-gradient">Dashboard</span></h2>
+      <p class="section-subtitle" data-animate>
+        Track your progress with detailed analytics and insights.
+      </p>
+
+      <div class="analytics-grid stagger-children">
+        <!-- Course Progress -->
+        <div class="analytics-card">
+          <div class="analytics-card-icon progress">&#128202;</div>
+          <div class="analytics-card-value" data-count="72" data-suffix="%">0</div>
+          <div class="analytics-card-label">Course Progress</div>
+          <div class="analytics-bar">
+            <div class="analytics-bar-fill primary" style="width:0%;" data-width="72%"></div>
+          </div>
+        </div>
+
+        <!-- Quiz Accuracy -->
+        <div class="analytics-card">
+          <div class="analytics-card-icon accuracy">&#127919;</div>
+          <div class="analytics-card-value" data-count="84" data-suffix="%">0</div>
+          <div class="analytics-card-label">Quiz Accuracy</div>
+          <div class="analytics-bar">
+            <div class="analytics-bar-fill green" style="width:0%;" data-width="84%"></div>
+          </div>
+        </div>
+
+        <!-- Study Streak -->
+        <div class="analytics-card">
+          <div class="analytics-card-icon streak">&#128293;</div>
+          <div class="analytics-card-value" data-count="7" data-suffix=" Days">0</div>
+          <div class="analytics-card-label">Study Streak</div>
+          <div class="analytics-bar">
+            <div class="analytics-bar-fill amber" style="width:0%;" data-width="70%"></div>
+          </div>
+        </div>
+
+        <!-- Topics Mastered -->
+        <div class="analytics-card">
+          <div class="analytics-card-icon topics">&#127891;</div>
+          <div class="analytics-card-value" data-count="18" data-suffix="">0</div>
+          <div class="analytics-card-label">Topics Mastered</div>
+          <div class="analytics-bar">
+            <div class="analytics-bar-fill cyan" style="width:0%;" data-width="60%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CTA SECTION ====== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box" data-animate>
+        <h2>Start Learning Smarter Today</h2>
+        <p>Join thousands of students already using AI-Learning System to achieve their learning goals.</p>
+        <a href="pages/signup.html" class="btn btn-lg cta-btn-white">Create Free Account</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <a href="index.html" class="navbar-brand" style="font-size:1.2rem;">
+            <img src="assets/images/logo.png" alt="AI-Learning System logo" class="brand-logo" style="width:32px;height:32px">
+            <span>AI-<span class="brand-text-accent">Learning</span> System</span>
+          </a>
+          <p>AI-powered personalized learning platform that adapts to every student's unique needs, strengths, and learning pace.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Twitter">&#120143;</a>
+            <a href="#" aria-label="GitHub">&#9883;</a>
+            <a href="#" aria-label="LinkedIn">&#105;&#110;</a>
+          </div>
+        </div>
+
+        <!-- Product -->
+        <div class="footer-column">
+          <h4>Product</h4>
+          <ul>
+<li><a href="pages/courses.html">Courses</a></li>
+            <li><a href="pages/flashcards.html">Flashcards</a></li>
+            <li><a href="pages/revision.html">Revision</a></li>
+            <li><a href="pages/learning-path.html">Learning Path</a></li>
+            <li><a href="pages/ai-tutor.html">AI Tutor</a></li>
+            <li><a href="pages/dashboard.html">Dashboard</a></li>
+          </ul>
+        </div>
+
+        <!-- Resources -->
+        <div class="footer-column">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Learning Resources</a></li>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 AI Learning System. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
+
+  <!-- Scripts (order matters) -->
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/navigation.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Analytics Bar Animation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var bars = document.querySelectorAll('[data-width]');
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.style.width = entry.target.getAttribute('data-width');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      bars.forEach(function (bar) { observer.observe(bar); });
+    });
+  </script>
+
+</body>
+</html>

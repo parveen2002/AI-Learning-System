@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Study Planner & Daily Learning Schedule on AI-Learning System. Plan lessons, quizzes, revision and practice, track your daily goal, streak and revision tasks.">
+  <title>Study Planner - AI-Learning System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+
+  <!-- ====== NAVBAR ====== -->
+  <!-- ====== NAVBAR ====== -->
+<nav class="navbar" id="navbar" aria-label="Primary">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">
+      <img src="../assets/images/logo.png" alt="AI-Learning System logo" class="brand-logo">
+      <span>AI-<span class="brand-text-accent">Learning</span> System</span>
+    </a>
+
+    <div class="navbar-menu">
+      <a href="../index.html" class="navbar-link">Home</a>
+      <a href="courses.html" class="navbar-link">Courses</a>
+      <a href="learning-path.html" class="navbar-link">Learning Path</a>
+      <a href="ai-tutor.html" class="navbar-link">AI Tutor</a>
+      <a href="dashboard.html" class="navbar-link">Dashboard</a>
+    </div>
+
+    <div class="navbar-actions">
+      <button type="button" class="navbar-icon-btn nav-search-btn" data-search-url="courses.html" aria-label="Search courses">&#128269;</button>
+      <button type="button" class="navbar-icon-btn theme-toggle" aria-label="Toggle theme">&#9790;</button>
+
+      <div class="navbar-auth" id="authGuest">
+        <a href="login.html" class="btn btn-ghost btn-sm">Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+      </div>
+
+      <div class="navbar-auth navbar-user-menu" id="authUser" style="display:none;">
+        <button type="button" class="navbar-user-btn" aria-haspopup="true" aria-expanded="false">
+          <span class="navbar-user-avatar">P</span>
+          <span class="navbar-user-name">User</span>
+          <span class="navbar-user-caret" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="navbar-dropdown" role="menu">
+          <a href="profile.html" class="navbar-dropdown-item" role="menuitem">&#128100; My Profile</a>
+          <a href="achievements.html" class="navbar-dropdown-item" role="menuitem">&#127942; Achievements</a>
+          <a href="bookmarks.html" class="navbar-dropdown-item" role="menuitem">&#128278; Bookmarks</a>
+          <a href="study-planner.html" class="navbar-dropdown-item" role="menuitem">&#128197; Study Planner</a>
+          <a href="analytics.html" class="navbar-dropdown-item" role="menuitem">&#128200; Analytics</a>
+          <a href="settings.html" class="navbar-dropdown-item" role="menuitem">&#9881; Settings</a>
+          <div class="navbar-dropdown-divider" role="separator"></div>
+          <div class="navbar-dropdown-item navbar-dropdown-logout" id="navLogoutBtn" role="menuitem" tabindex="0">&#10140; Logout</div>
+        </div>
+      </div>
+
+      <button type="button" class="navbar-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ====== MOBILE MENU ====== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" class="mobile-menu-link">Home</a>
+  <a href="courses.html" class="mobile-menu-link">Courses</a>
+  <a href="learning-path.html" class="mobile-menu-link">Learning Path</a>
+  <a href="ai-tutor.html" class="mobile-menu-link">AI Tutor</a>
+  <a href="dashboard.html" class="mobile-menu-link">Dashboard</a>
+
+  <div class="mobile-menu-divider">Learning Tools</div>
+  <a href="flashcards.html" class="mobile-menu-link">Flashcards</a>
+  <a href="revision.html" class="mobile-menu-link">Revision</a>
+
+  <div class="mobile-menu-divider">More</div>
+  <a href="achievements.html" class="mobile-menu-link">Achievements</a>
+  <a href="bookmarks.html" class="mobile-menu-link">Bookmarks</a>
+  <a href="study-planner.html" class="mobile-menu-link">Study Planner</a>
+  <a href="analytics.html" class="mobile-menu-link">Analytics</a>
+  <a href="settings.html" class="mobile-menu-link">Settings</a>
+
+  <div class="mobile-menu-actions" id="mobileAuthGuest">
+    <a href="login.html" class="btn btn-secondary btn-block">Login</a>
+    <a href="signup.html" class="btn btn-primary btn-block">Sign Up</a>
+  </div>
+
+  <div class="mobile-menu-actions" id="mobileAuthUser" style="display:none;">
+    <p class="mobile-menu-login-name">Logged in as <strong class="mobile-user-name">User</strong></p>
+    <button type="button" class="btn btn-secondary btn-block" id="mobileLogoutBtn">Logout</button>
+  </div>
+</div>
+
+  <!-- ====== STUDY PLANNER CONTENT ====== -->
+  <main class="sp-main">
+
+    <!-- Page Header -->
+    <section class="sp-header">
+      <div class="container">
+        <h1 class="sp-title">Study Planner</h1>
+        <p class="sp-subtitle">Plan lessons, quizzes, revision and practice. Stay on top of your daily learning schedule.</p>
+      </div>
+    </section>
+
+    <!-- Summary Cards -->
+    <section class="sp-section" aria-label="Your planner summary">
+      <div class="container">
+        <div class="sp-summary-grid" id="spSummary"></div>
+      </div>
+    </section>
+
+    <!-- Layout -->
+    <section class="sp-section">
+      <div class="container">
+        <div class="sp-layout">
+
+          <!-- MAIN COLUMN -->
+          <div class="sp-main-col">
+
+            <!-- Controls -->
+            <div class="sp-controls" aria-label="Task controls">
+              <div class="sp-view-toggle" id="spViewToggle" role="tablist" aria-label="Planner view">
+                <button type="button" class="sp-view-btn active" data-view="list" role="tab" aria-selected="true">List</button>
+                <button type="button" class="sp-view-btn" data-view="calendar" role="tab" aria-selected="false">Calendar</button>
+              </div>
+
+              <label class="sp-search">
+                <span class="sr-only">Search study tasks</span>
+                <span class="sp-search-icon" aria-hidden="true">&#128269;</span>
+                <input type="search" id="spSearch" placeholder="Search study tasks" autocomplete="off" aria-label="Search study tasks">
+              </label>
+
+              <div class="sp-filters">
+                <label class="sp-filter">
+                  <span class="sr-only">Task type</span>
+                  <select id="spTypeFilter" aria-label="Filter by task type">
+                    <option value="all">All Types</option>
+                    <option value="Lesson">Lesson</option>
+                    <option value="Quiz">Quiz</option>
+                    <option value="Revision">Revision</option>
+                    <option value="Flashcards">Flashcards</option>
+                    <option value="Practice">Practice</option>
+                    <option value="Custom Study">Custom Study</option>
+                  </select>
+                </label>
+                <label class="sp-filter">
+                  <span class="sr-only">Priority</span>
+                  <select id="spPriorityFilter" aria-label="Filter by priority">
+                    <option value="all">All Priorities</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                  </select>
+                </label>
+                <label class="sp-filter">
+                  <span class="sr-only">Course</span>
+                  <select id="spCourseFilter" aria-label="Filter by course">
+                    <option value="all">All Courses</option>
+                  </select>
+                </label>
+                <button type="button" class="btn btn-ghost btn-sm" id="spClearFilters">Clear</button>
+              </div>
+
+              <div class="sp-status-tabs" id="spStatusTabs" role="tablist" aria-label="Task filters"></div>
+            </div>
+
+            <!-- This Week -->
+            <div class="sp-card">
+              <div class="sp-card-header">
+                <h2 class="sp-card-title">This Week</h2>
+                <span class="sp-card-hint">Click a day to see its tasks</span>
+              </div>
+              <div class="sp-week-strip" id="spWeekStrip"></div>
+            </div>
+
+            <!-- Today's Study Plan -->
+            <div class="sp-card">
+              <div class="sp-card-header sp-card-header-split">
+                <div>
+                  <h2 class="sp-card-title">Today's Study Plan</h2>
+                  <p class="sp-card-sub">Your schedule for today, all in one place.</p>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm" id="spAddTaskBtn">&#43; Add Task</button>
+              </div>
+              <div class="sp-today-plan" id="spToday"></div>
+            </div>
+
+            <!-- Calendar -->
+            <div class="sp-card" id="spCalendarCard" hidden>
+              <div class="sp-card-header sp-card-header-split">
+                <div>
+                  <h2 class="sp-card-title" id="spCalendarTitle">Calendar</h2>
+                </div>
+                <div class="sp-calendar-nav">
+                  <button type="button" class="btn btn-ghost btn-sm" id="spCalToday">Today</button>
+                  <button type="button" class="btn btn-ghost btn-sm" id="spCalPrev">&#9664;</button>
+                  <button type="button" class="btn btn-ghost btn-sm" id="spCalNext">&#9654;</button>
+                </div>
+              </div>
+              <div class="sp-calendar" id="spCalendar"></div>
+              <div class="sp-calendar-day-tasks" id="spCalendarDayTasks">
+                <h3 class="sp-calendar-day-title" id="spCalendarDayTitle">Tasks</h3>
+              </div>
+            </div>
+
+            <!-- All Tasks / Filtered List -->
+            <div class="sp-card">
+              <div class="sp-card-header sp-card-header-split">
+                <div>
+                  <h2 class="sp-card-title" id="spTaskListTitle">All Study Tasks</h2>
+                  <p class="sp-card-sub" id="spTaskListCount"></p>
+                </div>
+                <button type="button" class="btn btn-primary btn-sm" id="spAddTaskBtn2" hidden>&#43; Add Task</button>
+              </div>
+              <div class="sp-task-list" id="spTaskList"></div>
+            </div>
+
+            <!-- Suggested Study Tasks -->
+            <div class="sp-card">
+              <div class="sp-card-header">
+                <h2 class="sp-card-title">Suggested Study Tasks</h2>
+                <p class="sp-card-sub">Based on your recent learning activity and schedule. Not AI generated.</p>
+              </div>
+              <div class="sp-suggestions" id="spSuggestions"></div>
+            </div>
+
+          </div>
+
+          <!-- SIDEBAR -->
+          <div class="sp-side-col">
+
+            <!-- Daily Goal -->
+            <div class="sp-card">
+              <div class="sp-card-header">
+                <h2 class="sp-card-title">Daily Learning Goal</h2>
+              </div>
+              <div class="sp-goal" id="spGoal"></div>
+            </div>
+
+            <!-- Study Streak -->
+            <div class="sp-card">
+              <div class="sp-card-header">
+                <h2 class="sp-card-title">Study Streak</h2>
+              </div>
+              <div class="sp-streak" id="spStreak"></div>
+            </div>
+
+            <!-- Due Revisions -->
+            <div class="sp-card">
+              <div class="sp-card-header">
+                <h2 class="sp-card-title">Flashcard Revision</h2>
+              </div>
+              <div class="sp-due-revision" id="spDueRevisions"></div>
+            </div>
+
+            <!-- From Your Learning Path -->
+            <div class="sp-card">
+              <div class="sp-card-header">
+                <h2 class="sp-card-title">From Your Learning Path</h2>
+              </div>
+              <div class="sp-learning-path" id="spLearningPath"></div>
+            </div>
+
+            <!-- Needs Attention -->
+            <div class="sp-card">
+              <div class="sp-card-header">
+                <h2 class="sp-card-title">Needs Attention</h2>
+              </div>
+              <div class="sp-needs-attention" id="spNeedsAttention"></div>
+            </div>
+
+            <!-- Upcoming -->
+            <div class="sp-card">
+              <div class="sp-card-header">
+                <h2 class="sp-card-title">Upcoming</h2>
+              </div>
+              <div class="sp-upcoming" id="spUpcoming"></div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== ADD / EDIT TASK MODAL ====== -->
+  <div class="tutor-modal-backdrop" id="spTaskModal" style="display:none;" aria-hidden="true">
+    <div class="tutor-modal sp-task-modal" role="dialog" aria-modal="true" aria-labelledby="spModalTitle">
+      <h3 class="tutor-modal-title" id="spModalTitle">Add Study Task</h3>
+      <form id="spTaskForm" novalidate>
+        <div class="sp-field">
+          <label class="sp-field-label" for="spTaskTitle">Title <span class="sp-req">*</span></label>
+          <input class="sp-field-input" type="text" id="spTaskTitle" placeholder="e.g. Complete Recursion Basics" maxlength="120" required>
+        </div>
+        <div class="sp-field-row">
+          <div class="sp-field">
+            <label class="sp-field-label" for="spTaskType">Type</label>
+            <select class="sp-field-input" id="spTaskType">
+              <option value="Lesson">Lesson</option>
+              <option value="Quiz">Quiz</option>
+              <option value="Revision">Revision</option>
+              <option value="Flashcards">Flashcards</option>
+              <option value="Practice">Practice</option>
+              <option value="Custom Study">Custom Study</option>
+            </select>
+          </div>
+          <div class="sp-field">
+            <label class="sp-field-label" for="spTaskPriority">Priority</label>
+            <select class="sp-field-input" id="spTaskPriority">
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
+        </div>
+        <div class="sp-field-row">
+          <div class="sp-field">
+            <label class="sp-field-label" for="spTaskDate">Date <span class="sp-req">*</span></label>
+            <input class="sp-field-input" type="date" id="spTaskDate" required>
+          </div>
+          <div class="sp-field">
+            <label class="sp-field-label" for="spTaskTime">Time <span class="sp-req">*</span></label>
+            <input class="sp-field-input" type="time" id="spTaskTime" required>
+          </div>
+          <div class="sp-field">
+            <label class="sp-field-label" for="spTaskDuration">Duration (min)</label>
+            <input class="sp-field-input" type="number" id="spTaskDuration" min="0" max="480" placeholder="30">
+          </div>
+        </div>
+        <div class="sp-field-row">
+          <div class="sp-field">
+            <label class="sp-field-label" for="spTaskCourse">Course</label>
+            <select class="sp-field-input" id="spTaskCourse">
+              <option value="">-- No course --</option>
+            </select>
+          </div>
+          <div class="sp-field">
+            <label class="sp-field-label" for="spTaskLesson">Lesson</label>
+            <select class="sp-field-input" id="spTaskLesson">
+              <option value="">-- No lesson --</option>
+            </select>
+          </div>
+        </div>
+        <div class="sp-field">
+          <label class="sp-field-label" for="spTaskTopic">Topic</label>
+          <input class="sp-field-input" type="text" id="spTaskTopic" placeholder="Topic or note about the task" maxlength="200">
+        </div>
+        <div class="sp-field">
+          <label class="sp-field-label" for="spTaskNotes">Notes</label>
+          <textarea class="sp-field-input sp-field-textarea" id="spTaskNotes" rows="2" placeholder="Anything you want to remember" maxlength="400"></textarea>
+        </div>
+        <p class="sp-form-error" id="spFormError" hidden></p>
+        <div class="tutor-modal-actions">
+          <button type="button" class="btn btn-ghost" id="spTaskCancelBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="spTaskSaveBtn">Add Task</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ====== DELETE CONFIRMATION MODAL ====== -->
+  <div class="tutor-modal-backdrop" id="spConfirmModal" style="display:none;" aria-hidden="true">
+    <div class="tutor-modal" role="dialog" aria-modal="true" aria-labelledby="spConfirmTitle">
+      <h3 class="tutor-modal-title" id="spConfirmTitle">Delete Study Task</h3>
+      <p class="tutor-modal-text" id="spConfirmText">Are you sure you want to delete this study task?</p>
+      <div class="tutor-modal-actions">
+        <button type="button" class="btn btn-ghost" id="spConfirmNo">Cancel</button>
+        <button type="button" class="btn btn-danger" id="spConfirmYes">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="sp-toast" id="spToast" role="status" aria-live="polite"></div>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;padding-top:0;">
+        <p>&copy; 2026 AI-Learning System. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy</a>
+          <a href="#">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
+
+  <!-- Scripts -->
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/study-planner.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      LearnSphereTheme.init();
+      LearnSphereNav.init();
+
+      fetch('../data/dashboard.json')
+        .then(function (r) { return r.json(); })
+        .then(function (dashboard) {
+          fetch('../data/courses.json')
+            .then(function (r) { return r.json(); })
+            .then(function (courses) {
+              fetch('../data/quizzes.json')
+                .then(function (r) { return r.json(); })
+                .then(function (quizzes) {
+                  fetch('../data/flashcards.json')
+                    .then(function (r) { return r.json(); })
+                    .then(function (flashcards) {
+                      LearnSphereAPI.initDashboardData(dashboard);
+                      LearnSphereAPI.initCourseData(courses, null);
+                      LearnSphereAPI.initQuizData(quizzes);
+                      LearnSphereAPI.initFlashcardData(flashcards);
+                      LearnSphereStudyPlanner.init();
+                    })
+                    .catch(function () {
+                      LearnSphereAPI.initDashboardData(dashboard);
+                      LearnSphereAPI.initCourseData(courses, null);
+                      LearnSphereAPI.initQuizData(quizzes);
+                      LearnSphereStudyPlanner.init();
+                    });
+                })
+                .catch(function () {
+                  LearnSphereAPI.initDashboardData(dashboard);
+                  LearnSphereAPI.initCourseData(courses, null);
+                  LearnSphereStudyPlanner.init();
+                });
+            })
+            .catch(function () {
+              LearnSphereAPI.initDashboardData(dashboard);
+              LearnSphereStudyPlanner.init();
+            });
+        })
+        .catch(function () {
+          var main = document.querySelector('.sp-main');
+          if (main) {
+            main.innerHTML =
+              '<div class="sp-fatal">' +
+              '  <div class="sp-fatal-icon">&#9888;</div>' +
+              '  <h3>Unable to load the study planner</h3>' +
+              '  <p>Please try again later.</p>' +
+              '  <a href="../pages/dashboard.html" class="btn btn-primary btn-sm">Back to Dashboard</a>' +
+              '</div>';
+          }
+        });
+
+    });
+  </script>
+
+</body>
+</html>

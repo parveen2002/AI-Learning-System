@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lesson - AI-Learning System">
+  <title>Lesson - AI-Learning System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- NAVBAR (compact) -->
+  <!-- ====== NAVBAR ====== -->
+<nav class="navbar" id="navbar" aria-label="Primary">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">
+      <img src="../assets/images/logo.png" alt="AI-Learning System logo" class="brand-logo">
+      <span>AI-<span class="brand-text-accent">Learning</span> System</span>
+    </a>
+
+    <div class="navbar-menu">
+      <a href="../index.html" class="navbar-link">Home</a>
+      <a href="courses.html" class="navbar-link active">Courses</a>
+      <a href="learning-path.html" class="navbar-link">Learning Path</a>
+      <a href="ai-tutor.html" class="navbar-link">AI Tutor</a>
+      <a href="dashboard.html" class="navbar-link">Dashboard</a>
+    </div>
+
+    <div class="navbar-actions">
+      <button type="button" class="navbar-icon-btn nav-search-btn" data-search-url="courses.html" aria-label="Search courses">&#128269;</button>
+      <button type="button" class="navbar-icon-btn theme-toggle" aria-label="Toggle theme">&#9790;</button>
+
+      <div class="navbar-auth" id="authGuest">
+        <a href="login.html" class="btn btn-ghost btn-sm">Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+      </div>
+
+      <div class="navbar-auth navbar-user-menu" id="authUser" style="display:none;">
+        <button type="button" class="navbar-user-btn" aria-haspopup="true" aria-expanded="false">
+          <span class="navbar-user-avatar">P</span>
+          <span class="navbar-user-name">User</span>
+          <span class="navbar-user-caret" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="navbar-dropdown" role="menu">
+          <a href="profile.html" class="navbar-dropdown-item" role="menuitem">&#128100; My Profile</a>
+          <a href="achievements.html" class="navbar-dropdown-item" role="menuitem">&#127942; Achievements</a>
+          <a href="bookmarks.html" class="navbar-dropdown-item" role="menuitem">&#128278; Bookmarks</a>
+          <a href="study-planner.html" class="navbar-dropdown-item" role="menuitem">&#128197; Study Planner</a>
+          <a href="analytics.html" class="navbar-dropdown-item" role="menuitem">&#128200; Analytics</a>
+          <a href="settings.html" class="navbar-dropdown-item" role="menuitem">&#9881; Settings</a>
+          <div class="navbar-dropdown-divider" role="separator"></div>
+          <div class="navbar-dropdown-item navbar-dropdown-logout" id="navLogoutBtn" role="menuitem" tabindex="0">&#10140; Logout</div>
+        </div>
+      </div>
+
+      <button type="button" class="navbar-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ====== MOBILE MENU ====== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" class="mobile-menu-link">Home</a>
+  <a href="courses.html" class="mobile-menu-link active">Courses</a>
+  <a href="learning-path.html" class="mobile-menu-link">Learning Path</a>
+  <a href="ai-tutor.html" class="mobile-menu-link">AI Tutor</a>
+  <a href="dashboard.html" class="mobile-menu-link">Dashboard</a>
+
+  <div class="mobile-menu-divider">Learning Tools</div>
+  <a href="flashcards.html" class="mobile-menu-link">Flashcards</a>
+  <a href="revision.html" class="mobile-menu-link">Revision</a>
+
+  <div class="mobile-menu-divider">More</div>
+  <a href="achievements.html" class="mobile-menu-link">Achievements</a>
+  <a href="bookmarks.html" class="mobile-menu-link">Bookmarks</a>
+  <a href="study-planner.html" class="mobile-menu-link">Study Planner</a>
+  <a href="analytics.html" class="mobile-menu-link">Analytics</a>
+  <a href="settings.html" class="mobile-menu-link">Settings</a>
+
+  <div class="mobile-menu-actions" id="mobileAuthGuest">
+    <a href="login.html" class="btn btn-secondary btn-block">Login</a>
+    <a href="signup.html" class="btn btn-primary btn-block">Sign Up</a>
+  </div>
+
+  <div class="mobile-menu-actions" id="mobileAuthUser" style="display:none;">
+    <p class="mobile-menu-login-name">Logged in as <strong class="mobile-user-name">User</strong></p>
+    <button type="button" class="btn btn-secondary btn-block" id="mobileLogoutBtn">Logout</button>
+  </div>
+</div>
+
+  <!-- LESSON LAYOUT -->
+  <div class="lesson-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="lesson-sidebar" id="syllabusSidebar">
+      <div class="lesson-sidebar-header">
+        <h3 id="lessonCourseTitle">Course</h3>
+        <a href="#" id="lessonBackLink">Back to Course</a>
+      </div>
+      <div class="lesson-sidebar-progress">
+        <div class="lesson-sidebar-progress-header">
+          <span>Progress</span>
+          <span id="lessonProgressPct">0%</span>
+        </div>
+        <div class="lesson-sidebar-progress-bar">
+          <div class="lesson-sidebar-progress-fill" id="lessonProgressFill" style="width:0%;"></div>
+        </div>
+        <div style="font-size:0.75rem;color:var(--text-tertiary);margin-top:4px;" id="lessonProgressCount">0 of 0 lessons</div>
+      </div>
+
+      <!-- Course quizzes (rendered by lessons.js) -->
+      <div class="lesson-quiz-panel" id="lessonQuizPanel">
+        <div class="lesson-quiz-panel-head">
+          <span class="lesson-quiz-panel-title">&#128221; Quizzes</span>
+          <span class="lesson-quiz-panel-count" id="lessonQuizCount">0</span>
+        </div>
+        <div class="lesson-quiz-list" id="lessonQuizList">
+          <!-- Rendered by lessons.js -->
+        </div>
+      </div>
+
+      <div id="syllabusList">
+        <!-- Rendered by lessons.js -->
+      </div>
+    </aside>
+
+    <!-- OVERLAY for mobile -->
+    <div class="syllabus-overlay" id="syllabusOverlay"></div>
+
+    <!-- MAIN CONTENT -->
+    <main class="lesson-main">
+      <div class="lesson-breadcrumb" id="lessonBreadcrumb">
+        <a href="../index.html">Home</a> &rsaquo; <a href="courses.html">Courses</a>
+      </div>
+
+      <div class="lesson-header">
+        <div class="lesson-header-titlearea">
+          <h1 id="lessonTitle">Loading...</h1>
+          <div class="lesson-header-meta" id="lessonMeta"></div>
+        </div>
+        <div class="lesson-header-actions">
+          <button type="button" class="btn btn-secondary lesson-bookmark-btn" id="lessonBookmarkBtn" aria-label="Save lesson to bookmarks">&#9734; Save</button>
+          <a href="ai-tutor.html" class="btn btn-ghost btn-sm lesson-ask-tutor-btn" id="lessonAskTutorBtn">Ask AI Tutor</a>
+        </div>
+      </div>
+
+      <div id="lessonContent">
+        <!-- Rendered by lessons.js -->
+      </div>
+
+      <!-- Navigation Footer -->
+      <div class="lesson-footer">
+        <a href="#" class="btn btn-secondary" id="prevLessonBtn">&#8592; Previous</a>
+        <div class="lesson-footer-center">
+          <button class="btn btn-primary" id="markCompleteBtn">Mark as Complete</button>
+          <a href="#" class="btn btn-primary lesson-take-quiz-btn" id="takeQuizBtn" style="display:none;">&#128221; Take Quiz &#8594;</a>
+        </div>
+        <a href="#" class="btn btn-primary" id="nextLessonBtn">Next &#8594;</a>
+      </div>
+    </main>
+  </div>
+
+<!-- Mobile syllabus toggle -->
+  <button class="syllabus-mobile-toggle" id="syllabusToggle">&#128218; Course Menu</button>
+
+  <!-- Bookmark toast -->
+  <div class="sp-toast" id="lessonBookmarkToast" role="status" aria-live="polite"></div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/lessons.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      LearnSphereTheme.init();
+      LearnSphereNav.init();
+
+fetch('../data/courses.json')
+        .then(function (r) { return r.json(); })
+        .then(function (courses) {
+          fetch('../data/lessons.json')
+            .then(function (r) { return r.json(); })
+            .then(function (lessons) {
+              fetch('../data/quizzes.json')
+                .then(function (r) { return r.json(); })
+                .then(function (quizzes) {
+                  LearnSphereLessons.init(courses, lessons, quizzes);
+                  setupLessonNav(courses, lessons);
+                })
+                .catch(function () {
+                  LearnSphereLessons.init(courses, lessons, []);
+                  setupLessonNav(courses, lessons);
+                });
+            })
+            .catch(function () {
+              LearnSphereLessons.init(courses, []);
+            });
+        });
+
+      function setupLessonNav(courses, lessons) {
+        var params = {};
+        var qs = window.location.search.substring(1);
+        if (qs) {
+          qs.split('&').forEach(function (p) {
+            var kv = p.split('=');
+            params[decodeURIComponent(kv[0])] = decodeURIComponent(kv[1] || '');
+          });
+        }
+        var cid = parseInt(params.courseId, 10);
+        var lid = params.lessonId;
+        if (!cid) return;
+
+        var course = null;
+        for (var i = 0; i < courses.length; i++) {
+          if (courses[i].id === cid) { course = courses[i]; break; }
+        }
+        if (!course) return;
+
+        // Set sidebar title
+        var titleEl = document.getElementById('lessonCourseTitle');
+        if (titleEl) titleEl.textContent = course.title;
+        var backLink = document.getElementById('lessonBackLink');
+        if (backLink) backLink.href = 'course-details.html?id=' + cid;
+
+        // Flatten lessons from the course curriculum
+        var flat = [];
+        if (course.curriculum) {
+          for (var m = 0; m < course.curriculum.length; m++) {
+            var modLessons = course.curriculum[m].lessons || [];
+            for (var l = 0; l < modLessons.length; l++) {
+              flat.push(modLessons[l]);
+            }
+          }
+        }
+
+        // Find current index
+        var idx = -1;
+        for (var j = 0; j < flat.length; j++) {
+          if (flat[j].id === lid) { idx = j; break; }
+        }
+
+        // Prev button
+        var prevBtn = document.getElementById('prevLessonBtn');
+        if (prevBtn) {
+          if (idx > 0) {
+            prevBtn.href = 'lesson.html?courseId=' + cid + '&lessonId=' + flat[idx - 1].id;
+          } else {
+            prevBtn.style.visibility = 'hidden';
+          }
+        }
+
+        // Next button
+        var nextBtn = document.getElementById('nextLessonBtn');
+        if (nextBtn) {
+          if (idx < flat.length - 1) {
+            nextBtn.href = 'lesson.html?courseId=' + cid + '&lessonId=' + flat[idx + 1].id;
+          } else {
+            nextBtn.href = 'course-details.html?id=' + cid;
+            nextBtn.textContent = 'Finish Course \u2192';
+          }
+        }
+      }
+
+      });
+  </script>
+
+</body>
+</html>

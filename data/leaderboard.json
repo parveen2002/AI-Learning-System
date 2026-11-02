@@ -1,0 +1,126 @@
+{
+  "updatedAt": "2026-09-01T00:00:00Z",
+  "note": "Demo leaderboard data. These are sample students used to preview the leaderboard module. Real multi-user rankings will be provided by the backend after integration.",
+  "students": [
+    {
+      "id": "student-001",
+      "displayName": "Aarav",
+      "avatarInitial": "A",
+      "level": 10,
+      "xp": 3720,
+      "quizAverage": 92,
+      "currentStreak": 18,
+      "achievementsUnlocked": 12
+    },
+    {
+      "id": "student-002",
+      "displayName": "Meera",
+      "avatarInitial": "M",
+      "level": 8,
+      "xp": 2980,
+      "quizAverage": 90,
+      "currentStreak": 15,
+      "achievementsUnlocked": 11
+    },
+    {
+      "id": "student-003",
+      "displayName": "Zara",
+      "avatarInitial": "Z",
+      "level": 8,
+      "xp": 2650,
+      "quizAverage": 88,
+      "currentStreak": 11,
+      "achievementsUnlocked": 10
+    },
+    {
+      "id": "student-004",
+      "displayName": "Raj",
+      "avatarInitial": "R",
+      "level": 7,
+      "xp": 2080,
+      "quizAverage": 85,
+      "currentStreak": 9,
+      "achievementsUnlocked": 8
+    },
+    {
+      "id": "student-005",
+      "displayName": "Priya",
+      "avatarInitial": "P",
+      "level": 6,
+      "xp": 1690,
+      "quizAverage": 82,
+      "currentStreak": 10,
+      "achievementsUnlocked": 8
+    },
+    {
+      "id": "student-006",
+      "displayName": "Kabir",
+      "avatarInitial": "K",
+      "level": 5,
+      "xp": 1450,
+      "quizAverage": 79,
+      "currentStreak": 7,
+      "achievementsUnlocked": 7
+    },
+    {
+      "id": "student-007",
+      "displayName": "Ananya",
+      "avatarInitial": "A",
+      "level": 4,
+      "xp": 980,
+      "quizAverage": 75,
+      "currentStreak": 12,
+      "achievementsUnlocked": 6
+    },
+    {
+      "id": "student-008",
+      "displayName": "Rohan",
+      "avatarInitial": "R",
+      "level": 4,
+      "xp": 720,
+      "quizAverage": 71,
+      "currentStreak": 5,
+      "achievementsUnlocked": 5
+    },
+    {
+      "id": "student-009",
+      "displayName": "Sara",
+      "avatarInitial": "S",
+      "level": 3,
+      "xp": 540,
+      "quizAverage": 68,
+      "currentStreak": 8,
+      "achievementsUnlocked": 4
+    },
+    {
+      "id": "student-010",
+      "displayName": "Dev",
+      "avatarInitial": "D",
+      "level": 3,
+      "xp": 360,
+      "quizAverage": 62,
+      "currentStreak": 3,
+      "achievementsUnlocked": 3
+    },
+    {
+      "id": "student-011",
+      "displayName": "Nina",
+      "avatarInitial": "N",
+      "level": 2,
+      "xp": 240,
+      "quizAverage": 58,
+      "currentStreak": 5,
+      "achievementsUnlocked": 3
+    },
+    {
+      "id": "student-012",
+      "displayName": "Vikram",
+      "avatarInitial": "V",
+      "level": 2,
+      "xp": 120,
+      "quizAverage": 55,
+      "currentStreak": 2,
+      "achievementsUnlocked": 2
+    }
+  ]
+}

@@ -1,0 +1,532 @@
+[
+  {
+    "card_id": "fc-1-01",
+    "course_id": 1,
+    "lesson_id": "l3",
+    "topic": "Arrays",
+    "question": "What is an array, and why is random access fast?",
+    "answer": "An array is a collection of elements stored in contiguous memory, where each element is identified by an index.",
+    "explanation": "Because elements sit next to each other in memory, the address of any element can be computed directly from the starting address and the index. This gives O(1) random access. Inserting or deleting in the middle is slower because elements must be shifted.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-1-02",
+    "course_id": 1,
+    "lesson_id": "l2",
+    "topic": "Big-O Complexity",
+    "question": "What is Big-O notation used for?",
+    "answer": "Big-O notation describes the upper bound of how an algorithm's time or space usage grows as the input size increases.",
+    "explanation": "It classifies algorithms by growth rate, for example O(1) constant, O(n) linear, O(n log n) linearithmic, and O(n^2) quadratic. It ignores constant factors and focuses on the dominant term as input grows.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-1-03",
+    "course_id": 1,
+    "lesson_id": "l4",
+    "topic": "Linked Lists",
+    "question": "What is a crucial trade-off with a linked list compared to an array?",
+    "answer": "A linked list allows efficient insertion and deletion but has slow random access.",
+    "explanation": "Each node stores a reference to the next node, so no shifting is needed to insert or remove elements. However, to reach element n you must walk the chain from the head, which is O(n) instead of the O(1) random access of an array.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-1-04",
+    "course_id": 1,
+    "lesson_id": "l7",
+    "topic": "Stacks",
+    "question": "What principle does a stack follow and what three operations does it support?",
+    "answer": "A stack follows Last In, First Out (LIFO) and supports push, pop, and peek.",
+    "explanation": "The last element added is the first removed, like a stack of plates. push adds to the top, pop removes the top, and peek reads the top without removing it. Stacks are used in undo histories, expression evaluation, and function call management.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-1-05",
+    "course_id": 1,
+    "lesson_id": "l10",
+    "topic": "Binary Trees",
+    "question": "What is a binary tree and why is a balanced shape important?",
+    "answer": "A binary tree is a hierarchical structure where each node has at most two children, usually called left and right.",
+    "explanation": "When a tree stays balanced, its height is O(log n), which keeps search, insert, and delete fast. A skewed tree degenerates toward O(n) operations because it behaves like a linked list.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-1-06",
+    "course_id": 1,
+    "lesson_id": "l14",
+    "topic": "Graph Traversal",
+    "question": "What is the difference between BFS and DFS?",
+    "answer": "BFS visits all neighbors at the current depth first using a queue, while DFS explores as far as possible along each branch before backtracking using a stack or recursion.",
+    "explanation": "BFS naturally finds the shortest path in unweighted graphs by expanding level by level. DFS is useful for path finding, cycle detection, and topological sorting. Both run in O(V + E) time.",
+    "difficulty": "hard"
+  },
+  {
+    "card_id": "fc-2-01",
+    "course_id": 2,
+    "lesson_id": "l2",
+    "topic": "Variables and Data Types",
+    "question": "What is a variable in Python?",
+    "answer": "A variable is a named reference to a value stored in memory.",
+    "explanation": "In Python the name points to an object, and the type belongs to the object rather than the name. This is why a variable can be reassigned to a different type and why Python is called dynamically typed.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-2-02",
+    "course_id": 2,
+    "lesson_id": "l4",
+    "topic": "Conditionals",
+    "question": "How does Python decide which branch of an if-elif-else statement runs?",
+    "answer": "It evaluates the conditions from top to bottom and runs the first block whose condition is true.",
+    "explanation": "Once a true condition is found, the rest of the chain is skipped. If no condition matches, the else block runs if present. Indentation defines which statements belong to each block.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-2-03",
+    "course_id": 2,
+    "lesson_id": "l5",
+    "topic": "Loops",
+    "question": "When should you use a for loop versus a while loop?",
+    "answer": "Use a for loop when iterating over a known sequence, and a while loop when repeating until a condition changes.",
+    "explanation": "For loops are ideal for iterating lists, strings, ranges, or dictionaries. While loops suit situations where the number of iterations is unknown, such as waiting for user input or processing until a flag becomes false.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-2-04",
+    "course_id": 2,
+    "lesson_id": "l7",
+    "topic": "Functions",
+    "question": "What is the purpose of a function in Python?",
+    "answer": "A function is a named, reusable block of code that performs a specific task and can accept inputs and return results.",
+    "explanation": "Functions promote reuse, reduce duplication, and make code easier to test and maintain. The def keyword defines a function, parameters receive inputs, and return sends a value back to the caller.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-2-05",
+    "course_id": 2,
+    "lesson_id": "l10",
+    "topic": "Classes and Objects",
+    "question": "What is the difference between a class and an object?",
+    "answer": "A class is a blueprint, while an object is an instance created from that blueprint.",
+    "explanation": "The class defines attributes and methods. Creating an object, such as with a constructor call, allocates an instance with its own attribute values. Many objects can be created from one class.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-2-06",
+    "course_id": 2,
+    "lesson_id": "l11",
+    "topic": "Inheritance",
+    "question": "What is inheritance in OOP and what does it let a subclass do?",
+    "answer": "Inheritance lets a subclass reuse and extend the attributes and methods of a parent class.",
+    "explanation": "The subclass automatically has the parent's behavior and can add new behavior or override inherited methods. This promotes code reuse and models 'is-a' relationships, such as a Dog inheriting from Animal.",
+    "difficulty": "hard"
+  },
+  {
+    "card_id": "fc-3-01",
+    "course_id": 3,
+    "lesson_id": "l2",
+    "topic": "HTML Structure",
+    "question": "What is semantic HTML and why does it matter?",
+    "answer": "Semantic HTML uses tags that describe meaning, such as header, nav, main, article, and footer, instead of generic divs.",
+    "explanation": "Semantic tags improve accessibility because assistive technology can interpret the page structure, help search engines understand content, and make the markup easier for developers to read and maintain.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-3-02",
+    "course_id": 3,
+    "lesson_id": "l3",
+    "topic": "Forms",
+    "question": "How do form labels and the name attribute work together?",
+    "answer": "The label text identifies a field, and the name attribute gives the field a key when the form is submitted.",
+    "explanation": "When a form is submitted, each control is sent as name=value pairs. Labels linked with for and id improve usability and accessibility, letting users click the label to focus the input.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-3-03",
+    "course_id": 3,
+    "lesson_id": "l4",
+    "topic": "CSS Selectors",
+    "question": "What is the difference between an ID selector and a class selector?",
+    "answer": "An ID selector targets one unique element, while a class selector can target many elements.",
+    "explanation": "A page should have only one element with a given id, and ids are styled with #. Classes use a dot and can be applied to any number of elements, making them the preferred tool for reusable styles.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-3-04",
+    "course_id": 3,
+    "lesson_id": "l5",
+    "topic": "Flexbox",
+    "question": "What does the justify-content property control in a flex container?",
+    "answer": "It aligns flex items along the main axis (usually horizontal).",
+    "explanation": "Values such as flex-start, center, space-between, and space-around distribute items along the main axis. The align-items property controls the cross axis instead.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-3-05",
+    "course_id": 3,
+    "lesson_id": "l7",
+    "topic": "JavaScript Variables",
+    "question": "What is the difference between const and let in JavaScript?",
+    "answer": "let declares a block-scoped variable that can be reassigned, while const declares a value that cannot be reassigned.",
+    "explanation": "const does not make the value immutable, only the binding. For example, an array declared with const can still be mutated with push, but the variable itself cannot be reassigned to a new array.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-3-06",
+    "course_id": 3,
+    "lesson_id": "l8",
+    "topic": "DOM Manipulation",
+    "question": "How do you change the text of an element on a page in JavaScript?",
+    "answer": "Select the element, then set its textContent (or innerHTML) property.",
+    "explanation": "document.getElementById or document.querySelector returns the element. textContent safely updates visible text without parsing markup, while innerHTML parses HTML strings and should be used carefully with untrusted input.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-3-07",
+    "course_id": 3,
+    "lesson_id": "l9",
+    "topic": "Events",
+    "question": "What is event bubbling?",
+    "answer": "Event bubbling is when an event fired on a child element propagates up through its ancestor elements.",
+    "explanation": "Clicking a button triggers the button handler first, then bubbles to its parent, document, and beyond. You can stop it with stopPropagation or handle it once on a parent using event delegation.",
+    "difficulty": "hard"
+  },
+  {
+    "card_id": "fc-4-01",
+    "course_id": 4,
+    "lesson_id": "l2",
+    "topic": "Relational Model",
+    "question": "What is a primary key in a relational database?",
+    "answer": "A primary key is a column or set of columns that uniquely identifies each row in a table.",
+    "explanation": "Primary keys must be unique and not null. They establish the identity of each record and are referenced by foreign keys in other tables to create relationships between tables.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-4-02",
+    "course_id": 4,
+    "lesson_id": "l4",
+    "topic": "SQL CRUD",
+    "question": "Which SQL statement would you use to add a new row to a table?",
+    "answer": "INSERT INTO table (columns) VALUES (values).",
+    "explanation": "INSERT adds new records, UPDATE modifies existing rows, DELETE removes rows, and SELECT retrieves data. Each is part of the core CRUD set used to manage data in a relational database.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-4-03",
+    "course_id": 4,
+    "lesson_id": "l5",
+    "topic": "JOINs",
+    "question": "What is the difference between an INNER JOIN and a LEFT JOIN?",
+    "answer": "INNER JOIN returns only matching rows from both tables, while LEFT JOIN returns all rows from the left table plus matches from the right.",
+    "explanation": "With LEFT JOIN, rows from the left table without a match still appear, with NULLs in the right table columns. INNER JOIN drops non-matching rows entirely, so it can reduce the result set.",
+    "difficulty": "hard"
+  },
+  {
+    "card_id": "fc-4-04",
+    "course_id": 4,
+    "lesson_id": "l7",
+    "topic": "Normalization",
+    "question": "What is the goal of normalization?",
+    "answer": "Normalization removes redundancy and reduces data anomalies by organizing data into well-structured tables.",
+    "explanation": "The normal forms build on each other: 1NF requires atomic values, 2NF removes partial dependencies, 3NF removes transitive dependencies, and BCNF tightens the rules further. Normalized designs make updates consistent and reduce wasted storage.",
+    "difficulty": "hard"
+  },
+  {
+    "card_id": "fc-4-05",
+    "course_id": 4,
+    "lesson_id": "l10",
+    "topic": "Indexing",
+    "question": "Why do indexes speed up SELECT queries but slow down writes?",
+    "answer": "Indexes let the database locate data faster, but every insert, update, or delete must also update the index structures.",
+    "explanation": "An index is like a table of contents, turning many full scans into direct lookups. The trade-off is maintenance cost on write operations and extra storage, so indexes should be added for columns used in WHERE, JOIN, and ORDER BY.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-4-06",
+    "course_id": 4,
+    "lesson_id": "l11",
+    "topic": "Transactions",
+    "question": "What does the ACID acronym stand for in transactions?",
+    "answer": "Atomicity, Consistency, Isolation, and Durability.",
+    "explanation": "Atomicity means all-or-nothing execution, Consistency keeps data valid, Isolation separates concurrent transactions, and Durability guarantees committed data survives failures. These properties make transactions reliable.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-5-01",
+    "course_id": 5,
+    "lesson_id": "l1",
+    "topic": "AI Fundamentals",
+    "question": "What is artificial intelligence?",
+    "answer": "Artificial intelligence is the field of building systems that can perform tasks that normally require human intelligence.",
+    "explanation": "These tasks include reasoning, learning, perception, and language understanding. AI systems range from rule-based search algorithms to machine learning models that learn patterns from data.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-5-02",
+    "course_id": 5,
+    "lesson_id": "l5",
+    "topic": "Informed Search",
+    "question": "What makes the A* search algorithm informed?",
+    "answer": "A* uses a heuristic function that estimates the cost from each node to the goal.",
+    "explanation": "It combines the actual cost so far, g(n), with a heuristic estimate, h(n), choosing the node that minimizes f(n) = g(n) + h(n). When the heuristic is admissible, A* finds the optimal path.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-5-03",
+    "course_id": 5,
+    "lesson_id": "l7",
+    "topic": "Machine Learning",
+    "question": "What is machine learning?",
+    "answer": "Machine learning is a branch of AI where systems improve at a task by learning patterns from data instead of being explicitly programmed.",
+    "explanation": "Rather than hard-coding rules, the model adjusts its parameters based on training examples. The three main paradigms are supervised learning, unsupervised learning, and reinforcement learning.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-5-04",
+    "course_id": 5,
+    "lesson_id": "l8",
+    "topic": "Linear Regression",
+    "question": "What does linear regression predict and how?",
+    "answer": "Linear regression predicts a continuous numeric value by fitting a line, y = mx + b, to the relationship between features and the target.",
+    "explanation": "The algorithm chooses weights that minimize a loss function, typically the mean squared error between predictions and actual values. The result is a straight-line model that estimates values for new inputs.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-5-05",
+    "course_id": 5,
+    "lesson_id": "l9",
+    "topic": "Classification",
+    "question": "What is the difference between classification and regression?",
+    "answer": "Classification predicts a discrete category or class label, while regression predicts a continuous numeric value.",
+    "explanation": "For example, classifying an email as spam or not spam is classification, while predicting house prices is regression. Common classification models include logistic regression, decision trees, and support vector machines.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-5-06",
+    "course_id": 5,
+    "lesson_id": "l10",
+    "topic": "Neural Networks",
+    "question": "What does an activation function do in a neuron?",
+    "answer": "An activation function introduces non-linearity into the output of a neuron.",
+    "explanation": "Without an activation function, stacking layers would collapse into a single linear transformation. Non-linear activations such as ReLU, sigmoid, and tanh let networks model complex relationships.",
+    "difficulty": "hard"
+  },
+  {
+    "card_id": "fc-6-01",
+    "course_id": 6,
+    "lesson_id": "l2",
+    "topic": "Excel Formulas",
+    "question": "What does the COUNT formula do versus COUNTIF?",
+    "answer": "COUNT counts cells containing numbers, while COUNTIF counts cells that meet a given condition.",
+    "explanation": "For example, =COUNTIF(A1:A10, \">5\") counts how many cells are greater than 5. Combining conditional counting with ranges is a core pattern for summarizing spreadsheet data.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-6-02",
+    "course_id": 6,
+    "lesson_id": "l3",
+    "topic": "Cell References",
+    "question": "What is the difference between relative, absolute, and mixed cell references?",
+    "answer": "Relative references change when copied, absolute references stay fixed, and mixed references lock one part of the address.",
+    "explanation": "A $ locks a reference: $A$1 is fully absolute, $A1 locks the column, and A$1 locks the row. Absolute references are essential for formulas that must always point to the same cell, such as a tax rate.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-6-03",
+    "course_id": 6,
+    "lesson_id": "l4",
+    "topic": "VLOOKUP",
+    "question": "What does VLOOKUP do and what is its main limitation?",
+    "answer": "VLOOKUP searches for a value in the first column and returns a value from another column in the same row.",
+    "explanation": "Syntax: VLOOKUP(lookup_value, table, col_index, [exact_match]). The lookup column must be the leftmost column, which is its main limitation. INDEX and MATCH can look up in any direction.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-6-04",
+    "course_id": 6,
+    "lesson_id": "l5",
+    "topic": "INDEX and MATCH",
+    "question": "Why is INDEX-MATCH more flexible than VLOOKUP?",
+    "answer": "INDEX-MATCH can look up values in any column or along any axis and does not break when columns are inserted.",
+    "explanation": "MATCH finds the position of a value, and INDEX returns the value at a given position. Because the lookup column does not need to be first, the pair is more robust to layout changes.",
+    "difficulty": "hard"
+  },
+  {
+    "card_id": "fc-6-05",
+    "course_id": 6,
+    "lesson_id": "l7",
+    "topic": "Pivot Tables",
+    "question": "What is a pivot table used for?",
+    "answer": "A pivot table summarizes and groups large datasets by fields you choose, such as totals or averages per category.",
+    "explanation": "You drag fields into rows, columns, values, and filters. The table quickly aggregates data, for example total sales per region, without writing formulas. Slicers connect to pivot tables for interactive filtering.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-7-01",
+    "course_id": 7,
+    "lesson_id": "l2",
+    "topic": "Types of Testing",
+    "question": "What is the difference between unit testing and integration testing?",
+    "answer": "Unit testing verifies a single component in isolation, while integration testing verifies that components work together.",
+    "explanation": "Unit tests are fast, focused, and run frequently, often on every build. Integration tests exercise real interactions, such as a function calling a database, and catch problems between components that unit tests miss.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-7-02",
+    "course_id": 7,
+    "lesson_id": "l4",
+    "topic": "Test Cases",
+    "question": "What is a good test case?",
+    "answer": "A good test case has a clear ID, preconditions, test data, steps, expected result, and actual result.",
+    "explanation": "It must be repeatable, traceable to a requirement, and specific enough that any tester can run it the same way. A strong suite covers normal, boundary, and error cases.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-7-03",
+    "course_id": 7,
+    "lesson_id": "l5",
+    "topic": "Boundary Value Analysis",
+    "question": "What is boundary value analysis?",
+    "answer": "Boundary value analysis is a technique that tests values at the edges of valid input ranges.",
+    "explanation": "Bugs cluster at boundaries. For an input range of 1 to 100 you would test 0, 1, 2, 99, 100, and 101. It is far more effective than testing arbitrary values inside the range.",
+    "difficulty": "hard"
+  },
+  {
+    "card_id": "fc-7-04",
+    "course_id": 7,
+    "lesson_id": "l7",
+    "topic": "Bug Life Cycle",
+    "question": "What is the bug life cycle?",
+    "answer": "The bug life cycle tracks a defect from discovery through fixing, verification, and closure.",
+    "explanation": "Typical states include New, Open, Assigned, Fixed, Retest, Verified, and Closed, with Reopen when the fix does not work. It provides visibility into the status and ownership of every defect.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-7-05",
+    "course_id": 7,
+    "lesson_id": "l10",
+    "topic": "Test Automation",
+    "question": "What is Selenium used for?",
+    "answer": "Selenium is a tool for automating web browsers, commonly used to run automated UI tests.",
+    "explanation": "It controls a real browser, simulating clicks, typing, and navigation, and can assert expected page states. It is most valuable for regression testing, where the same flows run repeatedly.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-8-01",
+    "course_id": 8,
+    "lesson_id": "l2",
+    "topic": "Java Data Types",
+    "question": "What is the difference between a primitive type and a reference type in Java?",
+    "answer": "A primitive type stores a value directly, while a reference type stores an address that points to an object.",
+    "explanation": "int, double, boolean, and char are primitives with fixed sizes. Reference types such as String and arrays hold an object reference, which defaults to null before assignment. This distinction affects memory use and comparison behavior.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-8-02",
+    "course_id": 8,
+    "lesson_id": "l4",
+    "topic": "Classes and Objects",
+    "question": "What is a constructor in Java and when is it called?",
+    "answer": "A constructor is a special method that initializes a new object and is called automatically when the object is created with new.",
+    "explanation": "It shares the class name and has no return type. Constructors can be overloaded to support different ways of initializing an object, and constructors of subclasses call the parent constructor.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-8-03",
+    "course_id": 8,
+    "lesson_id": "l5",
+    "topic": "Inheritance and Interfaces",
+    "question": "What is the difference between a class extending a superclass and implementing an interface?",
+    "answer": "Extending inherits behavior and state from a superclass, while implementing an interface only promises a set of method contracts.",
+    "explanation": "A class can extend only one superclass in Java but can implement many interfaces. Interfaces define what a class can do, while inheritance defines what a class is, enabling polymorphism in both cases.",
+    "difficulty": "hard"
+  },
+  {
+    "card_id": "fc-8-04",
+    "course_id": 8,
+    "lesson_id": "l7",
+    "topic": "Collections",
+    "question": "What is the difference between a List, a Set, and a Map?",
+    "answer": "A List is an ordered collection that allows duplicates, a Set allows no duplicates, and a Map stores key-value pairs.",
+    "explanation": "Lists are typically accessed by index, sets enforce uniqueness, and maps look up values by key. Common implementations are ArrayList, HashSet, and HashMap, each with distinct performance characteristics.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-8-05",
+    "course_id": 8,
+    "lesson_id": "l10",
+    "topic": "Exceptions",
+    "question": "What is the purpose of a try-catch block in Java?",
+    "answer": "A try-catch block handles exceptions so a program can recover gracefully instead of crashing.",
+    "explanation": "Code that may throw an exception goes in the try block, and catch blocks handle specific exception types. The finally block always runs, typically for cleanup. Checked exceptions must be declared or handled.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-8-06",
+    "course_id": 8,
+    "lesson_id": "l13",
+    "topic": "Multithreading",
+    "question": "What is a race condition and how is it avoided?",
+    "answer": "A race condition occurs when multiple threads modify shared data without synchronization, causing unpredictable results.",
+    "explanation": "Methods or blocks that touch shared state should be synchronized so only one thread enters at a time. Synchronization uses a lock, trading some throughput for correctness.",
+    "difficulty": "hard"
+  },
+  {
+    "card_id": "fc-9-01",
+    "course_id": 9,
+    "lesson_id": "l2",
+    "topic": "CIA Triad",
+    "question": "What are the three pillars of the CIA triad?",
+    "answer": "Confidentiality, Integrity, and Availability.",
+    "explanation": "Confidentiality means only authorized users can access data, integrity means data is accurate and unaltered, and availability means systems and data are accessible when needed. Security controls support one or more of these goals.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-9-02",
+    "course_id": 9,
+    "lesson_id": "l3",
+    "topic": "Threats",
+    "question": "What is social engineering?",
+    "answer": "Social engineering manipulates people into breaking security procedures rather than exploiting technical vulnerabilities.",
+    "explanation": "Attackers exploit trust, urgency, or fear, for example through phishing emails, fake support calls, or baiting. Training users to verify identity and requests is the main defense.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-9-03",
+    "course_id": 9,
+    "lesson_id": "l5",
+    "topic": "Network Defense",
+    "question": "What is the difference between a firewall and an IDS?",
+    "answer": "A firewall blocks or allows traffic based on rules, while an IDS monitors traffic for suspicious patterns and alerts analysts.",
+    "explanation": "Firewalls act at the perimeter by permitting or denying connections. An Intrusion Detection System passively watches for anomalies and generates alerts, while an Intrusion Prevention System can also block traffic.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-9-04",
+    "course_id": 9,
+    "lesson_id": "l8",
+    "topic": "Web Vulnerabilities",
+    "question": "How is SQL injection prevented?",
+    "answer": "SQL injection is prevented by using parameterized queries or prepared statements.",
+    "explanation": "Parameterized queries treat user input as data rather than executable SQL, so malicious input cannot change the query structure. Server-side validation and least-privilege database accounts add further protection.",
+    "difficulty": "easy"
+  },
+  {
+    "card_id": "fc-9-05",
+    "course_id": 9,
+    "lesson_id": "l11",
+    "topic": "Encryption",
+    "question": "What is the difference between symmetric and asymmetric encryption?",
+    "answer": "Symmetric encryption uses one shared key for encrypting and decrypting, while asymmetric encryption uses a public and private key pair.",
+    "explanation": "Symmetric encryption is fast but requires secure key exchange. Asymmetric encryption enables secure communication without sharing a secret but is slower. Real systems often combine both, using asymmetric encryption to exchange a symmetric session key.",
+    "difficulty": "medium"
+  },
+  {
+    "card_id": "fc-9-06",
+    "course_id": 9,
+    "lesson_id": "l12",
+    "topic": "Hashing",
+    "question": "Why does hashing work well for storing passwords?",
+    "answer": "Hashing converts a password into a fixed-size, one-way digest that cannot be reversed into the original password.",
+    "explanation": "When a user logs in, the entered password is hashed and compared to the stored digest. Salting adds random data per user so identical passwords produce different hashes, resisting rainbow table attacks.",
+    "difficulty": "medium"
+  }
+]

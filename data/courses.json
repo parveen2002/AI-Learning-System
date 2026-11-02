@@ -1,0 +1,667 @@
+[
+  {
+    "id": 1,
+    "title": "Data Structures & Algorithms",
+    "slug": "data-structures-algorithms",
+    "category": "Data Structures",
+    "level": "Intermediate",
+    "description": "Learn arrays, linked lists, stacks, queues, trees, graphs and algorithms through practical examples and coding challenges.",
+    "instructor": "AI-Learning System",
+    "duration": "8 weeks",
+    "lessonsCount": 32,
+    "topicsCount": 18,
+    "rating": 4.8,
+    "students": 2450,
+    "thumbnail": "dsa",
+    "progress": 0,
+    "featured": true,
+    "tags": ["DSA", "Programming", "Algorithms", "Data Structures"],
+    "learningOutcomes": [
+      "Understand arrays, linked lists, stacks, and queues",
+      "Implement binary trees, AVL trees, and heap structures",
+      "Learn graph traversal algorithms (BFS, DFS)",
+      "Master sorting algorithms (Merge Sort, Quick Sort, Heap Sort)",
+      "Implement searching algorithms (Binary Search, Hash Maps)",
+      "Analyze time and space complexity using Big-O notation",
+      "Solve real-world problems using the right data structure",
+      "Prepare for technical interviews at top companies"
+    ],
+    "curriculum": [
+      {
+        "id": "m1",
+        "title": "Fundamentals",
+        "lessons": [
+          {"id": "l1", "title": "Introduction to Data Structures", "type": "video", "duration": "12 min"},
+          {"id": "l2", "title": "Time and Space Complexity", "type": "reading", "duration": "15 min"},
+          {"id": "l3", "title": "Introduction to Arrays", "type": "video", "duration": "18 min"}
+        ]
+      },
+      {
+        "id": "m2",
+        "title": "Linked Lists",
+        "lessons": [
+          {"id": "l4", "title": "Singly Linked List", "type": "video", "duration": "20 min"},
+          {"id": "l5", "title": "Doubly Linked List", "type": "video", "duration": "18 min"},
+          {"id": "l6", "title": "Linked List Practice", "type": "practice", "duration": "25 min"}
+        ]
+      },
+      {
+        "id": "m3",
+        "title": "Stacks and Queues",
+        "lessons": [
+          {"id": "l7", "title": "Stack Fundamentals", "type": "video", "duration": "15 min"},
+          {"id": "l8", "title": "Queue and Deque", "type": "video", "duration": "16 min"},
+          {"id": "l9", "title": "Stack and Queue Problems", "type": "practice", "duration": "20 min"}
+        ]
+      },
+      {
+        "id": "m4",
+        "title": "Trees and Graphs",
+        "lessons": [
+          {"id": "l10", "title": "Binary Trees", "type": "video", "duration": "22 min"},
+          {"id": "l11", "title": "Graph Representation and Traversal", "type": "video", "duration": "24 min"},
+          {"id": "l12", "title": "Tree and Graph Assessment", "type": "quiz", "duration": "10 min"}
+        ]
+      },
+      {
+        "id": "m5",
+        "title": "Sorting and Searching",
+        "lessons": [
+          {"id": "l13", "title": "Merge Sort and Quick Sort", "type": "video", "duration": "25 min"},
+          {"id": "l14", "title": "Binary Search and Hash Maps", "type": "video", "duration": "20 min"},
+          {"id": "l15", "title": "Final Assessment", "type": "quiz", "duration": "15 min"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Python Programming",
+    "slug": "python-programming",
+    "category": "Programming",
+    "level": "Beginner",
+    "description": "Learn Python from scratch. Master syntax, data types, functions, OOP, file handling, and build real-world projects.",
+    "instructor": "AI-Learning System",
+    "duration": "6 weeks",
+    "lessonsCount": 28,
+    "topicsCount": 15,
+    "rating": 4.7,
+    "students": 3890,
+    "thumbnail": "python",
+    "progress": 0,
+    "featured": true,
+    "tags": ["Python", "Programming", "Beginner", "OOP"],
+    "learningOutcomes": [
+      "Write Python programs using proper syntax and conventions",
+      "Work with variables, data types, and operators",
+      "Implement functions, loops, and conditional statements",
+      "Understand Object-Oriented Programming in Python",
+      "Handle files and exceptions effectively",
+      "Use Python libraries for data manipulation",
+      "Build real-world Python projects",
+      "Debug and optimize Python code"
+    ],
+    "curriculum": [
+      {
+        "id": "m1",
+        "title": "Getting Started",
+        "lessons": [
+          {"id": "l1", "title": "Introduction to Python", "type": "video", "duration": "14 min"},
+          {"id": "l2", "title": "Variables and Data Types", "type": "video", "duration": "18 min"},
+          {"id": "l3", "title": "Operators and Expressions", "type": "reading", "duration": "12 min"}
+        ]
+      },
+      {
+        "id": "m2",
+        "title": "Control Flow",
+        "lessons": [
+          {"id": "l4", "title": "If-Else Statements", "type": "video", "duration": "15 min"},
+          {"id": "l5", "title": "For and While Loops", "type": "video", "duration": "18 min"},
+          {"id": "l6", "title": "Control Flow Practice", "type": "practice", "duration": "20 min"}
+        ]
+      },
+      {
+        "id": "m3",
+        "title": "Functions and Modules",
+        "lessons": [
+          {"id": "l7", "title": "Defining Functions", "type": "video", "duration": "16 min"},
+          {"id": "l8", "title": "Lambda and Higher-Order Functions", "type": "video", "duration": "20 min"},
+          {"id": "l9", "title": "Functions Quiz", "type": "quiz", "duration": "10 min"}
+        ]
+      },
+      {
+        "id": "m4",
+        "title": "Object-Oriented Programming",
+        "lessons": [
+          {"id": "l10", "title": "Classes and Objects", "type": "video", "duration": "22 min"},
+          {"id": "l11", "title": "Inheritance and Polymorphism", "type": "video", "duration": "20 min"},
+          {"id": "l12", "title": "OOP Practice Problems", "type": "practice", "duration": "25 min"}
+        ]
+      },
+      {
+        "id": "m5",
+        "title": "File Handling and Libraries",
+        "lessons": [
+          {"id": "l13", "title": "Reading and Writing Files", "type": "video", "duration": "16 min"},
+          {"id": "l14", "title": "Exception Handling", "type": "video", "duration": "14 min"},
+          {"id": "l15", "title": "Working with Pip and Libraries", "type": "reading", "duration": "10 min"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Web Development Fundamentals",
+    "slug": "web-development-fundamentals",
+    "category": "Web Development",
+    "level": "Beginner",
+    "description": "Build modern websites from scratch. Learn HTML5, CSS3, and JavaScript to create responsive, interactive web pages.",
+    "instructor": "AI-Learning System",
+    "duration": "7 weeks",
+    "lessonsCount": 30,
+    "topicsCount": 16,
+    "rating": 4.6,
+    "students": 3200,
+    "thumbnail": "webdev",
+    "progress": 0,
+    "featured": false,
+    "tags": ["Web Development", "HTML", "CSS", "JavaScript"],
+    "learningOutcomes": [
+      "Build semantic HTML5 page structures",
+      "Style pages using CSS3 with Flexbox and Grid",
+      "Add interactivity with vanilla JavaScript",
+      "Create responsive layouts for all screen sizes",
+      "Understand the browser rendering pipeline",
+      "Work with forms, events, and DOM manipulation",
+      "Deploy websites to hosting platforms",
+      "Follow modern web development best practices"
+    ],
+    "curriculum": [
+      {
+        "id": "m1",
+        "title": "HTML Foundations",
+        "lessons": [
+          {"id": "l1", "title": "How the Web Works", "type": "video", "duration": "10 min"},
+          {"id": "l2", "title": "HTML Document Structure", "type": "video", "duration": "15 min"},
+          {"id": "l3", "title": "Forms and Input Elements", "type": "video", "duration": "18 min"}
+        ]
+      },
+      {
+        "id": "m2",
+        "title": "CSS Styling",
+        "lessons": [
+          {"id": "l4", "title": "CSS Selectors and Properties", "type": "video", "duration": "16 min"},
+          {"id": "l5", "title": "Flexbox Layout", "type": "video", "duration": "20 min"},
+          {"id": "l6", "title": "CSS Grid", "type": "video", "duration": "18 min"}
+        ]
+      },
+      {
+        "id": "m3",
+        "title": "JavaScript Basics",
+        "lessons": [
+          {"id": "l7", "title": "Variables, Types, and Functions", "type": "video", "duration": "20 min"},
+          {"id": "l8", "title": "DOM Manipulation", "type": "video", "duration": "22 min"},
+          {"id": "l9", "title": "Events and Event Handling", "type": "video", "duration": "16 min"}
+        ]
+      },
+      {
+        "id": "m4",
+        "title": "Responsive Design",
+        "lessons": [
+          {"id": "l10", "title": "Media Queries", "type": "video", "duration": "14 min"},
+          {"id": "l11", "title": "Mobile-First Design", "type": "reading", "duration": "12 min"},
+          {"id": "l12", "title": "Responsive Project", "type": "practice", "duration": "35 min"}
+        ]
+      },
+      {
+        "id": "m5",
+        "title": "Final Projects",
+        "lessons": [
+          {"id": "l13", "title": "Portfolio Website Build", "type": "practice", "duration": "45 min"},
+          {"id": "l14", "title": "Best Practices and Deployment", "type": "reading", "duration": "10 min"},
+          {"id": "l15", "title": "Web Dev Final Quiz", "type": "quiz", "duration": "15 min"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Database Management Systems",
+    "slug": "database-management-systems",
+    "category": "Database",
+    "level": "Intermediate",
+    "description": "Understand relational databases, SQL, normalization, indexing, and transaction management. Hands-on with MySQL.",
+    "instructor": "AI-Learning System",
+    "duration": "6 weeks",
+    "lessonsCount": 25,
+    "topicsCount": 14,
+    "rating": 4.5,
+    "students": 1870,
+    "thumbnail": "dbms",
+    "progress": 0,
+    "featured": false,
+    "tags": ["Database", "SQL", "MySQL", "Normalization"],
+    "learningOutcomes": [
+      "Design efficient relational database schemas",
+      "Write complex SQL queries with JOINs and subqueries",
+      "Understand normalization forms (1NF, 2NF, 3NF, BCNF)",
+      "Implement indexing for query optimization",
+      "Manage transactions and ensure ACID properties",
+      "Use MySQL for real-world database projects",
+      "Understand NoSQL concepts and when to use them",
+      "Secure databases against common vulnerabilities"
+    ],
+    "curriculum": [
+      {
+        "id": "m1",
+        "title": "Database Fundamentals",
+        "lessons": [
+          {"id": "l1", "title": "Introduction to Databases", "type": "video", "duration": "12 min"},
+          {"id": "l2", "title": "Relational Model Concepts", "type": "reading", "duration": "15 min"},
+          {"id": "l3", "title": "ER Diagrams", "type": "video", "duration": "18 min"}
+        ]
+      },
+      {
+        "id": "m2",
+        "title": "SQL Essentials",
+        "lessons": [
+          {"id": "l4", "title": "SELECT, INSERT, UPDATE, DELETE", "type": "video", "duration": "20 min"},
+          {"id": "l5", "title": "JOINs and Subqueries", "type": "video", "duration": "22 min"},
+          {"id": "l6", "title": "SQL Practice", "type": "practice", "duration": "25 min"}
+        ]
+      },
+      {
+        "id": "m3",
+        "title": "Normalization",
+        "lessons": [
+          {"id": "l7", "title": "Normalization Forms", "type": "video", "duration": "20 min"},
+          {"id": "l8", "title": "Functional Dependencies", "type": "reading", "duration": "15 min"},
+          {"id": "l9", "title": "Normalization Quiz", "type": "quiz", "duration": "10 min"}
+        ]
+      },
+      {
+        "id": "m4",
+        "title": "Advanced Topics",
+        "lessons": [
+          {"id": "l10", "title": "Indexing and Query Optimization", "type": "video", "duration": "18 min"},
+          {"id": "l11", "title": "Transactions and ACID", "type": "video", "duration": "16 min"},
+          {"id": "l12", "title": "Stored Procedures and Triggers", "type": "video", "duration": "20 min"}
+        ]
+      },
+      {
+        "id": "m5",
+        "title": "Projects and Review",
+        "lessons": [
+          {"id": "l13", "title": "Database Design Project", "type": "practice", "duration": "40 min"},
+          {"id": "l14", "title": "NoSQL Introduction", "type": "reading", "duration": "12 min"},
+          {"id": "l15", "title": "DBMS Final Assessment", "type": "quiz", "duration": "15 min"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Artificial Intelligence Basics",
+    "slug": "artificial-intelligence-basics",
+    "category": "Artificial Intelligence",
+    "level": "Intermediate",
+    "description": "Explore AI fundamentals including search algorithms, knowledge representation, machine learning concepts, and neural networks.",
+    "instructor": "AI-Learning System",
+    "duration": "8 weeks",
+    "lessonsCount": 30,
+    "topicsCount": 20,
+    "rating": 4.7,
+    "students": 2100,
+    "thumbnail": "ai",
+    "progress": 0,
+    "featured": true,
+    "tags": ["AI", "Machine Learning", "Neural Networks", "Deep Learning"],
+    "learningOutcomes": [
+      "Understand the history and scope of artificial intelligence",
+      "Implement search algorithms (A*, Minimax)",
+      "Learn about knowledge representation and reasoning",
+      "Understand supervised, unsupervised, and reinforcement learning",
+      "Build basic machine learning models",
+      "Understand neural networks and deep learning concepts",
+      "Evaluate AI model performance",
+      "Discuss ethical considerations in AI"
+    ],
+    "curriculum": [
+      {
+        "id": "m1",
+        "title": "Introduction to AI",
+        "lessons": [
+          {"id": "l1", "title": "What is Artificial Intelligence?", "type": "video", "duration": "14 min"},
+          {"id": "l2", "title": "Types of AI and Applications", "type": "video", "duration": "16 min"},
+          {"id": "l3", "title": "AI Ethics and Impact", "type": "reading", "duration": "12 min"}
+        ]
+      },
+      {
+        "id": "m2",
+        "title": "Search and Problem Solving",
+        "lessons": [
+          {"id": "l4", "title": "Uninformed Search", "type": "video", "duration": "18 min"},
+          {"id": "l5", "title": "Informed Search and A*", "type": "video", "duration": "22 min"},
+          {"id": "l6", "title": "Search Algorithms Practice", "type": "practice", "duration": "25 min"}
+        ]
+      },
+      {
+        "id": "m3",
+        "title": "Machine Learning Foundations",
+        "lessons": [
+          {"id": "l7", "title": "Introduction to ML", "type": "video", "duration": "16 min"},
+          {"id": "l8", "title": "Linear Regression", "type": "video", "duration": "20 min"},
+          {"id": "l9", "title": "Classification Algorithms", "type": "video", "duration": "22 min"}
+        ]
+      },
+      {
+        "id": "m4",
+        "title": "Neural Networks",
+        "lessons": [
+          {"id": "l10", "title": "Perceptrons and Activation Functions", "type": "video", "duration": "18 min"},
+          {"id": "l11", "title": "Backpropagation", "type": "video", "duration": "22 min"},
+          {"id": "l12", "title": "Neural Network Quiz", "type": "quiz", "duration": "10 min"}
+        ]
+      },
+      {
+        "id": "m5",
+        "title": "Applications and Projects",
+        "lessons": [
+          {"id": "l13", "title": "Computer Vision Overview", "type": "video", "duration": "16 min"},
+          {"id": "l14", "title": "NLP Basics", "type": "video", "duration": "18 min"},
+          {"id": "l15", "title": "AI Final Assessment", "type": "quiz", "duration": "15 min"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Data Analytics with Excel",
+    "slug": "data-analytics-excel",
+    "category": "Data Analytics",
+    "level": "Beginner",
+    "description": "Master Excel for data analysis. Learn pivot tables, VLOOKUP, data visualization, dashboards, and advanced formulas.",
+    "instructor": "AI-Learning System",
+    "duration": "4 weeks",
+    "lessonsCount": 20,
+    "topicsCount": 12,
+    "rating": 4.4,
+    "students": 2980,
+    "thumbnail": "excel",
+    "progress": 0,
+    "featured": false,
+    "tags": ["Excel", "Data Analytics", "Dashboards", "Spreadsheets"],
+    "learningOutcomes": [
+      "Navigate Excel interface and workbook structure",
+      "Use essential formulas (SUM, AVERAGE, COUNT, IF)",
+      "Master VLOOKUP, HLOOKUP, INDEX-MATCH",
+      "Create and analyze pivot tables",
+      "Build interactive dashboards",
+      "Apply conditional formatting for data insights",
+      "Clean and transform messy datasets",
+      "Present data visually with charts and graphs"
+    ],
+    "curriculum": [
+      {
+        "id": "m1",
+        "title": "Excel Basics",
+        "lessons": [
+          {"id": "l1", "title": "Getting Started with Excel", "type": "video", "duration": "12 min"},
+          {"id": "l2", "title": "Essential Formulas", "type": "video", "duration": "18 min"},
+          {"id": "l3", "title": "Formatting and Cell References", "type": "video", "duration": "14 min"}
+        ]
+      },
+      {
+        "id": "m2",
+        "title": "Data Analysis Tools",
+        "lessons": [
+          {"id": "l4", "title": "VLOOKUP and HLOOKUP", "type": "video", "duration": "16 min"},
+          {"id": "l5", "title": "INDEX and MATCH", "type": "video", "duration": "18 min"},
+          {"id": "l6", "title": "Practice: Lookup Problems", "type": "practice", "duration": "20 min"}
+        ]
+      },
+      {
+        "id": "m3",
+        "title": "Pivot Tables",
+        "lessons": [
+          {"id": "l7", "title": "Creating Pivot Tables", "type": "video", "duration": "18 min"},
+          {"id": "l8", "title": "Pivot Charts and Slicers", "type": "video", "duration": "14 min"},
+          {"id": "l9", "title": "Pivot Table Quiz", "type": "quiz", "duration": "10 min"}
+        ]
+      },
+      {
+        "id": "m4",
+        "title": "Data Visualization",
+        "lessons": [
+          {"id": "l10", "title": "Chart Types and Best Practices", "type": "video", "duration": "16 min"},
+          {"id": "l11", "title": "Building Dashboards", "type": "video", "duration": "22 min"},
+          {"id": "l12", "title": "Data Cleaning Techniques", "type": "practice", "duration": "25 min"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Software Testing Fundamentals",
+    "slug": "software-testing-fundamentals",
+    "category": "Software Testing",
+    "level": "Beginner",
+    "description": "Learn software testing from scratch. Understand manual testing, test case design, bug reporting, and intro to automation.",
+    "instructor": "AI-Learning System",
+    "duration": "5 weeks",
+    "lessonsCount": 22,
+    "topicsCount": 14,
+    "rating": 4.3,
+    "students": 1620,
+    "thumbnail": "testing",
+    "progress": 0,
+    "featured": false,
+    "tags": ["Testing", "QA", "Manual Testing", "Selenium"],
+    "learningOutcomes": [
+      "Understand the software testing lifecycle",
+      "Write effective test cases and test plans",
+      "Apply black-box and white-box testing techniques",
+      "Perform boundary value and equivalence partitioning analysis",
+      "Report and track bugs using industry tools",
+      "Understand regression and smoke testing",
+      "Introduction to Selenium and test automation",
+      "Ensure quality in Agile development environments"
+    ],
+    "curriculum": [
+      {
+        "id": "m1",
+        "title": "Testing Basics",
+        "lessons": [
+          {"id": "l1", "title": "Why Testing Matters", "type": "reading", "duration": "10 min"},
+          {"id": "l2", "title": "Types of Testing", "type": "reading", "duration": "12 min"},
+          {"id": "l3", "title": "Software Testing Lifecycle", "type": "video", "duration": "15 min"}
+        ]
+      },
+      {
+        "id": "m2",
+        "title": "Test Design",
+        "lessons": [
+          {"id": "l4", "title": "Writing Test Cases", "type": "reading", "duration": "14 min"},
+          {"id": "l5", "title": "Boundary Value Analysis", "type": "reading", "duration": "12 min"},
+          {"id": "l6", "title": "Test Design Practice", "type": "practice", "duration": "20 min"}
+        ]
+      },
+      {
+        "id": "m3",
+        "title": "Bug Management",
+        "lessons": [
+          {"id": "l7", "title": "Bug Life Cycle", "type": "video", "duration": "12 min"},
+          {"id": "l8", "title": "Writing Effective Bug Reports", "type": "reading", "duration": "10 min"},
+          {"id": "l9", "title": "Bug Reporting Practice", "type": "practice", "duration": "15 min"}
+        ]
+      },
+      {
+        "id": "m4",
+        "title": "Automation Introduction",
+        "lessons": [
+          {"id": "l10", "title": "Introduction to Selenium", "type": "video", "duration": "18 min"},
+          {"id": "l11", "title": "Selenium WebDriver Basics", "type": "video", "duration": "20 min"},
+          {"id": "l12", "title": "Automation Practice", "type": "practice", "duration": "25 min"}
+        ]
+      },
+      {
+        "id": "m5",
+        "title": "Review and Assessment",
+        "lessons": [
+          {"id": "l13", "title": "Testing Best Practices", "type": "reading", "duration": "10 min"},
+          {"id": "l14", "title": "Testing Final Quiz", "type": "quiz", "duration": "15 min"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Java Programming",
+    "slug": "java-programming",
+    "category": "Programming",
+    "level": "Intermediate",
+    "description": "Comprehensive Java course covering OOP, collections, multithreading, exception handling, and file I/O.",
+    "instructor": "AI-Learning System",
+    "duration": "8 weeks",
+    "lessonsCount": 35,
+    "topicsCount": 20,
+    "rating": 4.6,
+    "students": 2120,
+    "thumbnail": "java",
+    "progress": 0,
+    "featured": false,
+    "tags": ["Java", "Programming", "OOP", "Multithreading"],
+    "learningOutcomes": [
+      "Write Java programs using core syntax and APIs",
+      "Implement Object-Oriented principles",
+      "Use the Java Collections Framework effectively",
+      "Handle exceptions and errors gracefully",
+      "Implement multithreading and concurrency",
+      "Perform file I/O operations",
+      "Build console-based and simple GUI applications",
+      "Understand JVM internals and memory management"
+    ],
+    "curriculum": [
+      {
+        "id": "m1",
+        "title": "Java Fundamentals",
+        "lessons": [
+          {"id": "l1", "title": "Introduction to Java", "type": "video", "duration": "14 min"},
+          {"id": "l2", "title": "Data Types and Variables", "type": "video", "duration": "16 min"},
+          {"id": "l3", "title": "Control Statements", "type": "video", "duration": "14 min"}
+        ]
+      },
+      {
+        "id": "m2",
+        "title": "Object-Oriented Programming",
+        "lessons": [
+          {"id": "l4", "title": "Classes and Objects", "type": "video", "duration": "20 min"},
+          {"id": "l5", "title": "Inheritance and Interfaces", "type": "video", "duration": "22 min"},
+          {"id": "l6", "title": "OOP Practice", "type": "practice", "duration": "25 min"}
+        ]
+      },
+      {
+        "id": "m3",
+        "title": "Collections Framework",
+        "lessons": [
+          {"id": "l7", "title": "List, Set, and Map", "type": "video", "duration": "20 min"},
+          {"id": "l8", "title": "Iterators and Comparators", "type": "video", "duration": "16 min"},
+          {"id": "l9", "title": "Collections Quiz", "type": "quiz", "duration": "10 min"}
+        ]
+      },
+      {
+        "id": "m4",
+        "title": "Exception Handling and I/O",
+        "lessons": [
+          {"id": "l10", "title": "Try-Catch and Custom Exceptions", "type": "video", "duration": "16 min"},
+          {"id": "l11", "title": "File I/O Streams", "type": "video", "duration": "18 min"},
+          {"id": "l12", "title": "Serialization", "type": "reading", "duration": "12 min"}
+        ]
+      },
+      {
+        "id": "m5",
+        "title": "Multithreading",
+        "lessons": [
+          {"id": "l13", "title": "Thread Basics", "type": "video", "duration": "18 min"},
+          {"id": "l14", "title": "Synchronization", "type": "video", "duration": "20 min"},
+          {"id": "l15", "title": "Thread Practice", "type": "practice", "duration": "25 min"}
+        ]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "Cybersecurity Fundamentals",
+    "slug": "cybersecurity-fundamentals",
+    "category": "Cybersecurity",
+    "level": "Beginner",
+    "description": "Learn to protect systems and data. Covers security principles, network defense, web vulnerabilities, cryptography, and cyber defense best practices.",
+    "instructor": "AI-Learning System",
+    "duration": "6 weeks",
+    "lessonsCount": 15,
+    "topicsCount": 12,
+    "rating": 4.7,
+    "students": 1980,
+    "thumbnail": "cyber",
+    "progress": 0,
+    "featured": false,
+    "tags": ["Security", "Networking", "Ethical Hacking", "Cyber Defense"],
+    "learningOutcomes": [
+      "Understand core security concepts and the CIA triad",
+      "Identify common threats, vulnerabilities, and attack vectors",
+      "Explain network security controls (firewalls, VPNs, IDS/IPS)",
+      "Recognize and defend against web application attacks (OWASP Top 10)",
+      "Apply basic cryptography: encryption, hashing, and PKI",
+      "Implement identity and access management best practices",
+      "Perform basic security audits and risk assessments",
+      "Build a practical foundation for a cyber defense career"
+    ],
+    "curriculum": [
+      {
+        "id": "m1",
+        "title": "Security Fundamentals",
+        "lessons": [
+          {"id": "l1", "title": "Introduction to Cybersecurity", "type": "video", "duration": "12 min"},
+          {"id": "l2", "title": "The CIA Triad", "type": "video", "duration": "15 min"},
+          {"id": "l3", "title": "Threats and Attack Vectors", "type": "reading", "duration": "18 min"}
+        ]
+      },
+      {
+        "id": "m2",
+        "title": "Network Security",
+        "lessons": [
+          {"id": "l4", "title": "Networking Basics for Security", "type": "video", "duration": "16 min"},
+          {"id": "l5", "title": "Firewalls, VPNs, and IDS", "type": "video", "duration": "18 min"},
+          {"id": "l6", "title": "Network Security Practice", "type": "practice", "duration": "25 min"}
+        ]
+      },
+      {
+        "id": "m3",
+        "title": "Web and Application Security",
+        "lessons": [
+          {"id": "l7", "title": "OWASP Top 10 Web Vulnerabilities", "type": "reading", "duration": "15 min"},
+          {"id": "l8", "title": "SQL Injection and XSS", "type": "video", "duration": "20 min"},
+          {"id": "l9", "title": "Web Security Practice", "type": "practice", "duration": "25 min"}
+        ]
+      },
+      {
+        "id": "m4",
+        "title": "Cryptography",
+        "lessons": [
+          {"id": "l10", "title": "Introduction to Cryptography", "type": "reading", "duration": "14 min"},
+          {"id": "l11", "title": "Symmetric and Asymmetric Encryption", "type": "video", "duration": "18 min"},
+          {"id": "l12", "title": "Hashing and Public Key Infrastructure", "type": "video", "duration": "16 min"}
+        ]
+      },
+      {
+        "id": "m5",
+        "title": "Cyber Defense",
+        "lessons": [
+          {"id": "l13", "title": "Identity and Access Management", "type": "reading", "duration": "14 min"},
+          {"id": "l14", "title": "Security Best Practices", "type": "video", "duration": "15 min"},
+          {"id": "l15", "title": "Security Audit Practice", "type": "practice", "duration": "25 min"}
+        ]
+      }
+    ]
+  }
+]

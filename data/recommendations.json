@@ -1,0 +1,131 @@
+{
+  "mastery_levels": {
+    "needs_improvement": {
+      "min": 0,
+      "max": 39,
+      "label": "Needs Improvement",
+      "description": "Your understanding is still developing. Focus on foundational concepts.",
+      "message": "It looks like you need more practice with this material. Don't worry — revisiting lessons and retaking quizzes will help you build a stronger foundation."
+    },
+    "developing": {
+      "min": 40,
+      "max": 59,
+      "label": "Developing",
+      "description": "You are making progress but have room to grow.",
+      "message": "You are on the right track! A little more review and practice will help you master these concepts."
+    },
+    "proficient": {
+      "min": 60,
+      "max": 79,
+      "label": "Proficient",
+      "description": "You have a solid understanding of the material.",
+      "message": "Good work! You understand the core concepts well. Keep going to reach mastery."
+    },
+    "mastered": {
+      "min": 80,
+      "max": 100,
+      "label": "Mastered",
+      "description": "You have a strong command of this topic.",
+      "message": "Excellent performance! You have mastered this material. Ready for more advanced topics."
+    }
+  },
+  "recommendations": {
+    "low_score": {
+      "title": "Foundational Practice Needed",
+      "message": "Your latest quiz score suggests you should review the lesson material before retaking the quiz.",
+      "action": "review",
+      "actionLabel": "Review Lesson",
+      "priority": "high"
+    },
+    "medium_score": {
+      "title": "Good Progress — Strengthen Weak Areas",
+      "message": "You are doing well. Reviewing the topics you found challenging will help you reach mastery.",
+      "action": "review_weak",
+      "actionLabel": "Review Weak Topics",
+      "priority": "medium"
+    },
+    "high_score": {
+      "title": "Ready for the Next Lesson",
+      "message": "Great performance! You are ready to move on to the next lesson.",
+      "action": "continue",
+      "actionLabel": "Continue Learning",
+      "priority": "low"
+    },
+    "mastery": {
+      "title": "Topic Mastered",
+      "message": "Outstanding! You have mastered this topic. Consider exploring advanced material or the next module.",
+      "action": "advance",
+      "actionLabel": "Explore Next Module",
+      "priority": "low"
+    },
+    "retry_quiz": {
+      "title": "Retake the Quiz",
+      "message": "Retaking the quiz after reviewing can help reinforce your understanding.",
+      "action": "quiz",
+      "actionLabel": "Retry Quiz",
+      "priority": "high"
+    },
+    "take_quiz": {
+      "title": "Take the Quiz",
+      "message": "You have completed lessons in this course. Take the quiz so we can better personalize your learning path.",
+      "action": "quiz",
+      "actionLabel": "Take Quiz",
+      "priority": "high"
+    },
+    "start_learning": {
+      "title": "Start Your Learning Journey",
+      "message": "Begin by selecting a course and completing your first lesson. Your personalized path will build as you progress.",
+      "action": "browse",
+      "actionLabel": "Browse Courses",
+      "priority": "medium"
+    },
+    "no_activity": {
+      "title": "No Learning Activity Yet",
+      "message": "Start learning to build your personalized path. Your progress, quiz results, and recommendations will appear here.",
+      "action": "browse",
+      "actionLabel": "Browse Courses",
+      "priority": "medium"
+    },
+    "course_completed": {
+      "title": "Course Completed!",
+      "message": "Congratulations! You have completed this course. Consider exploring a new topic or reviewing advanced material.",
+      "action": "browse",
+      "actionLabel": "Explore More Courses",
+      "priority": "low"
+    },
+    "next_lesson": {
+      "title": "Continue with Next Lesson",
+      "message": "Keep up the momentum. Move on to the next lesson in your learning path.",
+      "action": "continue",
+      "actionLabel": "Start Next Lesson",
+      "priority": "medium"
+    }
+  },
+  "difficulty": {
+    "foundational": {
+      "label": "Foundational Practice",
+      "description": "Revisit earlier lessons and concepts to build a stronger base.",
+      "message": "Based on your performance, spending more time on foundational concepts will help you progress more effectively."
+    },
+    "standard": {
+      "label": "Standard Difficulty",
+      "description": "Continue at the current pace with occasional review.",
+      "message": "You are progressing at a good pace. Keep learning and review topics as needed."
+    },
+    "advanced": {
+      "label": "Advanced Challenge",
+      "description": "You are ready for more challenging material.",
+      "message": "Your strong performance shows you are ready to take on more advanced concepts."
+    }
+  },
+  "messages": {
+    "welcome_back": "Welcome back! Here is your updated learning path.",
+    "good_progress": "You are making good progress in this course.",
+    "needs_review": "Your quiz score suggests you should review this topic before moving forward.",
+    "excellent": "Excellent performance! You are ready for a more challenging lesson.",
+    "encouragement": "Every lesson brings you closer to mastery. Keep it up!",
+    "streak_warning": "You have been away for a while. A quick review can help refresh your memory.",
+    "milestone_reached": "You have reached a new mastery level! Great work.",
+    "almost_there": "You are almost there! Just a few more lessons to complete this course."
+  }
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Quiz Result - AI-Learning System">
+  <title>Quiz Result - AI-Learning System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/animations.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <!-- ====== NAVBAR ====== -->
+<nav class="navbar" id="navbar" aria-label="Primary">
+  <div class="navbar-inner">
+    <a href="../index.html" class="navbar-brand">
+      <img src="../assets/images/logo.png" alt="AI-Learning System logo" class="brand-logo">
+      <span>AI-<span class="brand-text-accent">Learning</span> System</span>
+    </a>
+
+    <div class="navbar-menu">
+      <a href="../index.html" class="navbar-link">Home</a>
+      <a href="courses.html" class="navbar-link active">Courses</a>
+      <a href="learning-path.html" class="navbar-link">Learning Path</a>
+      <a href="ai-tutor.html" class="navbar-link">AI Tutor</a>
+      <a href="dashboard.html" class="navbar-link">Dashboard</a>
+    </div>
+
+    <div class="navbar-actions">
+      <button type="button" class="navbar-icon-btn nav-search-btn" data-search-url="courses.html" aria-label="Search courses">&#128269;</button>
+      <button type="button" class="navbar-icon-btn theme-toggle" aria-label="Toggle theme">&#9790;</button>
+
+      <div class="navbar-auth" id="authGuest">
+        <a href="login.html" class="btn btn-ghost btn-sm">Login</a>
+        <a href="signup.html" class="btn btn-primary btn-sm">Sign Up</a>
+      </div>
+
+      <div class="navbar-auth navbar-user-menu" id="authUser" style="display:none;">
+        <button type="button" class="navbar-user-btn" aria-haspopup="true" aria-expanded="false">
+          <span class="navbar-user-avatar">P</span>
+          <span class="navbar-user-name">User</span>
+          <span class="navbar-user-caret" aria-hidden="true">&#9662;</span>
+        </button>
+        <div class="navbar-dropdown" role="menu">
+          <a href="profile.html" class="navbar-dropdown-item" role="menuitem">&#128100; My Profile</a>
+          <a href="achievements.html" class="navbar-dropdown-item" role="menuitem">&#127942; Achievements</a>
+          <a href="bookmarks.html" class="navbar-dropdown-item" role="menuitem">&#128278; Bookmarks</a>
+          <a href="study-planner.html" class="navbar-dropdown-item" role="menuitem">&#128197; Study Planner</a>
+          <a href="analytics.html" class="navbar-dropdown-item" role="menuitem">&#128200; Analytics</a>
+          <a href="settings.html" class="navbar-dropdown-item" role="menuitem">&#9881; Settings</a>
+          <div class="navbar-dropdown-divider" role="separator"></div>
+          <div class="navbar-dropdown-item navbar-dropdown-logout" id="navLogoutBtn" role="menuitem" tabindex="0">&#10140; Logout</div>
+        </div>
+      </div>
+
+      <button type="button" class="navbar-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ====== MOBILE MENU ====== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="../index.html" class="mobile-menu-link">Home</a>
+  <a href="courses.html" class="mobile-menu-link active">Courses</a>
+  <a href="learning-path.html" class="mobile-menu-link">Learning Path</a>
+  <a href="ai-tutor.html" class="mobile-menu-link">AI Tutor</a>
+  <a href="dashboard.html" class="mobile-menu-link">Dashboard</a>
+
+  <div class="mobile-menu-divider">Learning Tools</div>
+  <a href="flashcards.html" class="mobile-menu-link">Flashcards</a>
+  <a href="revision.html" class="mobile-menu-link">Revision</a>
+
+  <div class="mobile-menu-divider">More</div>
+  <a href="achievements.html" class="mobile-menu-link">Achievements</a>
+  <a href="bookmarks.html" class="mobile-menu-link">Bookmarks</a>
+  <a href="study-planner.html" class="mobile-menu-link">Study Planner</a>
+  <a href="analytics.html" class="mobile-menu-link">Analytics</a>
+  <a href="settings.html" class="mobile-menu-link">Settings</a>
+
+  <div class="mobile-menu-actions" id="mobileAuthGuest">
+    <a href="login.html" class="btn btn-secondary btn-block">Login</a>
+    <a href="signup.html" class="btn btn-primary btn-block">Sign Up</a>
+  </div>
+
+  <div class="mobile-menu-actions" id="mobileAuthUser" style="display:none;">
+    <p class="mobile-menu-login-name">Logged in as <strong class="mobile-user-name">User</strong></p>
+    <button type="button" class="btn btn-secondary btn-block" id="mobileLogoutBtn">Logout</button>
+  </div>
+</div>
+
+  <!-- RESULT CONTENT -->
+  <div class="container quiz-result-container">
+
+    <!-- Error state -->
+    <div id="quizResultError" class="quiz-error" style="display:none;"></div>
+
+    <!-- Main result UI -->
+    <div id="quizResultContent" style="display:none;">
+
+      <div class="quiz-breadcrumb" id="quizResultBreadcrumb"></div>
+
+      <section class="quiz-result-hero card">
+        <div class="quiz-result-icon" id="quizResultIcon">&#10003;</div>
+        <span class="quiz-result-course" id="quizResultCourse"></span>
+        <h1 id="quizResultTitle"></h1>
+        <p class="quiz-result-message" id="quizResultMessage"></p>
+
+        <div class="quiz-result-score-wrap">
+          <div class="quiz-result-score-card">
+            <div class="quiz-result-score" id="quizResultScore">0%</div>
+            <div class="quiz-result-badge" id="quizResultBadge">PASSED</div>
+          </div>
+          <p class="quiz-result-best" id="quizResultBest"></p>
+        </div>
+
+        <div class="quiz-result-stats">
+          <div class="quiz-stat-card quiz-stat-correct">
+            <span class="quiz-stat-icon">&#10003;</span>
+            <span class="quiz-stat-value" id="quizStatCorrect">0</span>
+            <span class="quiz-stat-label">Correct</span>
+          </div>
+          <div class="quiz-stat-card quiz-stat-wrong">
+            <span class="quiz-stat-icon">&#10007;</span>
+            <span class="quiz-stat-value" id="quizStatWrong">0</span>
+            <span class="quiz-stat-label">Wrong</span>
+          </div>
+          <div class="quiz-stat-card quiz-stat-unanswered">
+            <span class="quiz-stat-icon">&#8212;</span>
+            <span class="quiz-stat-value" id="quizStatUnanswered">0</span>
+            <span class="quiz-stat-label">Not Answered</span>
+          </div>
+          <div class="quiz-stat-card quiz-stat-total">
+            <span class="quiz-stat-icon">&#128221;</span>
+            <span class="quiz-stat-value" id="quizStatTotal">0</span>
+            <span class="quiz-stat-label">Total Questions</span>
+          </div>
+        </div>
+
+        <div class="quiz-result-actions">
+          <a href="#" class="btn btn-secondary" id="quizRetryBtn">Retry Quiz</a>
+          <a href="#" class="btn btn-primary" id="quizContinueBtn">Continue Learning</a>
+          <a href="#" class="btn btn-ghost" id="quizBackCourseBtn">Back to Course</a>
+          <a href="#" class="btn btn-ghost quiz-ask-tutor-btn" id="quizAskTutorBtn">Ask AI Tutor</a>
+        </div>
+      </section>
+
+      <section class="quiz-recommendation card" id="quizRecommendation" style="display:none;">
+        <div class="quiz-recommendation-icon" id="quizRecIcon">&#127919;</div>
+        <div class="quiz-recommendation-copy">
+          <h2 class="quiz-recommendation-title" id="quizRecTitle">Next step</h2>
+          <p class="quiz-recommendation-message" id="quizRecMessage"></p>
+          <p class="quiz-recommendation-note">Rule-based prototype guidance from your quiz performance. Personalized AI recommendations arrive with the recommendation engine.</p>
+        </div>
+      </section>
+
+      <section class="quiz-review-section">
+        <div class="quiz-review-header">
+          <h2>Review Answers</h2>
+          <button type="button" class="btn btn-sm btn-ghost" id="quizReviewToggle" aria-expanded="false">Show Answer Review</button>
+        </div>
+        <div class="quiz-review" id="quizReview" style="display:none;">
+          <!-- Rendered by quiz.js -->
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="../js/config.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/auth.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/navigation.js"></script>
+  <script src="../js/quiz.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      LearnSphereTheme.init();
+      LearnSphereNav.init();
+
+      fetch('../data/quizzes.json')
+        .then(function (r) { return r.json(); })
+        .then(function (quizzes) {
+          fetch('../data/courses.json')
+            .then(function (r) { return r.json(); })
+            .then(function (courses) {
+              LearnSphereQuiz.initResult(quizzes, courses);
+            })
+            .catch(function () {
+              LearnSphereQuiz.initResult(quizzes, []);
+            });
+        })
+        .catch(function () {
+          LearnSphereQuiz.showFatalError();
+        });
+
+      });
+  </script>
+
+</body>
+</html>
